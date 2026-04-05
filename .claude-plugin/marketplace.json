@@ -1,0 +1,17 @@
+{
+  "name": "cowork-plugins",
+  "owner": {
+    "name": "GOOS (modu-ai)",
+    "email": "namgoos@gmail.com"
+  },
+  "metadata": {
+    "description": "MoAI 플러그인 마켓플레이스"
+  },
+  "plugins": [
+    {
+      "name": "moai-cowork",
+      "source": ".",
+      "description": "MoAI — 100 self-evolving domain harnesses for Cowork"
+    }
+  ]
+}

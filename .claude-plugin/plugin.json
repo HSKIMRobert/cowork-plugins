@@ -6,8 +6,8 @@
     "name": "GOOS",
     "url": "https://github.com/modu-ai"
   },
-  "repository": "https://github.com/modu-ai/moai-cowork",
-  "homepage": "https://github.com/modu-ai/moai-cowork#readme",
+  "repository": "https://github.com/modu-ai/cowork-plugins",
+  "homepage": "https://github.com/modu-ai/cowork-plugins#readme",
   "license": "MIT",
   "keywords": [
     "harness", "self-evolving", "playbook", "automation",
