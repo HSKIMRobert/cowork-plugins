@@ -68,6 +68,32 @@ MoAI 시스템 메시지에 주입:
  현재 작업: {task_description}"
 ```
 
+### 1-4. 소크라테스식 전제 검증 (규제/전략 하네스)
+
+규제·법률·전략 하네스 실행 시, 사용자의 전제가 산출물 품질에 직접 영향을 미친다.
+잘못된 전제에 기반한 산출물은 위험하므로, 실행 전 열린 질문으로 전제를 검증한다.
+
+```
+대상 하네스 (전제 검증 필수):
+  compliance, contract-review, regulatory, accounting-tax,
+  finance-compliance, tax-optimization, labor-hr, ip-strategy,
+  risk-register, data-privacy, corporate-governance,
+  market-entry-strategy, pricing-strategy, investor-report
+
+검증 질문 패턴 (텍스트 대화, 최대 2개):
+
+  [전제 확인]  "이 판단의 근거가 되는 핵심 전제는 무엇인가요?"
+  [반대 검증]  "반대 사례나 예외 상황은 어떤 게 있을까요?"
+  [범위 확인]  "이 결과가 적용되는 범위(시간/지역/대상)는 어디까지인가요?"
+  [리스크 인식] "이 방향으로 진행했을 때 가장 우려되는 점은 무엇인가요?"
+
+적용 규칙:
+  - 위 대상 하네스에만 적용 (다른 하네스는 스킵)
+  - 사용자가 명확한 지시를 이미 제공한 경우 스킵
+  - 검증 결과를 산출물 서두 "전제 조건" 섹션에 명시
+  - Sequential Thinking과 병행 가능 (복잡도 높을 시)
+```
+
 ---
 
 ## 2. 워크플로우 실행

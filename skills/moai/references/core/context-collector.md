@@ -96,7 +96,32 @@ IF response == "기타" OR response_confidence < 0.7:
   → context_store[질문_id] = [response, follow_up_response]
 ```
 
-### 2-4. 충분성 재평가
+### 2-4. 소크라테스식 심화 질문 (Socratic Deepening)
+
+AskUserQuestion 옵션 선택 이후, 맥락 깊이를 B→C등급으로 향상시키기 위해
+**텍스트 대화 기반** 열린 질문을 1-2개 수행한다.
+
+```
+IF sufficiency_score >= 60% AND sufficiency_score < 80%:
+  → 소크라테스식 심화 질문 수행 (텍스트 대화)
+
+목적별 질문 패턴:
+
+  [동기 탐색] "이 작업이 필요하게 된 배경은 무엇인가요?"
+  [전제 확인] "그렇게 판단하신 근거는 무엇인가요?"
+  [대안 탐색] "다른 접근 방식도 고려해 보셨나요?"
+  [영향 범위] "이 결과물이 누구에게 어떤 영향을 줄까요?"
+  [제약 발견] "이 작업에서 꼭 피해야 할 것이 있나요?"
+
+적용 규칙:
+  - AskUserQuestion이 아닌 일반 텍스트 대화로 수행
+  - 질문은 최대 2개 (사용자 피로 방지)
+  - 답변을 요약하여 확인: "정리하면 ~이라는 뜻이 맞으시죠?"
+  - 사용자가 "빨리 진행해" 또는 간단히 답하면 즉시 실행으로 전환
+  - 응답 내용을 context_store에 저장
+```
+
+### 2-5. 충분성 재평가
 ```
 updated_context = context_store + previous_context
 sufficiency_score = evaluate_context_completeness(
