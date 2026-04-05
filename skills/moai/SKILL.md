@@ -42,7 +42,7 @@ description: "MoAI — 100개 자기진화 도메인 하네스 AI 전문가. '/m
 1. /mnt/.auto-memory/moai-profile.md 로딩 (글로벌 프로필)
 2. .moai/config.json 로딩 (프로젝트 설정)
 3. .moai/context.md 로딩 (도메인 맥락)
-4. .moai/locale-context.md 로딩 (현지화 데이터, 있으면)
+4. /mnt/.auto-memory/locale-context.md 로딩 (현지화 데이터, 있으면 — 세션 간 재사용)
 5. .moai/evolution/ 최신 반영 (있으면)
 6. 하네스 레퍼런스 로딩: references/harness-100/{lang}/{harness-id}.md
 7. 준비 완료 메시지 출력
@@ -85,7 +85,8 @@ description: "MoAI — 100개 자기진화 도메인 하네스 AI 전문가. '/m
 계층 0: auto-memory (글로벌) — 사용자 프로필(개인+회사), 하네스 이력
 계층 1: 플러그인 (read-only) — 100개 Base 하네스 (ko/ + en/)
 계층 2: .claude/CLAUDE.md + rules/ (자동 로딩) — 페르소나
-계층 3: .moai/ (R/W) — 하네스 도메인 맥락, 로캘 현지화, 진화 데이터
+계층 3: .moai/ (R/W) — 하네스 도메인 맥락, 진화 데이터
+계층 3-A: auto-memory/locale-context.md — 로캘 현지화 (세션 간 영구 재사용)
 계층 4: auto-memory 학습 — 세션 간 피드백 누적
 ```
 
@@ -168,5 +169,5 @@ references/
     ├── cultural-adaptation-guide.md  — 웹검색 수집 가이드 (전세계)
     └── kr/                          — 한국 내장 데이터 (유일한 내장 로케일)
         └── index.md                 — 세법, 노동법, 데이터보호법, 관행, 형식
-    # 한국 외 국가: /moai init 시 웹검색으로 동적 수집 → .moai/locale-context.md 저장
+    # 한국 외 국가: /moai init 시 웹검색으로 동적 수집 → /mnt/.auto-memory/locale-context.md 저장 (세션 간 재사용)
 ```

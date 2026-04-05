@@ -147,7 +147,7 @@ MoAI 작업 구조:
   ├─ evolution/               # 자기학습 로그
   │   ├─ self-refine-log.md
   │   └─ rule-updates.md
-  ├─ locale-context.md        # 현지 규제/문화 컨텍스트
+  # locale-context.md는 /mnt/.auto-memory/에 저장 (세션 간 재사용)
   └─ projects/                # 프로젝트별 작업 결과
 
 skills/moai/references/core/  # MoAI 핵심 프로토콜 (READ-ONLY)

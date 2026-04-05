@@ -49,7 +49,8 @@ ELSE
 ```
 **중요**: [Other] 선택 시 사용자가 입력한 국가명으로 웹검색 기반 로케일 현지화 수행.
 입력된 국가의 세법, 노동법, 데이터보호법, 비즈니스 관행, 형식 표준을
-웹검색으로 수집하여 `.moai/locale-context.md`에 저장한다.
+웹검색으로 수집하여 `/mnt/.auto-memory/locale-context.md`에 저장한다.
+**재사용**: 이미 locale-context.md가 존재하면 설문(Q2)을 건너뛰고 기존 데이터를 재사용한다.
 
 ### Q3. 역할 [header: "직무설정"]
 ```
@@ -216,6 +217,18 @@ Q4. 보고 형식? (3옵션)
 
 ## Phase 5: 로캘 현지화 (웹검색 기반)
 
+### 5-0. 기존 로케일 데이터 확인 (재사용 판단)
+```
+IF /mnt/.auto-memory/locale-context.md 존재:
+  → Phase 5 전체 SKIP
+  → 기존 locale-context.md 재사용
+  → "기존 로케일 데이터(XX국가)를 재사용합니다." 메시지 출력
+  → Phase 6으로 진행
+
+IF 존재하지 않음:
+  → Phase 5-1부터 정상 진행
+```
+
 ### 5-1. 로케일 결정
 - **언어**: Phase 1-A Q1 결과
 - **근무 국가**: Phase 1-A Q2 결과
@@ -240,8 +253,9 @@ Q4. 보고 형식? (3옵션)
 5. "{국가명} date format currency number format" → 형식 표준
 ```
 
-수집된 데이터를 `.moai/locale-context.md`에 저장한다.
+수집된 데이터를 `/mnt/.auto-memory/locale-context.md`에 저장한다.
 이후 하네스 실행 시 이 파일을 참조하여 현지화된 산출물을 생성한다.
+**한 번 생성되면 세션 간 영구 재사용** — 다음 `/moai init`에서 재설문 없이 기존 데이터 활용.
 
 ### 5-3. Graceful Degradation
 - 웹검색 실패 시: 사용자에게 직접 입력 요청
@@ -302,7 +316,6 @@ Context Depth:
 │   └── ...
 ├── evolution/
 │   └── self-refine-log.md
-├── locale-context.md
 ├── category-selection.md
 └── harness-selection.json
 ```
