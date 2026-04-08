@@ -1,96 +1,89 @@
-# Side Project Launcher (79-side-project-launcher)
+# Side Project Launcher (79)
 
 > MoAI-Cowork V.0.1.3 Harness Reference
 
 ## Overview
-companyproject basis ideaverify→tech stack→MVP→developmentroadmap→launchchecklist A harness where an agent team collaborates to produce deliverables.
+A harness where an agent team collaborates to validate side project ideas, analyze technology stacks, design MVPs, and create development roadmaps for launch.
 
 ## Expert Roles
-- **Idea Validator**: Idea Validator — idea verifyspecialist
-  - web search(WebSearch/WebFetch)as competition service, company project, market mustwhen research
-  - " idea" not "execution possibleKorean idea" standardas assessment
-  - Product Hunt, GitHub, Indie Hackers etc.from company project search
-  - companyproject nature time·personcapability·cost constraint before judgment
-  - No-Go judgment also direction beforeexchange proposal present
-  - **tech stackanalysisto**: project type, technical difficulty, user scale expected deliver
-  - **MVPdesignspecialistto**: core problem, target user, differentiation point, UVP deliver
-  - **roadmapwritingspecialistto**: market , competition situation, launch grade also deliver
-  - **reviewerto**: idea verify report specialist deliver
-  - idea qualityperson case: for 5degree question present after possibleKorean scopefrom progress
-  - web search failure when: general market degreeas analysis, "search limitationas estimationvalue" specify
-  - competitionspecialist before case: not market specialist possiblenature also review
+- **Idea Validator**: Market and concept validation specialist. Researches market viability and validates project concept.
+  - Performs competitive analysis and market research
+  - Assesses execution feasibility given constraints
+  - Identifies differentiation and unique value proposition
+  - Evaluates market opportunity and timing
+  - Provides go/no-go recommendation with rationale
 
-- **Launch Reviewer**: Launch Reviewer — launch reviewer
-  - **all deliverable gap comparison**. idea→technical→MVP→roadmap quality annual verify
-  - **executionspecialist point**from assessment. " plan withindaydepartment whenworkto do number existing?"
-  - problem findings when **specific revision proposal** provide
-  - severity 3stage classification: 🔴 required revision / 🟡 recommended revision / 🟢 reference matters
-  - UVP Must-have feature reflected?
-  - target user core problem feature existing
-  - differentiation point featureas implementation
-  - tech stackas all Must-have feature implementation possibleKorean
-  - technical difficulty assessment qualityperson
-  - free Korean also withinfrom initial operations possibleKorean
-  - featureby time realisticperson
-  - dependency total schedule reflected?
-  - minuteKorean (1.5 or more)
-  - launch checklist beforeKorean
-  - total expected duration 3months exceedingdegree (companyproject duringcapability limitation)
-  - initial cost ₩0~₩50,000/month withinperson
-  - specialist operations possibleKorean structureperson
-  - **From all team members**: Receive all deliverables
-  - **To individual team members**: Send specific revision requests for their deliverables via SendMessage
-  - 🔴 required revision findings when: Immediately request revisions from the responsible team member and re-verify the results
-  - When all verification is complete: Generate the final integrated report
+- **Techstack Analyst**: Technology selection specialist. Recommends optimal technology stack for the project.
+  - Analyzes project requirements and technical difficulty
+  - Evaluates technology options for scalability and cost
+  - Prioritizes free/low-cost services (Vercel, Supabase, Cloudflare)
+  - Assesses learning curve and setup time
+  - Provides implementation difficulty assessment by feature
 
-- **Mvp Designer**: MVP Designer — MVP designspecialist
-  - ideaverifyspecialist UVP(`_workspace/01_idea_validation.md`) core feature mustwhen reflected
-  - MVP 2~4week(week standard) plan development possibleKorean scope limitation
-  - "feature " "feature items versus "report
-  - user feedback number minimum structure mustwhen included
-  - tech stackanalysis recommendation(`_workspace/02_techstack_recommendation.md`) to technicalqualityas actualcurrent possibleKorean writing
-  - **ideaverifyspecialistfrom**: core problem, target user, UVP, differentiation point receive
-  - **tech stackanalysisfrom**: tech stack, technicalquality constraint, implementation difficulty receive
-  - **roadmapwritingspecialistto**: featureby time, dependency total, priority deliver
-  - **reviewerto**: MVP specialist deliver
-  - feature scope regarding case: Must-have 3~5items limitationand degree classification
-  - technical constraintas implementation possibleKorean feature: versusplan UX proposal (example: AI versus rule based)
-  - UVP peopleKorean case: "user value" standardas re-definition
+- **MVP Designer**: Minimum viable product specialist. Designs focused MVP with core features.
+  - Defines core features addressing primary user problem
+  - Plans 2-4 week development timeline
+  - Distinguishes must-have features from nice-to-have
+  - Incorporates user feedback mechanisms
+  - Ensures technical feasibility assessment
 
-- **Roadmap Builder**: Roadmap Builder — roadmap writingspecialist
-  - MVP (`_workspace/03_mvp_spec.md`) feature list and time basedas schedule calculation
-  - companyproject currentactual: week 10~15time (pyeongday 2time + week 6~8time) basicas
-  - expected 1.5 actual total — mustwhen included
-  - launch "" not "minute" standardas — when + feedback
-  - Indie Hackers, Product Hunt, Reddit etc. actual companyproject launch channel search
-  - **ideaverifyspecialistfrom**: market , competition situation, launch grade also receive
-  - **tech stackanalysisfrom**: learning time, environment time, technical risk receive
-  - **MVPdesignspecialistfrom**: featureby time, dependency total, priority receive
-  - **reviewerto**: roadmap + launch checklist specialist deliver
-  - time quality case(week 5time or less): 4week→8week schedule versus, feature
-  - technical learning needed when: Week 0(learning weekbetween) addition, / recommendation
-  - launch channel impossible when: itemsperson based launchas beforeexchange
+- **Roadmap Builder**: Development planning specialist. Creates realistic development schedule and launch strategy.
+  - Designs phased development timeline
+  - Estimates effort including learning and setup time
+  - Plans realistic launch channel strategy
+  - Incorporates risk mitigation and buffer time
+  - Provides detailed launch checklist
 
-- **Techstack Analyst**: Techstack Analyst — tech stack analysis
-  - companyproject = minimum cost + development — degree prohibited
-  - " technical"report "un- technical" recommendation (when goal)
-  - free service (Vercel, Supabase, Cloudflare etc.)
-  - web searchas technical and comparison material research
-  - 1person developmentspecialist standardas operations department quality from/degree service
-  - **ideaverifyspecialistfrom**: project type, technical difficulty, user scale receive
-  - **MVPdesignspecialistto**: tech stack, technicalquality constraint, implementation difficultyby feature classification deliver
-  - **roadmapwritingspecialistto**: learning needed technical, environment time, technical risk deliver
-  - **reviewerto**: tech stack recommendationfrom specialist deliver
-  - development user: code/code tool(Bubble, Webflow, Supabase) recommendation
-  - project type un-: web basic , "type after re-review" specify
-  - web search failure: general technical degreeas recommendation, version/price "confirm needed" tablewhen
+- **Launch Reviewer**: Quality assurance specialist. Validates consistency and feasibility across all phases.
+  - Verifies idea-to-MVP feature consistency
+  - Assesses realistic development timeline
+  - Validates technical stack appropriateness
+  - Evaluates cost and resource requirements
+  - Confirms launch readiness and achievability
+
+## Workflow
+
+### Phase 1: Idea Assessment and Validation
+1. Collect project idea, market context, constraints (time, cost, skills), and success criteria
+2. Create `_workspace/` directory in project root
+3. Organize project information into `_workspace/00_input.md`
+4. Assess market opportunity and competitive landscape
+5. Clarify project goals and target audience
+
+### Phase 2: Team Setup and Sequential Execution
+Team members execute their deliverables with dependencies:
+
+| Order | Task | Owner | Depends On | Deliverable |
+|-------|------|-------|-----------|-------------|
+| 1 | Idea validation | idea-validator | Input | `_workspace/01_idea_validation.md` |
+| 2 | Techstack analysis | techstack-analyst | 1 | `_workspace/02_techstack_recommendation.md` |
+| 3 | MVP design | mvp-designer | 1, 2 | `_workspace/03_mvp_spec.md` |
+| 4 | Roadmap building | roadmap-builder | 1, 2, 3 | `_workspace/04_roadmap_launch.md` |
+| 5 | Launch review | launch-reviewer | 1, 2, 3, 4 | `_workspace/05_review_report.md` |
+
+Team communication:
+- Idea validator completes, provides market opportunity and differentiation analysis
+- Techstack analyst completes, delivers technology recommendations and implementation constraints
+- MVP designer completes, provides feature list and technical requirements
+- Roadmap builder completes, delivers development timeline and launch strategy
+- Reviewer validates all components, requests modifications if needed (maximum 2 rounds)
+
+### Phase 3: Integration and Final Delivery
+1. Confirm all deliverables are complete in `_workspace/`
+2. Review report identifies any required modifications
+3. Final handoff to user includes all documentation and launch checklist
 
 
 
 ## Deliverables
+All deliverables are stored in the `_workspace/` directory:
+- `00_input.md` — Organized user input
+- `01_idea_validation.md` — Idea validation report
+- `02_techstack_recommendation.md` — Technology stack recommendations
+- `03_mvp_spec.md` — MVP specification and features
+- `04_roadmap_launch.md` — Development roadmap and launch checklist
+- `05_review_report.md` — Comprehensive review report
 
 ## Extension Skills
-- **Market Sizing Calculator**: Market Sizing Calculator — market scale totalbasis
-- **Techstack Decision Matrix**: TechStack Decision Matrix — tech stack decision-making matrix
-
-Error handling information not found.
+- **market-sizing-calculator**: Market sizing guide with total addressable market (TAM) calculations and market opportunity assessment.
+- **techstack-decision-matrix**: Technology stack decision framework for comparing options based on cost, scalability, and learning curve.

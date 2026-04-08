@@ -1,91 +1,89 @@
-# Personal Finance (78-personal-finance)
+# Personal Finance (78)
 
 > MoAI-Cowork V.0.1.3 Harness Reference
 
 ## Overview
-itemsperson financialmanagement incomeexpenseanalysis→budgetdesign→investmentstrategy→tax savingsapproach→retirementdesign A harness where an agent team collaborates to produce deliverables.
+A harness where an agent team collaborates to create comprehensive personal financial management plans through income-expense analysis, budget design, investment strategy, and tax optimization.
 
 ## Expert Roles
-- **Budget Planner**: Budget Planner — budget designspecialist
-  - financialanalysis report(`_workspace/01_financial_analysis.md`) basedas realistic budget design
-  - quality approx. not degreewithin possibleKorean budget design — " maintenance + financial goal nature" balanced
-  - Korean level(degreeby gap) reflected
-  - stagequality goal: 1months→3months→6months→1year nature possibleKorean milestone setting
-  - **financialanalysisfrom**: expense structure, reduction possible item, savings capability receive
-  - **investmentexpertto**: investment possible month amount, savings goalby duration deliver
-  - **taxexpertto**: savings·investment plan deliver (tax request)
-  - **reviewerto**: budget design specialist deliver
-  - savings capability 0 or lessperson case: expense structure , minimum reductionplan 2degree present
-  - debt exchange person case: /company method comparison present, investmentreport exchange
+- **Financial Analyst**: Financial analysis specialist. Analyzes personal financial situation and diagnoses financial position.
+  - Analyzes income and expense patterns
+  - Identifies expense structure and optimization opportunities
+  - Assesses savings capacity and current assets
+  - Evaluates existing liabilities and debt
+  - Provides financial position diagnosis
 
-- **Finance Reviewer**: Finance Reviewer — financial reviewer
-  - **all deliverable figure gap total** — income-expense=savings, savings=investment+example
-  - **user point**from assessment. " plan withindaydepartment executionto do number existing?"
-  - problem findings when **specific revision proposal** provide
-  - severity 3stage classification: 🔴 required revision / 🟡 recommended revision / 🟢 reference matters
-  - month income - month expense = month savings(investment included) dayvalue
-  - budgettable total Korean
-  - investment amount budget investment and dayvalue
-  - tax total(tax, Korean) Korean
-  - reduction item budget reflected?
-  - investment duration and savings goal duration dayvalue
-  - tax investment portfolio included?
-  - retirement design investment strategy and annual
-  - reduction goal realisticperson (gradeKorean not)
-  - investment actual possibleKorean
-  - specialist etc. execution tool specificperson
-  - **From all team members**: Receive all deliverables
-  - **To individual team members**: Send specific revision requests for their deliverables via SendMessage
-  - 🔴 required revision findings when: Immediately request revisions from the responsible team member and re-verify the results
-  - When all verification is complete: Generate the final integrated report
+- **Budget Planner**: Budget design specialist. Creates realistic and achievable budget with savings goals.
+  - Designs category-based budgets aligned with income
+  - Sets realistic savings targets and goals
+  - Provides phased milestones (monthly to yearly progression)
+  - Identifies cost reduction opportunities
+  - Plans for both short-term and long-term goals
 
-- **Financial Analyst**: Financial Analyst — financial analysis
-  - user provideKorean financial data basedas Korean figure analysis perform
-  - Korean total pyeongbalanced statistics and comparisonto versusquality position identify
-  - judgment not basedKorean analysis — "" not "pyeongbalanced versus 30% exceeding" tablecurrent
-  - financial information nature persondegreeand, file actualpeople·total etc. itemspersoninformation includeddegree
-  - **budgetdesignspecialistto**: expense structure, reduction possible item, savings capability deliver
-  - **investmentexpertto**: investment possible amount, existing asset, risk number nature deliver
-  - **taxexpertto**: structure, current tax department, current status deliver
-  - **reviewerto**: financial analysis report specialist deliver
-  - income/expense data un-provide: Korean 1person/2person/4person pyeongbalanced data simulation, " data" specify
-  - beforeKorean data: item "un-confirm"as tablewhenand, estimation possibleKorean scope present
-  - debt information un-provide: debt None after progress, debt confirm message included
+- **Investment Advisor**: Investment strategy specialist. Recommends optimal asset allocation and portfolio design.
+  - Analyzes investment capacity from budget plan
+  - Recommends asset allocation matching risk profile
+  - Suggests specific investment vehicles (ETF, pension savings, ISA)
+  - Balances growth objectives with tax efficiency
+  - Designs diversified portfolio approach
 
-- **Investment Advisor**: Investment Advisor — investment expert
-  - budgetdesignspecialist plan(`_workspace/02_budget_plan.md`)from investment possible amount confirm
-  - Korean marketfrom possibleKorean recommendation (within ETF, pensionsavings, IRP, ISA etc.)
-  - **investment not information provide** specify — " document investment specialistdocument " degree
-  - tax (pensionsavings, IRP, ISA) as arrangement — tax savings and investment when nature
-  - web searchas , numbernumber, information research
-  - **financialanalysisfrom**: existing asset, risk nature, investment receive
-  - **budgetdesignspecialistfrom**: investment possible month amount, goal duration receive
-  - **taxexpertto**: tax total utilization current status, addition tax savings possible point deliver
-  - **reviewerto**: investment strategy specialist deliver
-  - investment nature un-identify: duringquality(balanced) nature , report "nature confirm needed" specify
-  - investment possible amount 0KRW: investment before secure + debt exchange
-  - risk request: risk degree + minute investment versusplan present
+- **Tax Strategist**: Tax optimization specialist. Develops tax savings strategy and retirement planning.
+  - Optimizes tax deductions and credits
+  - Plans tax-efficient investment strategies
+  - Designs retirement savings approach
+  - Identifies additional tax savings opportunities
+  - Provides retirement income projections
 
-- **Tax Strategist**: Tax Strategist — tax strategy
-  - Korean tax(2025~2026year standard) basedKorean Korean tax and Korean also applied
-  - specialist/companyspecialist/fromby differentiationdone tax savings strategy present
-  - basis tax savings and basis asset nature balanced
-  - tax change possiblenature specify — "current standard, tax items when possible"
-  - web searchas tax changematters and Korean also confirm
-  - **financialanalysisfrom**: structure, current tax department, current status receive
-  - **budgetdesignspecialistfrom**: savings·investment plan receive
-  - **investmentexpertfrom**: tax total utilization current status receive
-  - **reviewerto**: tax savings approach + retirement design specialist deliver
-  - type un-identify: specialist as progress, " type confirm needed" specify
-  - /retirement period un-provide: current 35tax, retirement 60tax as simulation
-  - tax change actualnature: current standard specify + "tax items monitoring needed"
+- **Finance Reviewer**: Quality assurance specialist. Validates consistency across all financial plans.
+  - Verifies income-expense-savings relationships
+  - Cross-validates budget, investment, and tax plans
+  - Assesses plan feasibility and realism
+  - Ensures goal alignment across all phases
+  - Identifies gaps and inconsistencies
+
+## Workflow
+
+### Phase 1: Financial Assessment and Goal Setting
+1. Collect financial information including income, expenses, assets, liabilities, and financial goals
+2. Create `_workspace/` directory in project root
+3. Organize financial data into `_workspace/00_input.md`
+4. Assess current financial position
+5. Clarify financial objectives and constraints
+
+### Phase 2: Team Setup and Sequential Execution
+Team members execute their deliverables with dependencies:
+
+| Order | Task | Owner | Depends On | Deliverable |
+|-------|------|-------|-----------|-------------|
+| 1 | Financial analysis | financial-analyst | Input | `_workspace/01_financial_analysis.md` |
+| 2 | Budget planning | budget-planner | 1 | `_workspace/02_budget_plan.md` |
+| 3 | Investment strategy | investment-advisor | 1, 2 | `_workspace/03_investment_strategy.md` |
+| 4 | Tax strategy | tax-strategist | 1, 2, 3 | `_workspace/04_tax_strategy.md` |
+| 5 | Review | finance-reviewer | 1, 2, 3, 4 | `_workspace/05_review_report.md` |
+
+Team communication:
+- Financial analyst completes, provides expense structure and savings capacity assessment
+- Budget planner completes, provides investment capacity and savings targets
+- Investment advisor completes, provides tax considerations for tax strategist
+- Tax strategist completes, provides tax-optimized investment approach
+- Reviewer validates all components, requests modifications if needed (maximum 2 rounds)
+
+### Phase 3: Integration and Final Delivery
+1. Confirm all deliverables are complete in `_workspace/`
+2. Review report identifies any required modifications
+3. Final handoff to user includes all financial plans and implementation roadmap
 
 
 
 ## Deliverables
+All deliverables are stored in the `_workspace/` directory:
+- `00_input.md` — Organized user input
+- `01_financial_analysis.md` — Income-expense analysis and financial position diagnosis
+- `02_budget_plan.md` — Budget design and savings plan
+- `03_investment_strategy.md` — Investment strategy and portfolio recommendations
+- `04_tax_strategy.md` — Tax optimization approach and retirement planning
+- `05_review_report.md` — Comprehensive review report
 
 ## Extension Skills
-- **Compound Interest Simulator**: Compound Interest Simulator — simulator
-- **Financial Ratio Analyzer**: Financial Ratio Analyzer — itemsperson financial ratio analysisbasis
-
-Error handling information not found.
+- **compound-interest-simulator**: Compound interest calculation guide with investment growth projections and savings goal timeline analysis.
+- **financial-ratio-analyzer**: Financial ratio analysis framework for personal finances including liquidity, solvency, and efficiency metrics.

@@ -1,4 +1,4 @@
-# RFP Responder (55-rfp-responder)
+# RFP Responder (55)
 
 > MoAI-Cowork V.0.1.3 Harness Reference
 
@@ -39,20 +39,35 @@ A harness where an agent team collaborates to create RFI/RFP responses: requirem
 
 ## Workflow
 
-### Phase 1: Preparation (Performed directly by orchestrator)
-1. Extract from user input: RFP document, company info, track record, team info
-2. Create `_workspace/` and save input to `00_input.md`
+### Phase 1: RFP Assessment and Planning
+1. Collect RFP document, company information, track record, team expertise, and organizational constraints
+2. Create `_workspace/` directory in project root
+3. Organize requirements into `_workspace/00_input.md`
+4. Identify key opportunities and competitive landscape
+5. Determine response strategy and approach
 
-### Phase 2: Team Assembly and Execution
-| Order | Task | Assigned To | Dependencies | Deliverable |
-|-------|------|-------------|-------------|-------------|
-| 1 | Requirements Analysis | requirement-analyst | None | `01_requirement_analysis.md` |
-| 2 | Capability Matching | capability-matcher | Task 1 | `02_capability_matrix.md` |
-| 3 | Technical Proposal | technical-proposer | Tasks 1, 2 | `03_technical_proposal.md` |
-| 4 | Pricing Proposal | pricing-strategist | Tasks 1, 2, 3 | `04_pricing_proposal.md` |
-| 5 | Review + Differentiation | proposal-reviewer | Tasks 1-4 | `05_differentiation_strategy.md`, `06_review_report.md` |
+### Phase 2: Team Setup and Sequential Execution
+Team members execute their deliverables with dependencies:
 
-### Phase 3: Integration and Final Deliverables
+| Order | Task | Owner | Depends On | Deliverable |
+|-------|------|-------|-----------|-------------|
+| 1 | Requirements analysis | requirement-analyst | Input | `_workspace/01_requirement_analysis.md` |
+| 2 | Capability matching | capability-matcher | 1 | `_workspace/02_capability_matching.md` |
+| 3 | Technical proposal | technical-proposer | 1, 2 | `_workspace/03_technical_proposal.md` |
+| 4 | Pricing proposal | pricing-strategist | 1, 2, 3 | `_workspace/04_pricing_proposal.md` |
+| 5 | Review and differentiation | proposal-reviewer | 1, 2, 3, 4 | `_workspace/05_review_report.md` |
+
+Team communication:
+- Requirement analyst completes, identifies evaluation criteria and hidden needs for all downstream teams
+- Capability matcher completes, provides strength/gap analysis and evidence for technical proposer
+- Technical proposer completes, delivers methodology and timeline for pricing strategist
+- Pricing strategist completes, provides cost and competitive positioning for reviewer
+- Reviewer validates all components, requests modifications if needed (maximum 2 rounds)
+
+### Phase 3: Integration and Final Delivery
+1. Confirm all deliverables are complete in `_workspace/`
+2. Review report identifies any required modifications
+3. Final handoff to user includes all proposal documents and strategy brief
 
 ## Deliverables
 All deliverables are saved in the `_workspace/` directory:
@@ -64,5 +79,5 @@ All deliverables are saved in the `_workspace/` directory:
 - `05_review_report.md` — Review report
 
 ## Extension Skills
-- **pricing-calculator**: Labor cost calculation, overhead/profit calculation, bidding strategy simulation
-
+- **win-theme-builder**: Win theme development guide with differentiation strategies, competitive messaging, and supporting evidence compilation.
+- **pricing-calculator**: Pricing calculation guide including labor cost estimation, overhead and profit calculation, and bidding strategy simulation.
