@@ -1,299 +1,223 @@
+<div align="center">
+
 # 🗿 MoAI-Cowork
 
-**100 arneses de autoevolución — Tu experto en IA personalizado**
+**100 Harnesses Auto-Evolucionarios — Tus Expertos Personales en IA**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)]()
+[![Version](https://img.shields.io/badge/version-0.1.3-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
+[![Harnesses](https://img.shields.io/badge/harnesses-100-orange)]()
+[![Languages](https://img.shields.io/badge/languages-17-purple)]()
 
-🌐 [한국어](README.md) | [English](README-en.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+🌐 [한국어](README.md) | [English](README-en.md) | [日本語](README-ja.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+
+</div>
 
 ---
 
-## 🎯 ¿Qué es MoAI?
+## ¿Qué es MoAI?
 
-**MoAI-Cowork** es un sistema de aprendizaje automático que transforma la IA en expertos especializados para cada dominio de tu organización.
+**MoAI-Cowork** es un plugin para Claude Cowork que proporciona 100 harnesses de expertos de dominio a través de un sistema de asistente de IA auto-aprendizaje.
 
-- **100 arneses**: 10 categorías × 10 dominios (contabilidad, derecho, RRHH, tecnología, marketing, etc.)
-- **Autoevolución**: Ciclo de Self-Refine basado en retroalimentación del usuario y análisis de resultados
-- **Perfil global**: Respuestas personalizadas mediante perfiles individual, de equipo y organizacional
-- **Basado en plugins**: Integración perfecta con Claude Code y el ecosistema Cowork
+Un harness es un módulo de experto en IA que agrupa conocimiento específico de dominio, flujos de trabajo, formatos de entregables y protocolos de recopilación de contexto en un solo paquete. Una vez instalado, MoAI se transforma en un experto de dominio y entrega resultados estructurados.
 
-### Características clave
+**Características clave:**
 
-| Función | Descripción |
+- 10 categorías × 100 harnesses — contenido, marketing, negocios, educación, legal, estilo de vida, comunicación, operaciones, finanzas e innovación de productos
+- Arquitectura de auto-aprendizaje de 5 capas — evoluciona y se adapta al usuario en el tiempo
+- Perfil global — comparte información personal + empresarial en sesiones, sin necesidad de re-entrada
+- Soporte de 17 idiomas — EN fuente única + localización en tiempo de ejecución
+- Soporte de localidad mundial — introduce tu país de trabajo y MoAI auto-recopila ley tributaria, ley laboral, protección de datos y prácticas comerciales mediante búsqueda web
+
+---
+
+## Instalación
+
+### Método 1: Instalar desde Claude Cowork Marketplace (Recomendado)
+
+1. Abre la aplicación **Claude Desktop**
+2. Ingresa en modo **Cowork** desde la esquina inferior izquierda
+3. Haz clic en el icono **Plugin (🧩)** junto a la entrada de chat
+4. Busca `moai-cowork` en el marketplace
+5. Encuentra **MoAI-Cowork** y haz clic en **Install**
+6. Después de la instalación, escribe `/moai init` en el chat para comenzar la configuración inicial
+
+### Método 2: Instalar desde K-Harness Marketplace
+
+K-Harness es el marketplace que incluye MoAI-Cowork.
+
+```
+# Paso 1: Agregar el marketplace
+/plugin marketplace add modu-ai/k-harness
+
+# Paso 2: Instalar plugin MoAI-Cowork
+/plugin install moai-cowork@k-harness
+```
+
+### Método 3: Instalar Directamente desde GitHub
+
+```
+# Clonar el repositorio
+git clone https://github.com/modu-ai/k-harness.git
+
+# Navegar al directorio del plugin
+cd k-harness/plugins/moai-cowork
+
+# Cargar manualmente en Claude Desktop
+# Cowork mode → Plugin (🧩) → "Install from file" → selecciona la carpeta moai-cowork
+```
+
+### Método 4: Instalación Manual mediante ZIP
+
+1. Descarga el último `moai-cowork-v0.1.3.zip` desde la página de [GitHub Releases](https://github.com/modu-ai/k-harness/releases)
+2. Abre Claude Desktop → ingresa en modo Cowork
+3. Haz clic en el icono Plugin (🧩) → **Install from file**
+4. Selecciona el archivo ZIP descargado
+
+---
+
+## Actualizando
+
+### Si se instaló a través del marketplace
+
+```
+# Actualizar marketplace K-Harness
+/plugin marketplace update k-harness
+
+# O a través de la interfaz de Cowork:
+# Plugin (🧩) → MoAI-Cowork → haz clic en "Update"
+```
+
+### Si se instaló desde GitHub
+
+```
+cd k-harness
+git pull origin main
+```
+
+### Si se instaló mediante ZIP
+
+1. Elimina el plugin existente: Plugin (🧩) → MoAI-Cowork → **Remove**
+2. Descarga el archivo ZIP más reciente
+3. Repite el proceso de instalación manual del Método 4
+
+### Verificar versión
+
+Escribe `/moai status` en el chat para verificar la versión actualmente instalada.
+
+---
+
+## Solución de Problemas
+
+### Plugin no reconocido
+
+1. Cierra completamente y reinicia Claude Desktop
+2. Verifica si MoAI-Cowork aparece en la lista Plugin (🧩) en modo Cowork
+3. Si no aparece, intenta reinstalar
+
+### Error en `/moai init`
+
+1. Escribe `/moai doctor` para ejecutar diagnósticos del entorno
+2. Si tu perfil global está dañado, reinicialo con `/moai profile --reset`
+
+### Harness no se carga
+
+1. Verifica que `.moai/config.json` exista en tu carpeta del proyecto
+2. Si no existe, reinicializa con `/moai init`
+
+### Datos de localización no recopilados
+
+- Korea: Utiliza datos integrados (no se necesita búsqueda web)
+- Otros países: Requiere conexión a internet y herramientas de búsqueda web
+
+---
+
+## Inicio Rápido
+
+### Paso 1: Inicializar
+
+```
+/moai init
+```
+
+MoAI realiza una entrevista interactiva para recopilar tu perfil (nombre, rol, empresa, localidad).
+
+### Paso 2: Explorar el Catálogo de Harnesses
+
+```
+/moai catalog
+```
+
+Ver la lista completa de 100 harnesses en 10 categorías.
+
+### Paso 3: Hacer una Solicitud en Lenguaje Natural
+
+```
+Ayúdame con una investigación de mercado
+```
+
+MoAI detecta automáticamente el harness `market-research` y ejecuta en modo experto.
+
+---
+
+## Catálogo de 100 Harnesses
+
+| # | Categoría | Cantidad | Harnesses de Ejemplo |
+|---|----------|----------|-----------------|
+| 1 | Contenido y Creatividad | 10 | copywriting, youtube-production, podcast-studio, book-publishing |
+| 2 | Negocios y Estrategia | 10 | business-model-canvas, competitive-analysis, startup-launcher, pricing-strategy |
+| 3 | Marketing y Crecimiento | 10 | brand-identity, growth-hacking, social-media-manager, influencer-strategy |
+| 4 | Educación e Investigación | 10 | course-builder, thesis-advisor, exam-prep, language-tutor |
+| 5 | Legal y Cumplimiento | 10 | contract-analyzer, compliance-checker, patent-drafter, privacy-engineer |
+| 6 | Estilo de Vida | 10 | travel-planner, wedding-planner, meal-planner, fitness-program |
+| 7 | Comunicación y Documentos | 10 | presentation-designer, report-generator, technical-writer, proposal-writer |
+| 8 | Operaciones y RRHH | 10 | hiring-pipeline, onboarding-system, operations-manual, crisis-communication |
+| 9 | Finanzas y Comercio | 10 | accounting-tax, financial-modeler, import-export, invoice-mgmt |
+| 10 | Productos e Innovación | 10 | product-manager, ai-strategy, ux-research, sales-enablement |
+
+Ver la lista completa de 100 harnesses con `/moai catalog`.
+
+---
+
+## Comandos Clave
+
+| Comando | Descripción |
 |---------|-------------|
-| **Aprendizaje automático** | Registro y análisis del rendimiento en cada interacción |
-| **Especialización de dominio** | Conocimiento práctico de vanguardia en cada campo |
-| **Adaptación cultural** | Soporte para prácticas empresariales globales e idiomas |
-| **Actualizaciones en tiempo real** | Incluye leyes fiscales, regulaciones e información de mercado más recientes |
-| **Soporte Multi-Usuario** | Gestión de perfiles a nivel de equipo y colaboración |
+| `/moai init` | Inicializar — recopilar perfil e instalar harness |
+| `/moai catalog` | Explorar catálogo de 100 harnesses |
+| `/moai status` | Verificar harness instalado y estado de evolución |
+| `/moai evolve` | Ejecutar ciclo de evolución de auto-aprendizaje |
+| `/moai profile` | Ver/editar perfil global |
+| `/moai doctor` | Ejecutar diagnósticos del entorno |
+| `/moai help` | Mostrar comandos disponibles |
 
 ---
 
-## 📦 Instalación
+## Arquitectura
 
-### Requisitos
-- Claude Code (última versión)
-- Soporte de plugins Cowork
-
-### Paso 1: Añadir el plugin a Cowork
-```bash
-# Instalar a través de Cowork CLI (próximamente)
-cowork install moai-cowork
 ```
-
-### Paso 2: Inicializar perfil
-```bash
-moai init
-```
-
-### Paso 3: Configurar perfil personal
-```bash
-moai profile --set-personal
+Capa 0: auto-memory (global) — perfil de usuario, historial de harness
+Capa 1: plugin (solo lectura) — 100 harnesses base (fuente única en/ localización en tiempo de ejecución)
+Capa 2: .claude/CLAUDE.md + rules/ — persona
+Capa 3: .moai/ (lectura/escritura) — contexto de dominio, datos de evolución
+Capa 4: auto-memory learning — acumulación de retroalimentación entre sesiones
 ```
 
 ---
 
-## 🚀 Inicio rápido
+## Licencia
 
-### Ejecutar tu primera consulta
-
-```
-@moai ¿Cuál es el calendario de declaración de IVA en España para 2026?
-```
-
-**Respuesta**: MoAI automáticamente:
-1. Carga la información de localización de España
-2. Consulta datos de leyes fiscales de 2026
-3. Proporciona un calendario de IVA personalizado
-
-### Activar aprendizaje automático
-
-```
-moai learn --feedback "La respuesta fue muy precisa"
-```
-
-MoAI registra este comentario para mejorar consultas similares en el futuro.
+MIT License — libre para usar, modificar y distribuir
 
 ---
 
-## 📚 Catálogo de 100 arneses
+## GitHub
 
-### 10 Categorías
-
-#### 1️⃣ Impuestos y Contabilidad (Tax & Accounting)
-- **ES_TAX_001**: IVA español y retenciones
-- **US_TAX_001**: Impuesto federal sobre la renta estadounidense
-- **JP_TAX_001**: Impuesto al consumo japonés
-- **UK_TAX_001**: IVA del Reino Unido
-- **VN_TAX_001**: IVA vietnamita
-- **TH_TAX_001**: IVA tailandés
-- *(6 más)*
-
-#### 2️⃣ Derecho laboral y RRHH (Labor & HR)
-- **ES_HR_001**: Derecho laboral español
-- **US_HR_001**: FLSA y salario mínimo
-- **JP_HR_001**: Derecho laboral japonés
-- **UK_HR_001**: Derecho de empleo británico
-- *(6 más)*
-
-#### 3️⃣ Datos y Cumplimiento (Data & Compliance)
-- **ES_DATA_001**: Protección de datos (RGPD)
-- **US_DATA_001**: CCPA/HIPAA
-- **JP_DATA_001**: Ley de Protección de Información Personal
-- **UK_DATA_001**: UK GDPR
-- *(6 más)*
-
-#### 4️⃣ Operaciones Empresariales (Business Operations)
-- **ES_BIZ_001**: Prácticas empresariales españolas
-- **US_BIZ_001**: Cultura de reuniones estadounidenses
-- **JP_BIZ_001**: Cultura de colaboración japonesa
-- *(7 más)*
-
-#### 5️⃣ Tecnología e IT (Technology & IT)
-- **TECH_001**: Mejores prácticas de desarrollo de software
-- **TECH_002**: Arquitectura en la nube
-- *(8 más)*
-
-#### 6️⃣ Marketing y Ventas (Marketing & Sales)
-- **MKT_001**: Estrategia de marketing digital
-- **MKT_002**: Técnicas de venta B2B
-- *(8 más)*
-
-#### 7️⃣ Finanzas e Inversión (Finance & Investment)
-- **FIN_001**: Análisis de estados financieros
-- **FIN_002**: Gestión de cartera de inversión
-- *(8 más)*
-
-#### 8️⃣ Derecho y Contratos (Legal & Contracts)
-- **LEG_001**: Revisión de contratos
-- **LEG_002**: Redacción de NDA
-- *(8 más)*
-
-#### 9️⃣ Estrategia y Planificación (Strategy & Planning)
-- **STR_001**: Establecimiento de estrategia empresarial
-- **STR_002**: Configuración de OKR
-- *(8 más)*
-
-#### 🔟 Cliente y Servicio (Customer & Service)
-- **CUS_001**: Análisis de satisfacción del cliente
-- **CUS_002**: Plan de mejora de servicios
-- *(8 más)*
+- **Repositorio**: [modu-ai/k-harness](https://github.com/modu-ai/k-harness)
+- **Problemas/Sugerencias**: [GitHub Issues](https://github.com/modu-ai/k-harness/issues)
 
 ---
 
-## 👤 Sistema de Perfil Global
+**MoAI-Cowork: Conoce a tus expertos en IA.**
 
-### Perfil Personal (Personal Profile)
-```yaml
-name: "María González"
-role: "CFO"
-locale: "es_ES"
-industry: "Finanzas"
-experience_years: 15
-languages: ["Español", "Inglés"]
-```
-
-### Perfil de Equipo (Team Profile)
-```yaml
-team_name: "Equipo de Finanzas"
-region: "Madrid"
-size: 8
-focus_areas: ["Impuestos", "Contabilidad"]
-```
-
-### Perfil Organizacional (Organization Profile)
-```yaml
-company_name: "ABC Corporation"
-headquarters: "Madrid"
-founded: 2010
-employees: 500
-industries: ["Finanzas", "Tecnología"]
-expansion_regions: ["Portugal", "Italia"]
-```
-
----
-
-## 🔄 Ciclo de Autoaprendizaje (Self-Refine)
-
-### Flujo de aprendizaje
-
-```
-1. Ejecutar consulta
-   ↓
-2. Generar respuesta (usando arneses)
-   ↓
-3. Recopilar retroalimentación del usuario
-   ↓
-4. Analizar resultados (precisión, relevancia, utilidad)
-   ↓
-5. Mejorar arnés (ajustar pesos)
-   ↓
-6. Aplicar a siguiente consulta
-```
-
-### Tipos de retroalimentación
-
-| Tipo | Descripción | Impacto |
-|------|-------------|---------|
-| **Positiva** | "Muy preciso" | Peso del arnés +10% |
-| **Parcial** | "Parcialmente correcto" | Peso ±5% |
-| **Negativa** | "Incorrecto" | Peso del arnés -15% |
-| **Personalizada** | "Necesita más contenido sobre X" | Refuerzo de área específica |
-
----
-
-## 📖 Ejemplos de uso
-
-### Ejemplo 1: Consulta fiscal
-```
-P: "¿Cuál es el proceso de registro de retenciones para empleados nuevos en España?"
-→ Activa arnés ES_HR_001
-→ Proporciona plazos, documentación requerida y procedimiento
-```
-
-### Ejemplo 2: Negocios internacionales
-```
-P: "¿Qué debo tener en cuenta en una reunión de negocios en Estados Unidos?"
-→ Activa arnés US_BIZ_001
-→ Guía de adaptación cultural, gestión del tiempo, estilo de comunicación
-```
-
-### Ejemplo 3: Cumplimiento normativo
-```
-P: "¿Qué procedimientos necesito para procesar datos de clientes en la UE?"
-→ Activa arneses ES_DATA_001 y GDPR relacionado
-→ Cumplimiento RGPD, gestión de consentimiento, procedimientos de transferencia
-```
-
----
-
-## 🛠 Cómo contribuir (Contributing)
-
-### 1. Proponer un nuevo arnés
-```bash
-# Proponer nuevo dominio
-moai contribute --domain "Derecho mercantil español" --category "legal"
-```
-
-### 2. Mejorar un arnés existente
-```bash
-# Mejora basada en retroalimentación
-moai improve DOMAIN_ID --feedback "Se necesita más contenido"
-```
-
-### 3. Añadir una nueva localización
-```bash
-# Añadir nueva localización de país
-moai add-locale --country "Portugal" --code "pt_PT"
-```
-
-### 4. Mejorar documentación
-- Editar archivos de localización en `/skills/moai/references/locale/`
-- Enviar Pull Request en GitHub
-- Actualizar guías de adaptación cultural
-
----
-
-## 📋 Roadmap
-
-### Fase 1 (Actual)
-- [x] Sistema básico de arneses
-- [x] Guías de localización global (7 países)
-- [ ] Implementación del ciclo Self-Refine
-
-### Fase 2 (2026 Q2)
-- [ ] 100 arneses completados
-- [ ] Interfaz multilingüe (12 idiomas)
-- [ ] Funciones de colaboración en equipo
-
-### Fase 3 (2026 Q3)
-- [ ] Actualizaciones de regulaciones en tiempo real
-- [ ] Proceso de revisión AI-to-Human
-- [ ] Plantillas específicas por industria
-
----
-
-## 📞 Soporte y contacto
-
-- **Documentación**: `/skills/moai/references/locale/`
-- **GitHub**: (próximamente)
-- **Email**: support@moai-cowork.dev
-
----
-
-## 📄 Licencia
-
-Licencia MIT - Libre para usar, modificar y distribuir
-
----
-
-## 🙏 Agradecimientos
-
-MoAI-Cowork evoluciona continuamente con retroalimentación de la comunidad Claude y Cowork.
-
----
-
-**MoAI-Cowork: Conoce tu experto en IA personalizado.**
-
-*Última actualización: 2026-04-04*
+*Versión 0.1.3 | Última actualización: 2026-04-08*

@@ -1,299 +1,223 @@
+<div align="center">
+
 # 🗿 MoAI-Cowork
 
-**100 selbstentwickelnde Instrumente — Dein personalisierter KI-Experte**
+**100 Selbstlernende Domain-Harnesses — Ihre persönlichen KI-Experten**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)]()
+[![Version](https://img.shields.io/badge/version-0.1.3-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
+[![Harnesses](https://img.shields.io/badge/harnesses-100-orange)]()
+[![Languages](https://img.shields.io/badge/languages-17-purple)]()
 
-🌐 [한국어](README.md) | [English](README-en.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+🌐 [한국어](README.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
 
----
-
-## 🎯 Was ist MoAI?
-
-**MoAI-Cowork** ist ein automatisches Lernsystem, das KI in spezialisierte Experten für jeden Bereich deiner Organisation verwandelt.
-
-- **100 Instrumente**: 10 Kategorien × 10 Domänen (Buchhaltung, Recht, Personalwesen, Technologie, Marketing, etc.)
-- **Selbstentwicklung**: Self-Refine-Zyklus basierend auf Nutzerfeedback und Ergebnisanalyse
-- **Globales Profil**: Personalisierte Antworten durch individuelle, Team- und Organisationsprofile
-- **Plugin-basiert**: Nahtlose Integration mit Claude Code und dem Cowork-Ökosystem
-
-### Kernfunktionen
-
-| Funktion | Beschreibung |
-|----------|-------------|
-| **Automatisches Lernen** | Leistungserfassung und -analyse bei jeder Interaktion |
-| **Domänenspezialisierung** | State-of-the-Art praktisches Wissen in jedem Bereich |
-| **Kulturelle Anpassung** | Unterstützung globaler Geschäftspraktiken und Sprachen |
-| **Echtzeit-Updates** | Neueste Steuergesetze, Vorschriften und Marktinformationen |
-| **Multi-User-Unterstützung** | Profilmanagement auf Team-Ebene und Zusammenarbeit |
+</div>
 
 ---
 
-## 📦 Installation
+## Was ist MoAI?
 
-### Anforderungen
-- Claude Code (neueste Version)
-- Cowork Plugin-Unterstützung
+**MoAI-Cowork** ist ein Plugin für Claude Cowork, das 100 Domain-Expert-Harnesses durch ein selbstlernendes KI-Assistenz-System bereitstellt.
 
-### Schritt 1: Plugin zu Cowork hinzufügen
-```bash
-# Installation über Cowork CLI (in Kürze)
-cowork install moai-cowork
-```
+Ein Harness ist ein KI-Experten-Modul, das domänenspezifisches Wissen, Workflows, Lieferformate und Kontext-Sammlungsprotokolle in einem Paket bündelt. Nach der Installation verwandelt sich MoAI in einen Domain-Experten und liefert strukturierte Ergebnisse.
 
-### Schritt 2: Profil initialisieren
-```bash
-moai init
-```
+**Wichtigste Merkmale:**
 
-### Schritt 3: Persönliches Profil konfigurieren
-```bash
-moai profile --set-personal
-```
+- 10 Kategorien × 100 Harnesses — Inhalte, Marketing, Business, Bildung, Recht, Lebensstil, Kommunikation, Betrieb, Finanzen und Produkt/Innovation
+- 5-schichtiges Selbstlern-Architektur — entwickelt sich über die Zeit an den Benutzer an
+- Globales Profil — teilen Sie persönliche + Unternehmensinformationen über Sessions hinweg, keine erneute Eingabe erforderlich
+- 17 Sprachunterstützung — EN als einzige Quelle + Runtime-Lokalisierung
+- Weltweite Locale-Unterstützung — geben Sie Ihr Arbeitsland ein und MoAI sammelt automatisch Steuerrecht, Arbeitsrecht, Datenschutz und Geschäftspraktiken durch Web-Suche
 
 ---
 
-## 🚀 Schnellstart
+## Installation
 
-### Deine erste Abfrage ausführen
+### Methode 1: Installation aus Claude Cowork Marketplace (Empfohlen)
+
+1. Starten Sie die **Claude Desktop** App
+2. Geben Sie **Cowork** Modus unten links ein
+3. Klicken Sie auf das **Plugin (🧩)** Symbol neben der Chat-Eingabe
+4. Suchen Sie nach `moai-cowork` im Marketplace
+5. Finden Sie **MoAI-Cowork** und klicken Sie auf **Install**
+6. Geben Sie nach der Installation `/moai init` im Chat ein, um das initiale Setup zu starten
+
+### Methode 2: Installation aus K-Harness Marketplace
+
+K-Harness ist der Marketplace, der MoAI-Cowork enthält.
 
 ```
-@moai Wie sind die Fristen für die Umsatzsteuererklärung in Deutschland 2026?
+# Schritt 1: Marketplace hinzufügen
+/plugin marketplace add modu-ai/k-harness
+
+# Schritt 2: MoAI-Cowork Plugin installieren
+/plugin install moai-cowork@k-harness
 ```
 
-**Antwort**: MoAI automatisch:
-1. Lädt Standortinformationen für Deutschland
-2. Konsultiert Steuergesetzdaten 2026
-3. Bietet einen personalisierten Umsatzsteuer-Kalender
-
-### Automatisches Lernen aktivieren
+### Methode 3: Direkte Installation von GitHub
 
 ```
-moai learn --feedback "Die Antwort war sehr genau"
+# Repository klonen
+git clone https://github.com/modu-ai/k-harness.git
+
+# Zum Plugin-Verzeichnis navigieren
+cd k-harness/plugins/moai-cowork
+
+# Manuell in Claude Desktop laden
+# Cowork Modus → Plugin (🧩) → "Aus Datei installieren" → moai-cowork Ordner auswählen
 ```
 
-MoAI speichert dieses Feedback, um ähnliche zukünftige Abfragen zu verbessern.
+### Methode 4: Manuelle Installation via ZIP
+
+1. Laden Sie die neueste `moai-cowork-v0.1.3.zip` von der [GitHub Releases](https://github.com/modu-ai/k-harness/releases) Seite herunter
+2. Öffnen Sie Claude Desktop → treten Sie in Cowork Modus ein
+3. Klicken Sie auf das Plugin (🧩) Symbol → **Aus Datei installieren**
+4. Wählen Sie die heruntergeladene ZIP-Datei aus
 
 ---
 
-## 📚 Katalog der 100 Instrumente
+## Aktualisierung
 
-### 10 Kategorien
+### Falls über Marketplace installiert
 
-#### 1️⃣ Steuern und Buchhaltung (Tax & Accounting)
-- **DE_TAX_001**: Deutsche Umsatzsteuer
-- **US_TAX_001**: US-Einkommensteuer
-- **JP_TAX_001**: Japanische Verbrauchsteuer
-- **UK_TAX_001**: UK VAT
-- **VN_TAX_001**: Vietnamesische Umsatzsteuer
-- **TH_TAX_001**: Thailändische Umsatzsteuer
-- *(6 weitere)*
+```
+# K-Harness Marketplace aktualisieren
+/plugin marketplace update k-harness
 
-#### 2️⃣ Arbeitsrecht und Personalwesen (Labor & HR)
-- **DE_HR_001**: Deutsches Arbeitsrecht
-- **US_HR_001**: FLSA und Mindestlohn
-- **JP_HR_001**: Japanisches Arbeitsrecht
-- **UK_HR_001**: Britisches Arbeitsrecht
-- *(6 weitere)*
+# Oder über Cowork UI:
+# Plugin (🧩) → MoAI-Cowork → klicken Sie auf "Update"
+```
 
-#### 3️⃣ Datenschutz und Compliance (Data & Compliance)
-- **DE_DATA_001**: Datenschutz (DSGVO)
-- **US_DATA_001**: CCPA/HIPAA
-- **JP_DATA_001**: Gesetz zum Schutz persönlicher Daten
-- **UK_DATA_001**: UK GDPR
-- *(6 weitere)*
+### Falls von GitHub installiert
 
-#### 4️⃣ Geschäftsabläufe (Business Operations)
-- **DE_BIZ_001**: Deutsche Geschäftspraktiken
-- **US_BIZ_001**: US-Besprechungskultur
-- **JP_BIZ_001**: Japanische Kooperationskultur
-- *(7 weitere)*
+```
+cd k-harness
+git pull origin main
+```
 
-#### 5️⃣ Technologie und IT (Technology & IT)
-- **TECH_001**: Best Practices in der Softwareentwicklung
-- **TECH_002**: Cloud-Architektur
-- *(8 weitere)*
+### Falls via ZIP installiert
 
-#### 6️⃣ Marketing und Vertrieb (Marketing & Sales)
-- **MKT_001**: Digitale Marketingstrategie
-- **MKT_002**: B2B-Vertriebstechniken
-- *(8 weitere)*
+1. Entfernen Sie das vorhandene Plugin: Plugin (🧩) → MoAI-Cowork → **Remove**
+2. Laden Sie die neueste ZIP-Datei herunter
+3. Wiederholen Sie den Prozess der manuellen Installation aus Methode 4
 
-#### 7️⃣ Finanzen und Investitionen (Finance & Investment)
-- **FIN_001**: Finanzanalyse
-- **FIN_002**: Investitionsportfoliomanagement
-- *(8 weitere)*
+### Version überprüfen
 
-#### 8️⃣ Recht und Verträge (Legal & Contracts)
-- **LEG_001**: Vertragsreview
-- **LEG_002**: NDA-Erstellung
-- *(8 weitere)*
-
-#### 9️⃣ Strategie und Planung (Strategy & Planning)
-- **STR_001**: Geschäftsstrategie entwickeln
-- **STR_002**: OKR-Einstellung
-- *(8 weitere)*
-
-#### 🔟 Kundenbeziehungen und Service (Customer & Service)
-- **CUS_001**: Kundenzufriedenheitsanalyse
-- **CUS_002**: Serviceverbesserungsplan
-- *(8 weitere)*
+Geben Sie `/moai status` im Chat ein, um die derzeit installierte Version zu überprüfen.
 
 ---
 
-## 👤 Globales Profilsystem
+## Fehlerbehebung
 
-### Persönliches Profil (Personal Profile)
-```yaml
-name: "Hans Müller"
-role: "CFO"
-locale: "de_DE"
-industry: "Finanzen"
-experience_years: 15
-languages: ["Deutsch", "Englisch"]
-```
+### Plugin nicht erkannt
 
-### Teamprofil (Team Profile)
-```yaml
-team_name: "Finanzteam"
-region: "Berlin"
-size: 8
-focus_areas: ["Steuern", "Buchhaltung"]
-```
+1. Beenden Sie Claude Desktop vollständig und starten Sie es neu
+2. Überprüfen Sie, ob MoAI-Cowork in der Plugin-Liste (🧩) im Cowork Modus angezeigt wird
+3. Falls nicht, versuchen Sie eine Neuinstallation
 
-### Organisationsprofil (Organization Profile)
-```yaml
-company_name: "ABC Corporation"
-headquarters: "Berlin"
-founded: 2010
-employees: 500
-industries: ["Finanzen", "Technologie"]
-expansion_regions: ["Schweiz", "Österreich"]
-```
+### Fehler bei `/moai init`
+
+1. Geben Sie `/moai doctor` ein, um die Umgebungsdiagnose auszuführen
+2. Falls Ihr globales Profil beschädigt ist, setzen Sie es mit `/moai profile --reset` zurück
+
+### Harness lädt nicht
+
+1. Überprüfen Sie, ob `.moai/config.json` in Ihrem Projektordner existiert
+2. Falls nicht, initialisieren Sie es erneut mit `/moai init`
+
+### Lokalisierungsdaten nicht erfasst
+
+- Südkorea: Verwendet integrierte Daten (keine Web-Suche erforderlich)
+- Andere Länder: Benötigt Internetverbindung und Web-Such-Tools
 
 ---
 
-## 🔄 Selbstlern-Zyklus (Self-Refine)
+## Schnelleinstieg
 
-### Lernfluss
+### Schritt 1: Initialisieren
 
 ```
-1. Abfrage ausführen
-   ↓
-2. Antwort generieren (unter Verwendung von Instrumenten)
-   ↓
-3. Nutzerfeedback sammeln
-   ↓
-4. Ergebnisse analysieren (Genauigkeit, Relevanz, Nützlichkeit)
-   ↓
-5. Instrument verbessern (Gewichte anpassen)
-   ↓
-6. Auf nächste Abfrage anwenden
+/moai init
 ```
 
-### Feedback-Typen
+MoAI führt ein interaktives Interview durch, um Ihr Profil (Name, Rolle, Unternehmen, Locale) zu erfassen.
 
-| Typ | Beschreibung | Auswirkung |
-|-----|-------------|-----------|
-| **Positiv** | "Sehr genau" | Instrument-Gewicht +10% |
-| **Teilweise** | "Teilweise korrekt" | Gewicht ±5% |
-| **Negativ** | "Falsch" | Instrument-Gewicht -15% |
-| **Benutzerdefiniert** | "Benötigt mehr Inhalte zu X" | Spezifische Bereichsverstärkung |
+### Schritt 2: Harness-Katalog durchsuchen
+
+```
+/moai catalog
+```
+
+Sehen Sie sich die vollständige Liste der 100 Harnesses in 10 Kategorien an.
+
+### Schritt 3: Machen Sie eine Anfrage in natürlicher Sprache
+
+```
+Hilf mir bei einer Marktforschung
+```
+
+MoAI erkennt automatisch den `market-research` Harness und läuft im Expert-Modus.
 
 ---
 
-## 📖 Verwendungsbeispiele
+## 100 Harness-Katalog
 
-### Beispiel 1: Steuerberatung
-```
-Q: "Wie ist der Registrierungsprozess für neue Mitarbeiter in Deutschland?"
-→ Aktiviert Instrument DE_HR_001
-→ Liefert Fristen, erforderliche Unterlagen und Verfahren
-```
+| # | Kategorie | Anzahl | Beispiel-Harnesses |
+|---|----------|-------|-----------------|
+| 1 | Inhalte & Kreativität | 10 | copywriting, youtube-production, podcast-studio, book-publishing |
+| 2 | Business & Strategie | 10 | business-model-canvas, competitive-analysis, startup-launcher, pricing-strategy |
+| 3 | Marketing & Wachstum | 10 | brand-identity, growth-hacking, social-media-manager, influencer-strategy |
+| 4 | Bildung & Forschung | 10 | course-builder, thesis-advisor, exam-prep, language-tutor |
+| 5 | Recht & Compliance | 10 | contract-analyzer, compliance-checker, patent-drafter, privacy-engineer |
+| 6 | Lebensstil | 10 | travel-planner, wedding-planner, meal-planner, fitness-program |
+| 7 | Kommunikation & Dokumentation | 10 | presentation-designer, report-generator, technical-writer, proposal-writer |
+| 8 | Betrieb & HR | 10 | hiring-pipeline, onboarding-system, operations-manual, crisis-communication |
+| 9 | Finanzen & Handel | 10 | accounting-tax, financial-modeler, import-export, invoice-mgmt |
+| 10 | Produkt & Innovation | 10 | product-manager, ai-strategy, ux-research, sales-enablement |
 
-### Beispiel 2: Internationales Geschäft
-```
-Q: "Worauf sollte ich in einem US-Geschäftstreffen achten?"
-→ Aktiviert Instrument US_BIZ_001
-→ Kulturelles Anpassungsleitfaden, Zeitmanagement, Kommunikationsstil
-```
+Siehe die vollständige Liste der 100 Harnesses mit `/moai catalog`.
 
-### Beispiel 3: Regelkonformität
+---
+
+## Wichtige Befehle
+
+| Befehl | Beschreibung |
+|---------|-------------|
+| `/moai init` | Initialisieren — sammeln Sie das Profil und installieren Sie Harness |
+| `/moai catalog` | Durchsuchen Sie den 100 Harness-Katalog |
+| `/moai status` | Überprüfen Sie den installierten Harness und Evolve-Status |
+| `/moai evolve` | Führen Sie einen Selbstlern-Evolve-Zyklus aus |
+| `/moai profile` | Zeigen Sie an/bearbeiten Sie das globale Profil |
+| `/moai doctor` | Führen Sie die Umgebungsdiagnose aus |
+| `/moai help` | Zeigen Sie verfügbare Befehle an |
+
+---
+
+## Architektur
+
 ```
-Q: "Welche Verfahren muss ich für die Verarbeitung von Kundendaten in der EU befolgen?"
-→ Aktiviert Instrumente DE_DATA_001 und zugehörige GDPR
-→ DSGVO-Konformität, Einwiltigungsverwaltung, Übergabeverfahren
+Layer 0: auto-memory (global) — Benutzerprofil, Harness-Verlauf
+Layer 1: plugin (read-only) — 100 Basis-Harnesses (en/ einzige Quelle, Runtime-Lokalisierung)
+Layer 2: .claude/CLAUDE.md + rules/ — Persona
+Layer 3: .moai/ (read/write) — Domain-Kontext, Evolution-Daten
+Layer 4: auto-memory learning — Sitzungsübergreifende Feedback-Akkumulation
 ```
 
 ---
 
-## 🛠 Wie man beiträgt (Contributing)
+## Lizenz
 
-### 1. Ein neues Instrument vorschlagen
-```bash
-# Neuen Bereich vorschlagen
-moai contribute --domain "Deutsches Handelsrecht" --category "legal"
-```
-
-### 2. Ein bestehendes Instrument verbessern
-```bash
-# Feedback-basierte Verbesserung
-moai improve DOMAIN_ID --feedback "Zusätzliche Inhalte erforderlich"
-```
-
-### 3. Neue Lokalisierung hinzufügen
-```bash
-# Neue Länderlokal hinzufügen
-moai add-locale --country "Schweiz" --code "de_CH"
-```
-
-### 4. Dokumentation verbessern
-- Bearbeite Lokalisierungsdateien in `/skills/moai/references/locale/`
-- Übermittle einen Pull Request auf GitHub
-- Aktualisiere kulturelle Anpassungsleitfäden
+MIT License — frei nutzbar, modifizierbar und verteilbar
 
 ---
 
-## 📋 Roadmap
+## GitHub
 
-### Phase 1 (Aktuell)
-- [x] Basis-Instrumentensystem
-- [x] Globale Lokalisierungsleitfäden (7 Länder)
-- [ ] Self-Refine-Zyklus-Implementierung
-
-### Phase 2 (2026 Q2)
-- [ ] 100 Instrumente abgeschlossen
-- [ ] Mehrsprachige Benutzeroberfläche (12 Sprachen)
-- [ ] Team-Kollaborationsfunktionen
-
-### Phase 3 (2026 Q3)
-- [ ] Echtzeit-Regulierungsaktualisierungen
-- [ ] KI-zu-Mensch-Überprüfungsprozess
-- [ ] Branchenspezifische Vorlagen
+- **Repository**: [modu-ai/k-harness](https://github.com/modu-ai/k-harness)
+- **Issues/Vorschläge**: [GitHub Issues](https://github.com/modu-ai/k-harness/issues)
 
 ---
 
-## 📞 Support und Kontakt
+**MoAI-Cowork: Treffen Sie Ihre KI-Experten.**
 
-- **Dokumentation**: `/skills/moai/references/locale/`
-- **GitHub**: (in Kürze)
-- **Email**: support@moai-cowork.dev
-
----
-
-## 📄 Lizenz
-
-MIT-Lizenz - Frei zu verwenden, zu ändern und zu verteilen
-
----
-
-## 🙏 Danksagungen
-
-MoAI-Cowork entwickelt sich kontinuierlich weiter durch Feedback der Claude- und Cowork-Gemeinschaft.
-
----
-
-**MoAI-Cowork: Triff deinen personalisierten KI-Experten.**
-
-*Zuletzt aktualisiert: 2026-04-04*
+*Version 0.1.3 | Last Updated: 2026-04-08*

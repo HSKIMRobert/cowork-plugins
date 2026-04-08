@@ -1,298 +1,223 @@
+<div align="center">
+
 # 🗿 MoAI-Cowork
 
 **100 Self-Evolving Domain Harnesses — Your Personal AI Experts**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)]()
+[![Version](https://img.shields.io/badge/version-0.1.3-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
+[![Harnesses](https://img.shields.io/badge/harnesses-100-orange)]()
+[![Languages](https://img.shields.io/badge/languages-17-purple)]()
 
-🌐 [한국어](README.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md)
+🌐 [한국어](README.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+
+</div>
 
 ---
 
-## 🎯 What is MoAI?
+## What is MoAI?
 
-**MoAI-Cowork** is an auto-learning system that transforms AI into domain experts across your organization.
+**MoAI-Cowork** is a plugin for Claude Cowork that provides 100 domain expert harnesses through a self-learning AI assistant system.
 
-- **100 Harnesses**: 10 categories × 10 domains (Accounting, Legal, HR, Tech, Marketing, etc.)
-- **Self-Evolving**: Continuous improvement through user feedback and Self-Refine cycles
-- **Global Profiles**: Personalized responses based on individual, team, and organizational profiles
-- **Plugin-Based**: Seamless integration with Claude Code and Cowork ecosystem
+A harness is an AI expert module that bundles domain-specific knowledge, workflows, deliverable formats, and context-collection protocols into one package. Once installed, MoAI transforms into a domain expert and delivers structured results.
 
-### Core Features
+**Key features:**
 
-| Feature | Description |
+- 10 categories × 100 harnesses — content, marketing, business, education, legal, lifestyle, communication, operations, finance, and product/innovation
+- 5-layer self-learning architecture — evolves and adapts to the user over time
+- Global profile — share personal + company info across sessions, no re-entry needed
+- 17 language support — EN single source + runtime localization
+- Worldwide locale support — enter your work country and MoAI auto-collects tax law, labor law, data protection, and business practices via web search
+
+---
+
+## Installation
+
+### Method 1: Install from Claude Cowork Marketplace (Recommended)
+
+1. Launch the **Claude Desktop** app
+2. Enter **Cowork** mode from the bottom-left
+3. Click the **Plugin (🧩)** icon next to the chat input
+4. Search for `moai-cowork` in the marketplace
+5. Find **MoAI-Cowork** and click **Install**
+6. After installation, type `/moai init` in chat to start the initial setup
+
+### Method 2: Install from K-Harness Marketplace
+
+K-Harness is the marketplace that includes MoAI-Cowork.
+
+```
+# Step 1: Add the marketplace
+/plugin marketplace add modu-ai/k-harness
+
+# Step 2: Install MoAI-Cowork plugin
+/plugin install moai-cowork@k-harness
+```
+
+### Method 3: Install Directly from GitHub
+
+```
+# Clone the repository
+git clone https://github.com/modu-ai/k-harness.git
+
+# Navigate to the plugin directory
+cd k-harness/plugins/moai-cowork
+
+# Load manually in Claude Desktop
+# Cowork mode → Plugin (🧩) → "Install from file" → select the moai-cowork folder
+```
+
+### Method 4: Manual Install via ZIP
+
+1. Download the latest `moai-cowork-v0.1.3.zip` from the [GitHub Releases](https://github.com/modu-ai/k-harness/releases) page
+2. Open Claude Desktop → enter Cowork mode
+3. Click the Plugin (🧩) icon → **Install from file**
+4. Select the downloaded ZIP file
+
+---
+
+## Updating
+
+### If installed via marketplace
+
+```
+# Update K-Harness marketplace
+/plugin marketplace update k-harness
+
+# Or via Cowork UI:
+# Plugin (🧩) → MoAI-Cowork → click "Update"
+```
+
+### If installed from GitHub
+
+```
+cd k-harness
+git pull origin main
+```
+
+### If installed via ZIP
+
+1. Remove the existing plugin: Plugin (🧩) → MoAI-Cowork → **Remove**
+2. Download the latest ZIP file
+3. Repeat the Method 4 manual installation process
+
+### Check version
+
+Type `/moai status` in chat to verify the currently installed version.
+
+---
+
+## Troubleshooting
+
+### Plugin not recognized
+
+1. Fully quit and restart Claude Desktop
+2. Check if MoAI-Cowork appears in the Plugin (🧩) list in Cowork mode
+3. If not, try reinstalling
+
+### Error on `/moai init`
+
+1. Type `/moai doctor` to run environment diagnostics
+2. If your global profile is corrupted, reset it with `/moai profile --reset`
+
+### Harness not loading
+
+1. Check if `.moai/config.json` exists in your project folder
+2. If not, re-initialize with `/moai init`
+
+### Localization data not collected
+
+- Korea: Uses built-in data (no web search needed)
+- Other countries: Requires internet connection and web search tools
+
+---
+
+## Quick Start
+
+### Step 1: Initialize
+
+```
+/moai init
+```
+
+MoAI conducts an interactive interview to collect your profile (name, role, company, locale).
+
+### Step 2: Browse the Harness Catalog
+
+```
+/moai catalog
+```
+
+View the full list of 100 harnesses across 10 categories.
+
+### Step 3: Make a Natural Language Request
+
+```
+Help me do market research
+```
+
+MoAI automatically detects the `market-research` harness and runs in expert mode.
+
+---
+
+## 100 Harness Catalog
+
+| # | Category | Count | Sample Harnesses |
+|---|----------|-------|-----------------|
+| 1 | Content & Creative | 10 | copywriting, youtube-production, podcast-studio, book-publishing |
+| 2 | Business & Strategy | 10 | business-model-canvas, competitive-analysis, startup-launcher, pricing-strategy |
+| 3 | Marketing & Growth | 10 | brand-identity, growth-hacking, social-media-manager, influencer-strategy |
+| 4 | Education & Research | 10 | course-builder, thesis-advisor, exam-prep, language-tutor |
+| 5 | Legal & Compliance | 10 | contract-analyzer, compliance-checker, patent-drafter, privacy-engineer |
+| 6 | Lifestyle | 10 | travel-planner, wedding-planner, meal-planner, fitness-program |
+| 7 | Communication & Docs | 10 | presentation-designer, report-generator, technical-writer, proposal-writer |
+| 8 | Operations & HR | 10 | hiring-pipeline, onboarding-system, operations-manual, crisis-communication |
+| 9 | Finance & Trade | 10 | accounting-tax, financial-modeler, import-export, invoice-mgmt |
+| 10 | Product & Innovation | 10 | product-manager, ai-strategy, ux-research, sales-enablement |
+
+See the full list of 100 harnesses with `/moai catalog`.
+
+---
+
+## Key Commands
+
+| Command | Description |
 |---------|-------------|
-| **Auto-Learning** | Performance tracking and analysis with each interaction |
-| **Domain Expertise** | Best practices from each field |
-| **Cultural Adaptation** | Global business practices and multilingual support |
-| **Real-Time Updates** | Latest tax laws, regulations, and market info |
-| **Multi-User Support** | Team-level profile management and collaboration |
+| `/moai init` | Initialize — collect profile and install harness |
+| `/moai catalog` | Browse 100 harness catalog |
+| `/moai status` | Check installed harness and evolution state |
+| `/moai evolve` | Run self-learning evolution cycle |
+| `/moai profile` | View/edit global profile |
+| `/moai doctor` | Run environment diagnostics |
+| `/moai help` | Show available commands |
 
 ---
 
-## 📦 Installation
+## Architecture
 
-### Requirements
-- Claude Code (latest version)
-- Cowork plugin support
-
-### Step 1: Add Plugin to Cowork
-```bash
-# Via Cowork CLI (coming soon)
-cowork install moai-cowork
 ```
-
-### Step 2: Initialize Profile
-```bash
-moai init
-```
-
-### Step 3: Set Personal Profile
-```bash
-moai profile --set-personal
+Layer 0: auto-memory (global) — user profile, harness history
+Layer 1: plugin (read-only) — 100 base harnesses (en/ single source, runtime localization)
+Layer 2: .claude/CLAUDE.md + rules/ — persona
+Layer 3: .moai/ (read/write) — domain context, evolution data
+Layer 4: auto-memory learning — cross-session feedback accumulation
 ```
 
 ---
 
-## 🚀 Quick Start
+## License
 
-### Run Your First Query
-
-```
-@moai What are the VAT reporting deadlines in the UK for 2026?
-```
-
-**Response**: MoAI automatically:
-1. Loads UK locale information
-2. References 2026 tax data
-3. Provides customized VAT reporting timeline
-
-### Enable Auto-Learning
-
-```
-moai learn --feedback "The answer was very accurate"
-```
-
-MoAI records this feedback to improve similar future queries.
+MIT License — free to use, modify, and distribute
 
 ---
 
-## 📚 100 Harnesses Catalog
+## GitHub
 
-### 10 Categories
-
-#### 1️⃣ Tax & Accounting
-- **US_TAX_001**: Federal Income Tax
-- **UK_TAX_001**: VAT & Corporation Tax
-- **JP_TAX_001**: Consumption Tax
-- **DE_TAX_001**: German Income Tax
-- **FR_TAX_001**: French Corporate Tax
-- *(5 more)*
-
-#### 2️⃣ Labor & HR
-- **US_HR_001**: FLSA & Minimum Wage
-- **UK_HR_001**: Employment Rights
-- **JP_HR_001**: Japanese Labor Law
-- **DE_HR_001**: German Works Council
-- *(6 more)*
-
-#### 3️⃣ Data & Compliance
-- **US_DATA_001**: CCPA/HIPAA/SOX
-- **UK_DATA_001**: UK GDPR & DPA 2018
-- **JP_DATA_001**: APPI Compliance
-- **DE_DATA_001**: GDPR Implementation
-- *(6 more)*
-
-#### 4️⃣ Business Operations
-- **US_BIZ_001**: American Business Practices
-- **UK_BIZ_001**: British Business Culture
-- **JP_BIZ_001**: Japanese Harmony Culture
-- *(7 more)*
-
-#### 5️⃣ Technology & IT
-- **TECH_001**: Software Development Best Practices
-- **TECH_002**: Cloud Architecture
-- *(8 more)*
-
-#### 6️⃣ Marketing & Sales
-- **MKT_001**: Digital Marketing Strategy
-- **MKT_002**: B2B Sales Techniques
-- *(8 more)*
-
-#### 7️⃣ Finance & Investment
-- **FIN_001**: Financial Statement Analysis
-- **FIN_002**: Investment Portfolio Management
-- *(8 more)*
-
-#### 8️⃣ Legal & Contracts
-- **LEG_001**: Contract Review
-- **LEG_002**: NDA Drafting
-- *(8 more)*
-
-#### 9️⃣ Strategy & Planning
-- **STR_001**: Business Strategy Development
-- **STR_002**: OKR Setting
-- *(8 more)*
-
-#### 🔟 Customer & Service
-- **CUS_001**: Customer Satisfaction Analysis
-- **CUS_002**: Service Improvement Planning
-- *(8 more)*
-
----
-
-## 👤 Global Profile System
-
-### Personal Profile
-```yaml
-name: "John Smith"
-role: "CFO"
-locale: "en_US"
-industry: "Finance"
-experience_years: 15
-languages: ["English", "French"]
-```
-
-### Team Profile
-```yaml
-team_name: "Finance Team"
-region: "London"
-size: 8
-focus_areas: ["Taxation", "Accounting"]
-```
-
-### Organization Profile
-```yaml
-company_name: "Global Tech Corp"
-headquarters: "San Francisco"
-founded: 2010
-employees: 2000
-industries: ["Technology", "Finance"]
-expansion_regions: ["EU", "APAC"]
-```
-
----
-
-## 🔄 Self-Refine Learning Cycle
-
-### Learning Flow
-
-```
-1. Execute Query
-   ↓
-2. Generate Response (harness-based)
-   ↓
-3. Collect User Feedback
-   ↓
-4. Analyze Results (accuracy, relevance, utility)
-   ↓
-5. Improve Harness (weight adjustment)
-   ↓
-6. Apply to Next Query
-```
-
-### Feedback Types
-
-| Type | Description | Impact |
-|------|-------------|--------|
-| **Positive** | "Very accurate" | Harness weight +10% |
-| **Partial** | "Partially correct" | Weight ±5% |
-| **Negative** | "Incorrect" | Harness weight -15% |
-| **Custom** | "Add XX content" | Specific field enhancement |
-
----
-
-## 📖 Usage Examples
-
-### Example 1: Tax Consultation
-```
-Q: "What are the FLSA overtime rules for a US-based startup?"
-→ US_HR_001 harness activated
-→ Provides FLSA regulations, overtime rates, exemptions
-```
-
-### Example 2: International Business
-```
-Q: "What should I know about Japanese business meeting etiquette?"
-→ JP_BIZ_001 harness activated
-→ Provides business card etiquette, meeting format, communication style
-```
-
-### Example 3: Regulatory Compliance
-```
-Q: "What GDPR requirements apply to our EU customer data?"
-→ UK_DATA_001 + relevant EU locale harnesses activated
-→ Provides GDPR compliance checklist, consent management, data transfer procedures
-```
-
----
-
-## 🛠 Contributing
-
-### 1. Propose a New Harness
-```bash
-# Suggest a new domain
-moai contribute --domain "German Employment Law" --category "labor"
-```
-
-### 2. Improve Existing Harness
-```bash
-# Feedback-based improvement
-moai improve DOMAIN_ID --feedback "Add missing content"
-```
-
-### 3. Add a New Locale
-```bash
-# Add a new country locale
-moai add-locale --country "Brazil" --code "pt_BR"
-```
-
-### 4. Improve Documentation
-- Edit locale files in `/skills/moai/references/locale/`
-- Submit Pull Request on GitHub
-- Update cultural adaptation guides
-
----
-
-## 📋 Roadmap
-
-### Phase 1 (Current)
-- [x] Core harness system
-- [x] Global locale guides (7 countries)
-- [ ] Self-Refine cycle implementation
-
-### Phase 2 (2026 Q2)
-- [ ] Complete 100 harnesses
-- [ ] Multilingual UI (12 languages)
-- [ ] Team collaboration features
-
-### Phase 3 (2026 Q3)
-- [ ] Real-time regulatory updates
-- [ ] AI-to-Human review process
-- [ ] Industry-specific templates
-
----
-
-## 📞 Support & Feedback
-
-- **Documentation**: `/skills/moai/references/locale/`
-- **GitHub**: (coming soon)
-- **Email**: support@moai-cowork.dev
-
----
-
-## 📄 License
-
-MIT License - Free to use, modify, and distribute
-
----
-
-## 🙏 Acknowledgments
-
-MoAI-Cowork continues to evolve through feedback from the Claude and Cowork communities.
+- **Repository**: [modu-ai/k-harness](https://github.com/modu-ai/k-harness)
+- **Issues/Suggestions**: [GitHub Issues](https://github.com/modu-ai/k-harness/issues)
 
 ---
 
 **MoAI-Cowork: Meet Your AI Experts.**
 
-*Last Updated: 2026-04-04*
+*Version 0.1.3 | Last Updated: 2026-04-08*

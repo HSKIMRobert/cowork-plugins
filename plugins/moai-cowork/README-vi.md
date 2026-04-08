@@ -1,299 +1,223 @@
+<div align="center">
+
 # 🗿 MoAI-Cowork
 
-**100 công cụ tự tiến hóa — Chuyên gia AI được cá nhân hóa của bạn**
+**100 Harness Tự Tiến Hóa — Các Chuyên Gia AI Của Bạn**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)]()
+[![Version](https://img.shields.io/badge/version-0.1.3-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
+[![Harnesses](https://img.shields.io/badge/harnesses-100-orange)]()
+[![Languages](https://img.shields.io/badge/languages-17-purple)]()
 
-🌐 [한국어](README.md) | [English](README-en.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+🌐 [한국어](README.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
 
----
-
-## 🎯 MoAI là gì?
-
-**MoAI-Cowork** là một hệ thống học tập tự động biến AI thành các chuyên gia chuyên biệt cho mỗi lĩnh vực của tổ chức bạn.
-
-- **100 công cụ**: 10 danh mục × 10 lĩnh vực (kế toán, pháp luật, nhân sự, công nghệ, tiếp thị, v.v.)
-- **Tự tiến hóa**: Chu kỳ Self-Refine dựa trên phản hồi của người dùng và phân tích kết quả
-- **Hồ sơ toàn cầu**: Phản hồi được cá nhân hóa thông qua hồ sơ cá nhân, nhóm và tổ chức
-- **Dựa trên plugin**: Tích hợp liền mạch với Claude Code và hệ sinh thái Cowork
-
-### Các tính năng chính
-
-| Chức năng | Mô tả |
-|----------|--------|
-| **Học tập tự động** | Ghi lại và phân tích hiệu suất ở mỗi tương tác |
-| **Chuyên môn lĩnh vực** | Kiến thức thực tế hàng đầu trong mỗi lĩnh vực |
-| **Thích ứng văn hóa** | Hỗ trợ các thông lệ kinh doanh toàn cầu và ngôn ngữ |
-| **Cập nhật thời gian thực** | Bao gồm luật thuế, quy định và thông tin thị trường mới nhất |
-| **Hỗ trợ đa người dùng** | Quản lý hồ sơ cấp độ nhóm và cộng tác |
+</div>
 
 ---
 
-## 📦 Cài đặt
+## MoAI Là Gì?
 
-### Yêu cầu
-- Claude Code (phiên bản mới nhất)
-- Hỗ trợ plugin Cowork
+**MoAI-Cowork** là một plugin cho Claude Cowork cung cấp 100 harness chuyên gia lĩnh vực thông qua hệ thống trợ lý AI tự học.
 
-### Bước 1: Thêm plugin vào Cowork
-```bash
-# Cài đặt qua Cowork CLI (sắp có)
-cowork install moai-cowork
-```
+Harness là một mô-đun chuyên gia AI gói gọn kiến thức chuyên ngành, quy trình làm việc, định dạng kết quả và giao thức thu thập ngữ cảnh vào một gói duy nhất. Sau khi cài đặt, MoAI chuyển thành chuyên gia lĩnh vực và cung cấp kết quả có cấu trúc.
 
-### Bước 2: Khởi tạo hồ sơ
-```bash
-moai init
-```
+**Các tính năng chính:**
 
-### Bước 3: Cấu hình hồ sơ cá nhân
-```bash
-moai profile --set-personal
-```
+- 10 danh mục × 100 harness — nội dung, marketing, kinh doanh, giáo dục, pháp lý, lối sống, giao tiếp, vận hành, tài chính và sản phẩm/đổi mới
+- Kiến trúc tự học 5 lớp — phát triển và thích ứng theo người dùng theo thời gian
+- Hồ sơ toàn cầu — chia sẻ thông tin cá nhân + công ty trên các phiên, không cần nhập lại
+- Hỗ trợ 17 ngôn ngữ — EN nguồn duy nhất + định địa phương trong thời gian chạy
+- Hỗ trợ locale toàn thế giới — nhập đất nước làm việc của bạn và MoAI tự động thu thập luật thuế, luật lao động, bảo vệ dữ liệu và thực hành kinh doanh thông qua tìm kiếm web
 
 ---
 
-## 🚀 Bắt đầu nhanh
+## Cài Đặt
 
-### Chạy truy vấn đầu tiên của bạn
+### Phương Pháp 1: Cài Đặt Từ Claude Cowork Marketplace (Được Khuyến Nghị)
+
+1. Khởi chạy ứng dụng **Claude Desktop**
+2. Nhập chế độ **Cowork** từ phía dưới bên trái
+3. Nhấp vào biểu tượng **Plugin (🧩)** bên cạnh ô nhập liệu trò chuyện
+4. Tìm kiếm `moai-cowork` trên marketplace
+5. Tìm **MoAI-Cowork** và nhấp **Install**
+6. Sau khi cài đặt, nhập `/moai init` trong trò chuyện để bắt đầu thiết lập ban đầu
+
+### Phương Pháp 2: Cài Đặt Từ K-Harness Marketplace
+
+K-Harness là marketplace bao gồm MoAI-Cowork.
 
 ```
-@moai Lịch khai báo thuế GTGT của Việt Nam năm 2026 là gì?
+# Bước 1: Thêm marketplace
+/plugin marketplace add modu-ai/k-harness
+
+# Bước 2: Cài đặt plugin MoAI-Cowork
+/plugin install moai-cowork@k-harness
 ```
 
-**Phản hồi**: MoAI tự động:
-1. Tải thông tin địa phương hóa của Việt Nam
-2. Tham khảo dữ liệu luật thuế 2026
-3. Cung cấp lịch GTGT được cá nhân hóa
-
-### Kích hoạt học tập tự động
+### Phương Pháp 3: Cài Đặt Trực Tiếp Từ GitHub
 
 ```
-moai learn --feedback "Câu trả lời rất chính xác"
+# Clone repository
+git clone https://github.com/modu-ai/k-harness.git
+
+# Điều hướng đến thư mục plugin
+cd k-harness/plugins/moai-cowork
+
+# Tải thủ công trong Claude Desktop
+# Chế độ Cowork → Plugin (🧩) → "Install from file" → chọn thư mục moai-cowork
 ```
 
-MoAI ghi lại phản hồi này để cải thiện các truy vấn tương tự trong tương lai.
+### Phương Pháp 4: Cài Đặt Thủ Công Qua ZIP
+
+1. Tải xuống `moai-cowork-v0.1.3.zip` mới nhất từ trang [GitHub Releases](https://github.com/modu-ai/k-harness/releases)
+2. Mở Claude Desktop → nhập chế độ Cowork
+3. Nhấp vào biểu tượng Plugin (🧩) → **Install from file**
+4. Chọn tệp ZIP đã tải xuống
 
 ---
 
-## 📚 Danh mục 100 công cụ
+## Cập Nhật
 
-### 10 Danh mục
+### Nếu cài đặt thông qua marketplace
 
-#### 1️⃣ Thuế và Kế toán (Tax & Accounting)
-- **VN_TAX_001**: Thuế GTGT Việt Nam
-- **US_TAX_001**: Thuế thu nhập liên bang Mỹ
-- **JP_TAX_001**: Thuế tiêu thụ Nhật Bản
-- **UK_TAX_001**: VAT Vương quốc Anh
-- **VN_TAX_001**: VAT Việt Nam
-- **TH_TAX_001**: VAT Thái Lan
-- *(6 thêm)*
+```
+# Cập nhật K-Harness marketplace
+/plugin marketplace update k-harness
 
-#### 2️⃣ Luật lao động và Nhân sự (Labor & HR)
-- **VN_HR_001**: Luật lao động Việt Nam
-- **US_HR_001**: FLSA và lương tối thiểu
-- **JP_HR_001**: Luật lao động Nhật Bản
-- **UK_HR_001**: Luật việc làm Anh
-- *(6 thêm)*
+# Hoặc thông qua Cowork UI:
+# Plugin (🧩) → MoAI-Cowork → nhấp "Update"
+```
 
-#### 3️⃣ Dữ liệu và Tuân thủ (Data & Compliance)
-- **VN_DATA_001**: Bảo vệ dữ liệu cá nhân
-- **US_DATA_001**: CCPA/HIPAA
-- **JP_DATA_001**: Luật bảo vệ thông tin cá nhân
-- **UK_DATA_001**: UK GDPR
-- *(6 thêm)*
+### Nếu cài đặt từ GitHub
 
-#### 4️⃣ Hoạt động kinh doanh (Business Operations)
-- **VN_BIZ_001**: Thông lệ kinh doanh Việt Nam
-- **US_BIZ_001**: Văn hóa họp mặt Mỹ
-- **JP_BIZ_001**: Văn hóa hợp tác Nhật Bản
-- *(7 thêm)*
+```
+cd k-harness
+git pull origin main
+```
 
-#### 5️⃣ Công nghệ và CNTT (Technology & IT)
-- **TECH_001**: Các thực hành tốt nhất phát triển phần mềm
-- **TECH_002**: Kiến trúc đám mây
-- *(8 thêm)*
+### Nếu cài đặt qua ZIP
 
-#### 6️⃣ Tiếp thị và Bán hàng (Marketing & Sales)
-- **MKT_001**: Chiến lược tiếp thị kỹ thuật số
-- **MKT_002**: Kỹ thuật bán hàng B2B
-- *(8 thêm)*
+1. Xóa plugin hiện có: Plugin (🧩) → MoAI-Cowork → **Remove**
+2. Tải xuống tệp ZIP mới nhất
+3. Lặp lại quy trình cài đặt thủ công Phương Pháp 4
 
-#### 7️⃣ Tài chính và Đầu tư (Finance & Investment)
-- **FIN_001**: Phân tích báo cáo tài chính
-- **FIN_002**: Quản lý danh mục đầu tư
-- *(8 thêm)*
+### Kiểm tra phiên bản
 
-#### 8️⃣ Pháp luật và Hợp đồng (Legal & Contracts)
-- **LEG_001**: Xem xét hợp đồng
-- **LEG_002**: Soạn thảo NDA
-- *(8 thêm)*
-
-#### 9️⃣ Chiến lược và Lập kế hoạch (Strategy & Planning)
-- **STR_001**: Thiết lập chiến lược kinh doanh
-- **STR_002**: Cài đặt OKR
-- *(8 thêm)*
-
-#### 🔟 Khách hàng và Dịch vụ (Customer & Service)
-- **CUS_001**: Phân tích sự hài lòng của khách hàng
-- **CUS_002**: Kế hoạch cải thiện dịch vụ
-- *(8 thêm)*
+Nhập `/moai status` trong trò chuyện để xác minh phiên bản hiện được cài đặt.
 
 ---
 
-## 👤 Hệ thống hồ sơ toàn cầu
+## Khắc Phục Sự Cố
 
-### Hồ sơ cá nhân (Personal Profile)
-```yaml
-name: "Nguyễn Văn A"
-role: "CFO"
-locale: "vi_VN"
-industry: "Tài chính"
-experience_years: 15
-languages: ["Tiếng Việt", "Tiếng Anh"]
-```
+### Plugin không được nhận dạng
 
-### Hồ sơ nhóm (Team Profile)
-```yaml
-team_name: "Nhóm tài chính"
-region: "Hà Nội"
-size: 8
-focus_areas: ["Thuế", "Kế toán"]
-```
+1. Thoát hoàn toàn và khởi động lại Claude Desktop
+2. Kiểm tra xem MoAI-Cowork có xuất hiện trong danh sách Plugin (🧩) ở chế độ Cowork không
+3. Nếu không, hãy thử cài đặt lại
 
-### Hồ sơ tổ chức (Organization Profile)
-```yaml
-company_name: "ABC Corporation"
-headquarters: "Hà Nội"
-founded: 2010
-employees: 500
-industries: ["Tài chính", "Công nghệ"]
-expansion_regions: ["Thái Lan", "Campuchia"]
-```
+### Lỗi khi `/moai init`
+
+1. Nhập `/moai doctor` để chạy chẩn đoán môi trường
+2. Nếu hồ sơ toàn cầu của bạn bị hỏng, đặt lại bằng `/moai profile --reset`
+
+### Harness không tải
+
+1. Kiểm tra xem `.moai/config.json` có tồn tại trong thư mục dự án của bạn không
+2. Nếu không, hãy khởi tạo lại bằng `/moai init`
+
+### Dữ liệu định địa phương không được thu thập
+
+- Hàn Quốc: Sử dụng dữ liệu tích hợp (không cần tìm kiếm web)
+- Các quốc gia khác: Cần kết nối Internet và công cụ tìm kiếm web
 
 ---
 
-## 🔄 Chu kỳ học tập tự động (Self-Refine)
+## Bắt Đầu Nhanh
 
-### Luồng học tập
+### Bước 1: Khởi Tạo
 
 ```
-1. Chạy truy vấn
-   ↓
-2. Tạo phản hồi (sử dụng công cụ)
-   ↓
-3. Thu thập phản hồi của người dùng
-   ↓
-4. Phân tích kết quả (độ chính xác, mức độ liên quan, tiện ích)
-   ↓
-5. Cải thiện công cụ (điều chỉnh trọng số)
-   ↓
-6. Áp dụng vào truy vấn tiếp theo
+/moai init
 ```
 
-### Các loại phản hồi
+MoAI tiến hành phỏng vấn tương tác để thu thập hồ sơ của bạn (tên, vai trò, công ty, locale).
 
-| Loại | Mô tả | Tác động |
-|------|--------|---------|
-| **Tích cực** | "Rất chính xác" | Trọng số công cụ +10% |
-| **Một phần** | "Một phần đúng" | Trọng số ±5% |
-| **Tiêu cực** | "Sai" | Trọng số công cụ -15% |
-| **Tùy chỉnh** | "Cần thêm nội dung về X" | Tăng cường lĩnh vực cụ thể |
+### Bước 2: Duyệt Danh Mục Harness
+
+```
+/moai catalog
+```
+
+Xem danh sách đầy đủ của 100 harness trên 10 danh mục.
+
+### Bước 3: Gửi Yêu Cầu Bằng Ngôn Ngữ Tự Nhiên
+
+```
+Giúp tôi nghiên cứu thị trường
+```
+
+MoAI tự động phát hiện harness `market-research` và chạy ở chế độ chuyên gia.
 
 ---
 
-## 📖 Ví dụ sử dụng
+## Danh Mục 100 Harness
 
-### Ví dụ 1: Tư vấn thuế
-```
-H: "Quy trình đăng ký bảo hiểm xã hội cho nhân viên mới ở Việt Nam là gì?"
-→ Kích hoạt công cụ VN_HR_001
-→ Cung cấp thời hạn, tài liệu cần thiết và quy trình
-```
+| # | Danh Mục | Số Lượng | Harness Mẫu |
+|---|----------|---------|-----------------|
+| 1 | Nội Dung & Sáng Tạo | 10 | copywriting, youtube-production, podcast-studio, book-publishing |
+| 2 | Kinh Doanh & Chiến Lược | 10 | business-model-canvas, competitive-analysis, startup-launcher, pricing-strategy |
+| 3 | Marketing & Tăng Trưởng | 10 | brand-identity, growth-hacking, social-media-manager, influencer-strategy |
+| 4 | Giáo Dục & Nghiên Cứu | 10 | course-builder, thesis-advisor, exam-prep, language-tutor |
+| 5 | Pháp Lý & Tuân Thủ | 10 | contract-analyzer, compliance-checker, patent-drafter, privacy-engineer |
+| 6 | Lối Sống | 10 | travel-planner, wedding-planner, meal-planner, fitness-program |
+| 7 | Giao Tiếp & Tài Liệu | 10 | presentation-designer, report-generator, technical-writer, proposal-writer |
+| 8 | Vận Hành & Nhân Sự | 10 | hiring-pipeline, onboarding-system, operations-manual, crisis-communication |
+| 9 | Tài Chính & Thương Mại | 10 | accounting-tax, financial-modeler, import-export, invoice-mgmt |
+| 10 | Sản Phẩm & Đổi Mới | 10 | product-manager, ai-strategy, ux-research, sales-enablement |
 
-### Ví dụ 2: Kinh doanh quốc tế
-```
-H: "Tôi nên chú ý điều gì trong cuộc họp kinh doanh tại Mỹ?"
-→ Kích hoạt công cụ US_BIZ_001
-→ Hướng dẫn thích ứng văn hóa, quản lý thời gian, phong cách giao tiếp
-```
+Xem danh sách đầy đủ 100 harness bằng `/moai catalog`.
 
-### Ví dụ 3: Tuân thủ quy định
+---
+
+## Các Lệnh Chính
+
+| Lệnh | Mô Tả |
+|---------|-------------|
+| `/moai init` | Khởi tạo — thu thập hồ sơ và cài đặt harness |
+| `/moai catalog` | Duyệt danh mục 100 harness |
+| `/moai status` | Kiểm tra harness đã cài đặt và trạng thái phát triển |
+| `/moai evolve` | Chạy chu kỳ phát triển tự học |
+| `/moai profile` | Xem/chỉnh sửa hồ sơ toàn cầu |
+| `/moai doctor` | Chạy chẩn đoán môi trường |
+| `/moai help` | Hiển thị các lệnh khả dụng |
+
+---
+
+## Kiến Trúc
+
 ```
-H: "Tôi phải tuân theo những quy trình nào để xử lý dữ liệu khách hàng ở EU?"
-→ Kích hoạt công cụ VN_DATA_001 và GDPR liên quan
-→ Tuân thủ GDPR, quản lý sự đồng ý, quy trình chuyển dữ liệu
+Layer 0: auto-memory (global) — hồ sơ người dùng, lịch sử harness
+Layer 1: plugin (read-only) — 100 base harness (en/ nguồn duy nhất, bản địa hóa thời gian chạy)
+Layer 2: .claude/CLAUDE.md + rules/ — nhân vật
+Layer 3: .moai/ (read/write) — bối cảnh miền, dữ liệu tiến hóa
+Layer 4: auto-memory learning — tích lũy phản hồi liên phiên
 ```
 
 ---
 
-## 🛠 Cách đóng góp (Contributing)
+## Giấy Phép
 
-### 1. Đề xuất công cụ mới
-```bash
-# Đề xuất lĩnh vực mới
-moai contribute --domain "Luật thương mại Việt Nam" --category "legal"
-```
-
-### 2. Cải thiện công cụ hiện có
-```bash
-# Cải thiện dựa trên phản hồi
-moai improve DOMAIN_ID --feedback "Cần thêm nội dung"
-```
-
-### 3. Thêm địa phương hóa mới
-```bash
-# Thêm địa phương hóa quốc gia mới
-moai add-locale --country "Lào" --code "lo_LA"
-```
-
-### 4. Cải thiện tài liệu
-- Chỉnh sửa tệp địa phương hóa trong `/skills/moai/references/locale/`
-- Gửi Pull Request trên GitHub
-- Cập nhật hướng dẫn thích ứng văn hóa
+MIT License — tự do sử dụng, sửa đổi và phân phối
 
 ---
 
-## 📋 Lộ trình
+## GitHub
 
-### Giai đoạn 1 (Hiện tại)
-- [x] Hệ thống công cụ cơ bản
-- [x] Hướng dẫn địa phương hóa toàn cầu (7 quốc gia)
-- [ ] Triển khai chu kỳ Self-Refine
-
-### Giai đoạn 2 (2026 Q2)
-- [ ] 100 công cụ hoàn tất
-- [ ] Giao diện đa ngôn ngữ (12 ngôn ngữ)
-- [ ] Tính năng cộng tác nhóm
-
-### Giai đoạn 3 (2026 Q3)
-- [ ] Cập nhật quy định thời gian thực
-- [ ] Quy trình đánh giá AI-to-Human
-- [ ] Mẫu dành riêng cho ngành
+- **Repository**: [modu-ai/k-harness](https://github.com/modu-ai/k-harness)
+- **Issues/Suggestions**: [GitHub Issues](https://github.com/modu-ai/k-harness/issues)
 
 ---
 
-## 📞 Hỗ trợ và liên hệ
+**MoAI-Cowork: Gặp gỡ chuyên gia AI của bạn.**
 
-- **Tài liệu**: `/skills/moai/references/locale/`
-- **GitHub**: (sắp có)
-- **Email**: support@moai-cowork.dev
-
----
-
-## 📄 Giấy phép
-
-Giấy phép MIT - Tự do sử dụng, sửa đổi và phân phối
-
----
-
-## 🙏 Lời cảm ơn
-
-MoAI-Cowork tiếp tục phát triển với phản hồi từ cộng đồng Claude và Cowork.
-
----
-
-**MoAI-Cowork: Gặp chuyên gia AI được cá nhân hóa của bạn.**
-
-*Cập nhật lần cuối: 2026-04-04*
+*Version 0.1.3 | Last Updated: 2026-04-08*

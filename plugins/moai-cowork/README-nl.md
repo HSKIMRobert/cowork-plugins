@@ -1,299 +1,223 @@
+<div align="center">
+
 # 🗿 MoAI-Cowork
 
-**100 zelfevoluerende instrumenten — Je persoonlijke AI-expert**
+**100 Zelf-Evoluerende Domein Harnesses — Uw Persoonlijke AI-Experts**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)]()
+[![Version](https://img.shields.io/badge/version-0.1.3-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
+[![Harnesses](https://img.shields.io/badge/harnesses-100-orange)]()
+[![Languages](https://img.shields.io/badge/languages-17-purple)]()
 
-🌐 [한국어](README.md) | [English](README-en.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+🌐 [한국어](README.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+
+</div>
 
 ---
 
-## 🎯 Wat is MoAI?
+## Wat is MoAI?
 
-**MoAI-Cowork** is een automatisch leersysteem dat AI omzet in gespecialiseerde experts voor elk domein van je organisatie.
+**MoAI-Cowork** is een plugin voor Claude Cowork die 100 domein-expert harnesses levert via een zelf-lerend AI-assistent systeem.
 
-- **100 instrumenten**: 10 categorieën × 10 domeinen (boekhouden, recht, HR, technologie, marketing, enz.)
-- **Zelfevolutie**: Self-Refine-cyclus gebaseerd op gebruikersfeedback en resultaatanalyse
-- **Globaal profiel**: Gepersonaliseerde reacties via persoonlijke, team- en organisatieprofielen
-- **Op plugins gebaseerd**: Naadloze integratie met Claude Code en het Cowork-ecosysteem
+Een harness is een AI-expert module die domeinspecifieke kennis, workflows, deliverable-formaten en context-verzamelingsprotocollen in één pakket bundelt. Nadat het is geïnstalleerd, transformeert MoAI in een domein-expert en levert gestructureerde resultaten.
 
-### Kernfuncties
+**Sleutelfuncties:**
 
-| Functie | Beschrijving |
+- 10 categorieën × 100 harnesses — inhoud, marketing, zaken, onderwijs, juridisch, levensstijl, communicatie, operaties, financiën en product/innovatie
+- 5-laags zelf-lerend architectuur — evolueert en past zich aan de gebruiker aan over tijd
+- Globaal profiel — deel persoonlijke + bedrijfsinformatie over sessies heen, geen herboeking nodig
+- Ondersteuning voor 17 talen — EN enkele bron + runtime-lokalisatie
+- Wereldwijde locale-ondersteuning — voer uw werkland in en MoAI verzamelt automatisch belastingwetgeving, arbeidswetgeving, gegevensbescherming en bedrijfspraktijken via websearch
+
+---
+
+## Installatie
+
+### Methode 1: Installeer vanuit Claude Cowork Marketplace (Aanbevolen)
+
+1. Start de **Claude Desktop** app
+2. Ga naar **Cowork** modus vanuit de onderste linkerkant
+3. Klik op het **Plugin (🧩)** pictogram naast de chat-invoer
+4. Zoek naar `moai-cowork` in de marketplace
+5. Zoek **MoAI-Cowork** en klik op **Install**
+6. Na installatie, typ `/moai init` in de chat om de initiële setup te starten
+
+### Methode 2: Installeer vanuit K-Harness Marketplace
+
+K-Harness is de marketplace die MoAI-Cowork bevat.
+
+```
+# Stap 1: Voeg de marketplace toe
+/plugin marketplace add modu-ai/k-harness
+
+# Stap 2: Installeer MoAI-Cowork plugin
+/plugin install moai-cowork@k-harness
+```
+
+### Methode 3: Installeer rechtstreeks vanuit GitHub
+
+```
+# Kloon de repository
+git clone https://github.com/modu-ai/k-harness.git
+
+# Navigeer naar de plugin directory
+cd k-harness/plugins/moai-cowork
+
+# Laad handmatig in Claude Desktop
+# Cowork modus → Plugin (🧩) → "Install from file" → selecteer de moai-cowork map
+```
+
+### Methode 4: Handmatige installatie via ZIP
+
+1. Download de meest recente `moai-cowork-v0.1.3.zip` van de [GitHub Releases](https://github.com/modu-ai/k-harness/releases) pagina
+2. Open Claude Desktop → ga naar Cowork modus
+3. Klik op het Plugin (🧩) pictogram → **Install from file**
+4. Selecteer het gedownloade ZIP-bestand
+
+---
+
+## Bijwerken
+
+### Indien geïnstalleerd via marketplace
+
+```
+# Update K-Harness marketplace
+/plugin marketplace update k-harness
+
+# Of via Cowork UI:
+# Plugin (🧩) → MoAI-Cowork → klik op "Update"
+```
+
+### Indien geïnstalleerd vanuit GitHub
+
+```
+cd k-harness
+git pull origin main
+```
+
+### Indien geïnstalleerd via ZIP
+
+1. Verwijder de bestaande plugin: Plugin (🧩) → MoAI-Cowork → **Remove**
+2. Download het meest recente ZIP-bestand
+3. Herhaal het handmatige installatieproces van Methode 4
+
+### Check versie
+
+Typ `/moai status` in de chat om de momenteel geïnstalleerde versie te verifiëren.
+
+---
+
+## Problemen oplossen
+
+### Plugin niet herkend
+
+1. Sluit Claude Desktop volledig af en start opnieuw
+2. Controleer of MoAI-Cowork in de Plugin (🧩) lijst in Cowork modus verschijnt
+3. Indien niet, probeer reinstallatie
+
+### Fout op `/moai init`
+
+1. Typ `/moai doctor` om omgevingsdiagnostiek uit te voeren
+2. Indien uw globale profiel is beschadigd, stel het opnieuw in met `/moai profile --reset`
+
+### Harness laadt niet
+
+1. Controleer of `.moai/config.json` bestaat in uw projectmap
+2. Indien niet, herinitialiseer met `/moai init`
+
+### Lokalisatiegegevens niet verzameld
+
+- Korea: Gebruikt ingebouwde gegevens (geen websearch nodig)
+- Andere landen: Vereist internetverbinding en websearch-tools
+
+---
+
+## Snelle Start
+
+### Stap 1: Initialiseer
+
+```
+/moai init
+```
+
+MoAI voert een interactief interview uit om uw profiel in te vullen (naam, functie, bedrijf, locale).
+
+### Stap 2: Blader door de Harness-catalogus
+
+```
+/moai catalog
+```
+
+Bekijk de volledige lijst van 100 harnesses in 10 categorieën.
+
+### Stap 3: Doen een Natuurlijke Taal Verzoek
+
+```
+Help me met een marktonderzoek
+```
+
+MoAI detecteert automatisch de `market-research` harness en draait in expert modus.
+
+---
+
+## 100 Harness-catalogus
+
+| # | Categorie | Aantal | Voorbeeldharnessen |
+|---|----------|--------|-----------------|
+| 1 | Inhoud & Creatief | 10 | copywriting, youtube-production, podcast-studio, book-publishing |
+| 2 | Zaken & Strategie | 10 | business-model-canvas, competitive-analysis, startup-launcher, pricing-strategy |
+| 3 | Marketing & Groei | 10 | brand-identity, growth-hacking, social-media-manager, influencer-strategy |
+| 4 | Onderwijs & Onderzoek | 10 | course-builder, thesis-advisor, exam-prep, language-tutor |
+| 5 | Juridisch & Compliance | 10 | contract-analyzer, compliance-checker, patent-drafter, privacy-engineer |
+| 6 | Levensstijl | 10 | travel-planner, wedding-planner, meal-planner, fitness-program |
+| 7 | Communicatie & Documenten | 10 | presentation-designer, report-generator, technical-writer, proposal-writer |
+| 8 | Operaties & HR | 10 | hiring-pipeline, onboarding-system, operations-manual, crisis-communication |
+| 9 | Financiën & Handel | 10 | accounting-tax, financial-modeler, import-export, invoice-mgmt |
+| 10 | Product & Innovatie | 10 | product-manager, ai-strategy, ux-research, sales-enablement |
+
+Bekijk de volledige lijst van 100 harnesses met `/moai catalog`.
+
+---
+
+## Sleutelcommando's
+
+| Commando | Beschrijving |
 |---------|-------------|
-| **Automatisch leren** | Registratie en analyse van prestaties bij elke interactie |
-| **Domeinspecialisatie** | State-of-the-art praktische kennis in elk veld |
-| **Culturele aanpassing** | Ondersteuning voor wereldwijde bedrijfspraktijken en talen |
-| **Real-time updates** | Bevat de meest recente belastingwetten, regelgeving en marktinformatie |
-| **Multi-user ondersteuning** | Profielbeheer op teamniveau en samenwerking |
+| `/moai init` | Initialiseer — verzamel profiel en installeer harness |
+| `/moai catalog` | Blader door 100 harness-catalogus |
+| `/moai status` | Controleer geïnstalleerde harness en evolutietoestand |
+| `/moai evolve` | Voer zelf-lerend evolutiecyclus uit |
+| `/moai profile` | Bekijk/bewerk globaal profiel |
+| `/moai doctor` | Voer omgevingsdiagnostiek uit |
+| `/moai help` | Toon beschikbare commando's |
 
 ---
 
-## 📦 Installatie
+## Architectuur
 
-### Vereisten
-- Claude Code (nieuwste versie)
-- Cowork plugin-ondersteuning
-
-### Stap 1: Plugin toevoegen aan Cowork
-```bash
-# Installeren via Cowork CLI (binnenkort)
-cowork install moai-cowork
 ```
-
-### Stap 2: Profiel initialiseren
-```bash
-moai init
-```
-
-### Stap 3: Persoonlijk profiel configureren
-```bash
-moai profile --set-personal
+Laag 0: auto-memory (globaal) — gebruikersprofiel, harness-historie
+Laag 1: plugin (alleen-lezen) — 100 basisharnesses (en/ enkele bron, runtime-lokalisatie)
+Laag 2: .claude/CLAUDE.md + rules/ — persona
+Laag 3: .moai/ (lezen/schrijven) — domeincontext, evolutiegegevens
+Laag 4: auto-memory learning — cross-session feedbackaccumulatie
 ```
 
 ---
 
-## 🚀 Snel starten
+## Licentie
 
-### Voer je eerste zoekopdracht uit
-
-```
-@moai Wat is het Nederlandse btw-aangiftekalender voor 2026?
-```
-
-**Antwoord**: MoAI automatisch:
-1. Laadt Nederlandse lokalisatie-informatie
-2. Raadpleegt belastingwetgeving gegevens 2026
-3. Geeft een gepersonaliseerde btw-kalender
-
-### Automatisch leren inschakelen
-
-```
-moai learn --feedback "Het antwoord was zeer nauwkeurig"
-```
-
-MoAI registreert deze feedback om vergelijkbare toekomstige zoekopdrachten te verbeteren.
+MIT License — vrij te gebruiken, aanpassen en distribueren
 
 ---
 
-## 📚 Catalogus van 100 instrumenten
+## GitHub
 
-### 10 Categorieën
-
-#### 1️⃣ Belastingen en boekhouden (Tax & Accounting)
-- **NL_TAX_001**: Nederlandse btw
-- **US_TAX_001**: Amerikaanse federale inkomstenbelasting
-- **JP_TAX_001**: Japanse verbruiksbelasting
-- **UK_TAX_001**: Britse VAT
-- **VN_TAX_001**: Vietnamese VAT
-- **TH_TAX_001**: Thaise VAT
-- *(6 meer)*
-
-#### 2️⃣ Arbeidsrecht en HR (Labor & HR)
-- **NL_HR_001**: Nederlands arbeidsrecht
-- **US_HR_001**: FLSA en minimumloon
-- **JP_HR_001**: Japans arbeidsrecht
-- **UK_HR_001**: Brits arbeidswetgeving
-- *(6 meer)*
-
-#### 3️⃣ Gegevens en naleving (Data & Compliance)
-- **NL_DATA_001**: Gegevensbescherming (AVG)
-- **US_DATA_001**: CCPA/HIPAA
-- **JP_DATA_001**: Wet op de bescherming van persoonsgegevens
-- **UK_DATA_001**: UK GDPR
-- *(6 meer)*
-
-#### 4️⃣ Bedrijfsvoering (Business Operations)
-- **NL_BIZ_001**: Nederlandse bedrijfspraktijken
-- **US_BIZ_001**: Amerikaanse vergadercultuur
-- **JP_BIZ_001**: Japanse samenwerkingscultuur
-- *(7 meer)*
-
-#### 5️⃣ Technologie en IT (Technology & IT)
-- **TECH_001**: Best practices voor softwareontwikkeling
-- **TECH_002**: Cloud-architectuur
-- *(8 meer)*
-
-#### 6️⃣ Marketing en verkoop (Marketing & Sales)
-- **MKT_001**: Digitale marketingstrategie
-- **MKT_002**: B2B-verkooptechnieken
-- *(8 meer)*
-
-#### 7️⃣ Financiën en beleggingen (Finance & Investment)
-- **FIN_001**: Financiële analyse
-- **FIN_002**: Beleggingsportfoliobeheer
-- *(8 meer)*
-
-#### 8️⃣ Recht en contracten (Legal & Contracts)
-- **LEG_001**: Contractbeoordeling
-- **LEG_002**: NDA-opstelling
-- *(8 meer)*
-
-#### 9️⃣ Strategie en planning (Strategy & Planning)
-- **STR_001**: Bedrijfsstrategieformulering
-- **STR_002**: OKR-instellingen
-- *(8 meer)*
-
-#### 🔟 Klant en service (Customer & Service)
-- **CUS_001**: Klanttevredenheidsanalyse
-- **CUS_002**: Serviceverbetersingsplan
-- *(8 meer)*
+- **Repository**: [modu-ai/k-harness](https://github.com/modu-ai/k-harness)
+- **Issues/Suggesties**: [GitHub Issues](https://github.com/modu-ai/k-harness/issues)
 
 ---
 
-## 👤 Globaal profileersysteem
+**MoAI-Cowork: Ontmoet uw AI-experts.**
 
-### Persoonlijk profiel (Personal Profile)
-```yaml
-name: "Jan Jansen"
-role: "CFO"
-locale: "nl_NL"
-industry: "Financiën"
-experience_years: 15
-languages: ["Nederlands", "Engels"]
-```
-
-### Teamprofiel (Team Profile)
-```yaml
-team_name: "Financieel Team"
-region: "Amsterdam"
-size: 8
-focus_areas: ["Belastingen", "Boekhouden"]
-```
-
-### Organisatieprofiel (Organization Profile)
-```yaml
-company_name: "ABC Corporation"
-headquarters: "Amsterdam"
-founded: 2010
-employees: 500
-industries: ["Financiën", "Technologie"]
-expansion_regions: ["België", "Duitsland"]
-```
-
----
-
-## 🔄 Zelf-leercyclus (Self-Refine)
-
-### Leerstroomdoorgave
-
-```
-1. Voer zoekopdracht uit
-   ↓
-2. Genereer antwoord (met behulp van instrumenten)
-   ↓
-3. Verzamel gebruikersfeedback
-   ↓
-4. Analyseer resultaten (nauwkeurigheid, relevantie, bruikbaarheid)
-   ↓
-5. Verbeter instrument (gewichten aanpassen)
-   ↓
-6. Toepassen op volgende zoekopdracht
-```
-
-### Soorten feedback
-
-| Type | Beschrijving | Impact |
-|------|-------------|--------|
-| **Positief** | "Zeer nauwkeurig" | Instrumentgewicht +10% |
-| **Gedeeltelijk** | "Gedeeltelijk correct" | Gewicht ±5% |
-| **Negatief** | "Onjuist" | Instrumentgewicht -15% |
-| **Aangepast** | "Meer inhoud nodig over X" | Versterking van specifiek gebied |
-
----
-
-## 📖 Gebruiksvoorbeelden
-
-### Voorbeeld 1: Belastingconsultatie
-```
-V: "Wat is het registratieproces voor werknemersbijdragen in Nederland?"
-→ Activeer instrument NL_HR_001
-→ Geef termijnen, vereiste documenten en procedure
-```
-
-### Voorbeeld 2: Internationaal bedrijf
-```
-V: "Waarop moet ik letten in een zakenmeeting in de VS?"
-→ Activeer instrument US_BIZ_001
-→ Cultuuradaptatiegids, tijdbeheer, communicatiestijl
-```
-
-### Voorbeeld 3: Regelgevingsconformiteit
-```
-V: "Welke procedures moet ik volgen om klantgegevens in de EU te verwerken?"
-→ Activeer instrumenten NL_DATA_001 en gerelateerde GDPR
-→ GDPR-conformiteit, toestemmingsbeheer, gegevensoverdrachtsprocedures
-```
-
----
-
-## 🛠 Hoe bij te dragen (Contributing)
-
-### 1. Stel een nieuw instrument voor
-```bash
-# Stel een nieuw domein voor
-moai contribute --domain "Nederlands handelsrecht" --category "legal"
-```
-
-### 2. Verbeter een bestaand instrument
-```bash
-# Verbetering op basis van feedback
-moai improve DOMAIN_ID --feedback "Aanvullende inhoud nodig"
-```
-
-### 3. Voeg nieuwe lokalisatie toe
-```bash
-# Voeg nieuwe landlokalisatie toe
-moai add-locale --country "België" --code "nl_BE"
-```
-
-### 4. Verbeter documentatie
-- Bewerk lokalisatiebestanden in `/skills/moai/references/locale/`
-- Dien Pull Request in op GitHub
-- Update cultuuradaptatierichtlijnen
-
----
-
-## 📋 Routekaart
-
-### Fase 1 (Actueel)
-- [x] Basissysteem van instrumenten
-- [x] Globale lokalisatierichtlijnen (7 landen)
-- [ ] Self-Refine cyclus implementatie
-
-### Fase 2 (2026 Q2)
-- [ ] 100 instrumenten voltooid
-- [ ] Meertalige interface (12 talen)
-- [ ] Samenwerkingsfuncties van het team
-
-### Fase 3 (2026 Q3)
-- [ ] Updates van regelgeving in real-time
-- [ ] AI-to-Human beoordelingsproces
-- [ ] Branchespecifieke sjablonen
-
----
-
-## 📞 Ondersteuning en contact
-
-- **Documentatie**: `/skills/moai/references/locale/`
-- **GitHub**: (binnenkort)
-- **Email**: support@moai-cowork.dev
-
----
-
-## 📄 Licentie
-
-MIT-licentie - Vrij te gebruiken, aan te passen en te distribueren
-
----
-
-## 🙏 Dankbetuigingen
-
-MoAI-Cowork evolueert voortdurend met feedback van de Claude- en Cowork-gemeenschap.
-
----
-
-**MoAI-Cowork: Ontmoet je persoonlijke AI-expert.**
-
-*Laatst bijgewerkt: 2026-04-04*
+*Version 0.1.3 | Last Updated: 2026-04-08*

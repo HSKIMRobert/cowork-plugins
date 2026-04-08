@@ -1,299 +1,223 @@
+<div align="center">
+
 # 🗿 MoAI-Cowork
 
-**100 instrumen evolusi diri — Ahli AI yang dipersonalisasi untuk Anda**
+**100 Harness Domain Berkembang Sendiri — Ahli AI Pribadi Anda**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)]()
+[![Version](https://img.shields.io/badge/version-0.1.3-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
+[![Harnesses](https://img.shields.io/badge/harnesses-100-orange)]()
+[![Languages](https://img.shields.io/badge/languages-17-purple)]()
 
-🌐 [한국어](README.md) | [English](README-en.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+🌐 [한국어](README.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
 
----
-
-## 🎯 Apa itu MoAI?
-
-**MoAI-Cowork** adalah sistem pembelajaran otomatis yang mengubah AI menjadi ahli khusus untuk setiap domain organisasi Anda.
-
-- **100 instrumen**: 10 kategori × 10 domain (akuntansi, hukum, HR, teknologi, pemasaran, dll.)
-- **Evolusi diri**: Siklus Self-Refine berdasarkan umpan balik pengguna dan analisis hasil
-- **Profil global**: Respons yang dipersonalisasi melalui profil individual, tim, dan organisasi
-- **Berbasis plugin**: Integrasi sempurna dengan Claude Code dan ekosistem Cowork
-
-### Fitur Inti
-
-| Fungsi | Deskripsi |
-|--------|-----------|
-| **Pembelajaran otomatis** | Pencatatan dan analisis kinerja pada setiap interaksi |
-| **Spesialisasi domain** | Pengetahuan praktis terdepan di setiap bidang |
-| **Adaptasi budaya** | Dukungan praktik bisnis global dan bahasa |
-| **Pembaruan real-time** | Termasuk hukum pajak, regulasi, dan informasi pasar terbaru |
-| **Dukungan multi-pengguna** | Manajemen profil tingkat tim dan kolaborasi |
+</div>
 
 ---
 
-## 📦 Instalasi
+## Apa itu MoAI?
 
-### Persyaratan
-- Claude Code (versi terbaru)
-- Dukungan plugin Cowork
+**MoAI-Cowork** adalah plugin untuk Claude Cowork yang menyediakan 100 harness pakar domain melalui sistem asisten AI yang belajar sendiri.
 
-### Langkah 1: Tambahkan plugin ke Cowork
-```bash
-# Instalasi melalui Cowork CLI (akan segera tersedia)
-cowork install moai-cowork
-```
+Sebuah harness adalah modul pakar AI yang menggabungkan pengetahuan khusus domain, alur kerja, format deliverable, dan protokol pengumpulan konteks ke dalam satu paket. Setelah dipasang, MoAI bertransformasi menjadi pakar domain dan memberikan hasil terstruktur.
 
-### Langkah 2: Inisialisasi profil
-```bash
-moai init
-```
+**Fitur utama:**
 
-### Langkah 3: Konfigurasi profil personal
-```bash
-moai profile --set-personal
-```
+- 10 kategori × 100 harness — konten, pemasaran, bisnis, pendidikan, hukum, gaya hidup, komunikasi, operasi, keuangan, dan produk/inovasi
+- Arsitektur pembelajaran mandiri 5 lapisan — berkembang dan beradaptasi dengan pengguna seiring waktu
+- Profil global — bagikan informasi pribadi + perusahaan di seluruh sesi, tidak perlu memasukkan ulang
+- Dukungan 17 bahasa — sumber tunggal EN + lokalisasi runtime
+- Dukungan lokal di seluruh dunia — masukkan negara kerja Anda dan MoAI secara otomatis mengumpulkan hukum pajak, hukum ketenagakerjaan, perlindungan data, dan praktik bisnis melalui pencarian web
 
 ---
 
-## 🚀 Memulai dengan cepat
+## Instalasi
 
-### Jalankan kueri pertama Anda
+### Metode 1: Instal dari Claude Cowork Marketplace (Direkomendasikan)
+
+1. Luncurkan aplikasi **Claude Desktop**
+2. Masuk mode **Cowork** dari kiri bawah
+3. Klik ikon **Plugin (🧩)** di samping input chat
+4. Cari `moai-cowork` di marketplace
+5. Temukan **MoAI-Cowork** dan klik **Install**
+6. Setelah instalasi, ketik `/moai init` dalam chat untuk memulai pengaturan awal
+
+### Metode 2: Instal dari K-Harness Marketplace
+
+K-Harness adalah marketplace yang menyertakan MoAI-Cowork.
 
 ```
-@moai Apa jadwal pelaporan pajak pertambahan nilai Indonesia untuk 2026?
+# Langkah 1: Tambahkan marketplace
+/plugin marketplace add modu-ai/k-harness
+
+# Langkah 2: Instal plugin MoAI-Cowork
+/plugin install moai-cowork@k-harness
 ```
 
-**Respons**: MoAI secara otomatis:
-1. Memuat informasi lokalisasi Indonesia
-2. Mengonsultasikan data hukum pajak 2026
-3. Menyediakan jadwal PPN yang dipersonalisasi
-
-### Aktifkan pembelajaran otomatis
+### Metode 3: Instal Langsung dari GitHub
 
 ```
-moai learn --feedback "Jawaban sangat akurat"
+# Kloning repository
+git clone https://github.com/modu-ai/k-harness.git
+
+# Navigasi ke direktori plugin
+cd k-harness/plugins/moai-cowork
+
+# Muat secara manual di Claude Desktop
+# Cowork mode → Plugin (🧩) → "Install from file" → pilih folder moai-cowork
 ```
 
-MoAI mencatat umpan balik ini untuk meningkatkan kueri serupa di masa depan.
+### Metode 4: Instal Manual via ZIP
+
+1. Unduh `moai-cowork-v0.1.3.zip` terbaru dari halaman [GitHub Releases](https://github.com/modu-ai/k-harness/releases)
+2. Buka Claude Desktop → masuk mode Cowork
+3. Klik ikon Plugin (🧩) → **Install from file**
+4. Pilih file ZIP yang telah diunduh
 
 ---
 
-## 📚 Katalog 100 Instrumen
+## Pembaruan
 
-### 10 Kategori
+### Jika diinstal melalui marketplace
 
-#### 1️⃣ Pajak dan Akuntansi (Tax & Accounting)
-- **ID_TAX_001**: Pajak pertambahan nilai Indonesia
-- **US_TAX_001**: Pajak penghasilan federal AS
-- **JP_TAX_001**: Pajak konsumsi Jepang
-- **UK_TAX_001**: VAT Inggris
-- **VN_TAX_001**: VAT Vietnam
-- **TH_TAX_001**: VAT Thailand
-- *(6 lagi)*
+```
+# Perbarui marketplace K-Harness
+/plugin marketplace update k-harness
 
-#### 2️⃣ Hukum Ketenagakerjaan dan SDM (Labor & HR)
-- **ID_HR_001**: Hukum ketenagakerjaan Indonesia
-- **US_HR_001**: FLSA dan upah minimum
-- **JP_HR_001**: Hukum ketenagakerjaan Jepang
-- **UK_HR_001**: Hukum ketenagakerjaan Inggris
-- *(6 lagi)*
+# Atau melalui UI Cowork:
+# Plugin (🧩) → MoAI-Cowork → klik "Update"
+```
 
-#### 3️⃣ Data dan Kepatuhan (Data & Compliance)
-- **ID_DATA_001**: Perlindungan data pribadi
-- **US_DATA_001**: CCPA/HIPAA
-- **JP_DATA_001**: Undang-Undang Perlindungan Informasi Pribadi
-- **UK_DATA_001**: UK GDPR
-- *(6 lagi)*
+### Jika diinstal dari GitHub
 
-#### 4️⃣ Operasi Bisnis (Business Operations)
-- **ID_BIZ_001**: Praktik bisnis Indonesia
-- **US_BIZ_001**: Budaya pertemuan AS
-- **JP_BIZ_001**: Budaya kolaborasi Jepang
-- *(7 lagi)*
+```
+cd k-harness
+git pull origin main
+```
 
-#### 5️⃣ Teknologi dan IT (Technology & IT)
-- **TECH_001**: Praktik terbaik pengembangan perangkat lunak
-- **TECH_002**: Arsitektur cloud
-- *(8 lagi)*
+### Jika diinstal melalui ZIP
 
-#### 6️⃣ Pemasaran dan Penjualan (Marketing & Sales)
-- **MKT_001**: Strategi pemasaran digital
-- **MKT_002**: Teknik penjualan B2B
-- *(8 lagi)*
+1. Hapus plugin yang ada: Plugin (🧩) → MoAI-Cowork → **Remove**
+2. Unduh file ZIP terbaru
+3. Ulangi proses instalasi manual Metode 4
 
-#### 7️⃣ Keuangan dan Investasi (Finance & Investment)
-- **FIN_001**: Analisis laporan keuangan
-- **FIN_002**: Manajemen portofolio investasi
-- *(8 lagi)*
+### Periksa versi
 
-#### 8️⃣ Hukum dan Kontrak (Legal & Contracts)
-- **LEG_001**: Peninjauan kontrak
-- **LEG_002**: Penyusunan NDA
-- *(8 lagi)*
-
-#### 9️⃣ Strategi dan Perencanaan (Strategy & Planning)
-- **STR_001**: Penetapan strategi bisnis
-- **STR_002**: Pengaturan OKR
-- *(8 lagi)*
-
-#### 🔟 Pelanggan dan Layanan (Customer & Service)
-- **CUS_001**: Analisis kepuasan pelanggan
-- **CUS_002**: Rencana peningkatan layanan
-- *(8 lagi)*
+Ketik `/moai status` dalam chat untuk memverifikasi versi yang saat ini dipasang.
 
 ---
 
-## 👤 Sistem Profil Global
+## Pemecahan Masalah
 
-### Profil Pribadi (Personal Profile)
-```yaml
-name: "Budi Santoso"
-role: "CFO"
-locale: "id_ID"
-industry: "Keuangan"
-experience_years: 15
-languages: ["Indonesia", "Inggris"]
-```
+### Plugin tidak dikenali
 
-### Profil Tim (Team Profile)
-```yaml
-team_name: "Tim Keuangan"
-region: "Jakarta"
-size: 8
-focus_areas: ["Pajak", "Akuntansi"]
-```
+1. Keluar sepenuhnya dan mulai ulang Claude Desktop
+2. Periksa apakah MoAI-Cowork muncul dalam daftar Plugin (🧩) di mode Cowork
+3. Jika tidak, coba pasang kembali
 
-### Profil Organisasi (Organization Profile)
-```yaml
-company_name: "ABC Corporation"
-headquarters: "Jakarta"
-founded: 2010
-employees: 500
-industries: ["Keuangan", "Teknologi"]
-expansion_regions: ["Singapura", "Malaysia"]
-```
+### Kesalahan pada `/moai init`
+
+1. Ketik `/moai doctor` untuk menjalankan diagnostik lingkungan
+2. Jika profil global Anda rusak, atur ulang dengan `/moai profile --reset`
+
+### Harness tidak memuat
+
+1. Periksa apakah `.moai/config.json` ada di folder proyek Anda
+2. Jika tidak, inisialisasi kembali dengan `/moai init`
+
+### Data lokalisasi tidak dikumpulkan
+
+- Korea: Menggunakan data bawaan (tidak perlu pencarian web)
+- Negara lain: Memerlukan koneksi internet dan alat pencarian web
 
 ---
 
-## 🔄 Siklus Pembelajaran Diri (Self-Refine)
+## Memulai dengan Cepat
 
-### Alur pembelajaran
+### Langkah 1: Inisialisasi
 
 ```
-1. Jalankan kueri
-   ↓
-2. Buat respons (menggunakan instrumen)
-   ↓
-3. Kumpulkan umpan balik pengguna
-   ↓
-4. Analisis hasil (akurasi, relevansi, utilitas)
-   ↓
-5. Tingkatkan instrumen (sesuaikan bobot)
-   ↓
-6. Terapkan ke kueri berikutnya
+/moai init
 ```
 
-### Jenis umpan balik
+MoAI melakukan wawancara interaktif untuk mengumpulkan profil Anda (nama, peran, perusahaan, lokal).
 
-| Jenis | Deskripsi | Dampak |
-|------|-----------|--------|
-| **Positif** | "Sangat akurat" | Bobot instrumen +10% |
-| **Parsial** | "Sebagian benar" | Bobot ±5% |
-| **Negatif** | "Salah" | Bobot instrumen -15% |
-| **Khusus** | "Butuh lebih banyak konten tentang X" | Penguatan area spesifik |
+### Langkah 2: Jelajahi Katalog Harness
+
+```
+/moai catalog
+```
+
+Lihat daftar lengkap 100 harness di 10 kategori.
+
+### Langkah 3: Buat Permintaan Bahasa Alami
+
+```
+Bantu saya melakukan riset pasar
+```
+
+MoAI secara otomatis mendeteksi harness `market-research` dan berjalan dalam mode ahli.
 
 ---
 
-## 📖 Contoh Penggunaan
+## Katalog 100 Harness
 
-### Contoh 1: Konsultasi pajak
-```
-T: "Apa prosedur pendaftaran kontribusi untuk karyawan baru di Indonesia?"
-→ Aktifkan instrumen ID_HR_001
-→ Sediakan batas waktu, dokumen diperlukan, dan prosedur
-```
+| # | Kategori | Jumlah | Contoh Harness |
+|---|----------|--------|-----------------|
+| 1 | Konten & Kreatif | 10 | copywriting, youtube-production, podcast-studio, book-publishing |
+| 2 | Bisnis & Strategi | 10 | business-model-canvas, competitive-analysis, startup-launcher, pricing-strategy |
+| 3 | Pemasaran & Pertumbuhan | 10 | brand-identity, growth-hacking, social-media-manager, influencer-strategy |
+| 4 | Pendidikan & Penelitian | 10 | course-builder, thesis-advisor, exam-prep, language-tutor |
+| 5 | Hukum & Kepatuhan | 10 | contract-analyzer, compliance-checker, patent-drafter, privacy-engineer |
+| 6 | Gaya Hidup | 10 | travel-planner, wedding-planner, meal-planner, fitness-program |
+| 7 | Komunikasi & Dokumen | 10 | presentation-designer, report-generator, technical-writer, proposal-writer |
+| 8 | Operasi & HR | 10 | hiring-pipeline, onboarding-system, operations-manual, crisis-communication |
+| 9 | Keuangan & Perdagangan | 10 | accounting-tax, financial-modeler, import-export, invoice-mgmt |
+| 10 | Produk & Inovasi | 10 | product-manager, ai-strategy, ux-research, sales-enablement |
 
-### Contoh 2: Bisnis internasional
-```
-T: "Apa yang perlu diperhatikan dalam pertemuan bisnis AS?"
-→ Aktifkan instrumen US_BIZ_001
-→ Panduan adaptasi budaya, manajemen waktu, gaya komunikasi
-```
+Lihat daftar lengkap 100 harness dengan `/moai catalog`.
 
-### Contoh 3: Kepatuhan regulasi
+---
+
+## Perintah Kunci
+
+| Perintah | Deskripsi |
+|---------|-------------|
+| `/moai init` | Inisialisasi — kumpulkan profil dan instal harness |
+| `/moai catalog` | Jelajahi katalog 100 harness |
+| `/moai status` | Periksa harness yang dipasang dan status evolusi |
+| `/moai evolve` | Jalankan siklus evolusi pembelajaran mandiri |
+| `/moai profile` | Lihat/edit profil global |
+| `/moai doctor` | Jalankan diagnostik lingkungan |
+| `/moai help` | Tampilkan perintah yang tersedia |
+
+---
+
+## Arsitektur
+
 ```
-T: "Prosedur apa yang harus saya ikuti untuk memproses data pelanggan di UE?"
-→ Aktifkan instrumen ID_DATA_001 dan GDPR terkait
-→ Kepatuhan GDPR, manajemen persetujuan, prosedur transfer
+Layer 0: auto-memory (global) — profil pengguna, riwayat harness
+Layer 1: plugin (read-only) — 100 harness dasar (sumber tunggal en/, lokalisasi runtime)
+Layer 2: .claude/CLAUDE.md + rules/ — persona
+Layer 3: .moai/ (read/write) — konteks domain, data evolusi
+Layer 4: auto-memory learning — akumulasi umpan balik lintas sesi
 ```
 
 ---
 
-## 🛠 Cara Berkontribusi (Contributing)
+## Lisensi
 
-### 1. Usulkan instrumen baru
-```bash
-# Usulkan domain baru
-moai contribute --domain "Hukum komersial Indonesia" --category "legal"
-```
-
-### 2. Tingkatkan instrumen yang ada
-```bash
-# Peningkatan berdasarkan umpan balik
-moai improve DOMAIN_ID --feedback "Konten tambahan diperlukan"
-```
-
-### 3. Tambahkan lokalisasi baru
-```bash
-# Tambahkan lokalisasi negara baru
-moai add-locale --country "Malaysia" --code "ms_MY"
-```
-
-### 4. Tingkatkan dokumentasi
-- Edit file lokalisasi di `/skills/moai/references/locale/`
-- Kirim Pull Request di GitHub
-- Perbarui panduan adaptasi budaya
+MIT License — bebas digunakan, dimodifikasi, dan didistribusikan
 
 ---
 
-## 📋 Peta Jalan
+## GitHub
 
-### Fase 1 (Saat Ini)
-- [x] Sistem instrumen dasar
-- [x] Panduan lokalisasi global (7 negara)
-- [ ] Implementasi siklus Self-Refine
-
-### Fase 2 (2026 Q2)
-- [ ] 100 instrumen selesai
-- [ ] Antarmuka multibahasa (12 bahasa)
-- [ ] Fitur kolaborasi tim
-
-### Fase 3 (2026 Q3)
-- [ ] Pembaruan regulasi real-time
-- [ ] Proses review AI-ke-Manusia
-- [ ] Template spesifik industri
+- **Repository**: [modu-ai/k-harness](https://github.com/modu-ai/k-harness)
+- **Issues/Suggestions**: [GitHub Issues](https://github.com/modu-ai/k-harness/issues)
 
 ---
 
-## 📞 Dukungan dan Kontak
+**MoAI-Cowork: Temui Pakar AI Anda.**
 
-- **Dokumentasi**: `/skills/moai/references/locale/`
-- **GitHub**: (akan segera hadir)
-- **Email**: support@moai-cowork.dev
-
----
-
-## 📄 Lisensi
-
-Lisensi MIT - Bebas untuk digunakan, dimodifikasi, dan didistribusikan
-
----
-
-## 🙏 Ucapan Terima Kasih
-
-MoAI-Cowork terus berkembang dengan umpan balik dari komunitas Claude dan Cowork.
-
----
-
-**MoAI-Cowork: Temui ahli AI yang dipersonalisasi untuk Anda.**
-
-*Terakhir diperbarui: 2026-04-04*
+*Version 0.1.3 | Last Updated: 2026-04-08*

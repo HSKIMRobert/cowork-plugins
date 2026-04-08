@@ -1,299 +1,223 @@
+<div align="center">
+
 # 🗿 MoAI-Cowork
 
-**100 כלים בעלי התפתחות עצמית — המומחה בינה מלאכותית המותאם שלך**
+**100 Harnesses בעלי ביקורת עצמית - מומחי ה-AI האישיים שלך**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)]()
+[![Version](https://img.shields.io/badge/version-0.1.3-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
+[![Harnesses](https://img.shields.io/badge/harnesses-100-orange)]()
+[![Languages](https://img.shields.io/badge/languages-17-purple)]()
 
-🌐 [한국어](README.md) | [English](README-en.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+🌐 [한국어](README.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
 
----
-
-## 🎯 מה הוא MoAI?
-
-**MoAI-Cowork** היא מערכת למידה אוטומטית המומיר בינה מלאכותית למומחים מיוחדים לכל תחום בארגון שלך.
-
-- **100 כלים**: 10 קטגוריות × 10 תחומים (חשבונאות, משפט, משאבי אנוש, טכנולוגיה, שיווק וכו')
-- **התפתחות עצמית**: מחזור Self-Refine המבוסס על משוב המשתמש וניתוח התוצאות
-- **פרופיל גלובלי**: תגובות מותאמות אישית דרך פרופילים אישיים, של צוות וארגוניים
-- **מבוסס על תוסף**: אינטגרציה חלקה עם Claude Code ומערכת הביקוש של Cowork
-
-### תכונות ליבה
-
-| פונקציה | תיאור |
-|---------|-------|
-| **למידה אוטומטית** | תיעוד וניתוח ביצועים בכל אינטראקציה |
-| **התמחות בתחום** | ידע מעשי מטכנולוגיה מתקדמת בכל תחום |
-| **התאמה תרבותית** | תמיכה בנוהגים עסקיים גלובליים ובשפות |
-| **עדכונים בזמן אמת** | כולל חוקי מס, תקנות ומידע בשוק הכי חדשים |
-| **תמיכה ריבוי משתמשים** | ניהול פרופילים ברמת הצוות והשיתוף |
+</div>
 
 ---
 
-## 📦 התקנה
+## מה זה MoAI?
 
-### דרישות
-- Claude Code (גרסה אחרונה)
-- תמיכת תוסף Cowork
+**MoAI-Cowork** הוא תוסף ל-Claude Cowork המספק 100 harness מומחים בתחומים שונים דרך מערכת סייע AI שמתפתחת בעצמה.
 
-### שלב 1: הוסף תוסף ל-Cowork
-```bash
-# התקנה דרך Cowork CLI (בקרוב)
-cowork install moai-cowork
-```
+Harness הוא מודול מומחה AI המקבץ ידע ספציפי לתחום, זרימות עבודה, פורמטי deliverable וממסכי האסיף קשר בחבילה אחת. לאחר התקנה, MoAI הופך למומחה בתחום ומספק תוצאות מובנות.
 
-### שלב 2: אתחול פרופיל
-```bash
-moai init
-```
+**תכונות עיקריות:**
 
-### שלב 3: הגדר את פרופילך האישי
-```bash
-moai profile --set-personal
-```
+- 10 קטגוריות × 100 harnesses - תוכן, שיווק, עסקים, חינוך, משפט, אורח חיים, תקשורת, פעולות, כספים וקונספט/חדשנות
+- ארכיטקטורת אימון עצמי בעומק 5 שכבות - מתפתחת והסתגלת למשתמש לאורך זמן
+- פרופיל גלובלי - שיתוף של פרטים אישיים וחברתיים בהפעלות, ללא צורך בהזנה מחודשת
+- תמיכה בחרי שפות - EN מקור יחיד + התאמה מקום בזמן ריצה
+- תמיכת אזור עולמית - הזן את מדינת העבודה שלך ו-MoAI אוטומטית אוסף חוקי מס, חוקי עבודה, הגנת נתונים ועוסקי של באמצעות חיפוש באינטרנט
 
 ---
 
-## 🚀 התחלה מהירה
+## התקנה
 
-### הרץ את השאילתה הראשונה שלך
+### שיטה 1: התקנה מ-Claude Cowork Marketplace (מומלץ)
+
+1. הפעל את אפליקציית **Claude Desktop**
+2. כנס ל-**Cowork** מהפינה השמאלית התחתונה
+3. לחץ על סמל **Plugin (🧩)** ליד קלט הצ'אט
+4. חפש את `moai-cowork` ב-Marketplace
+5. מצא את **MoAI-Cowork** ולחץ על **Install**
+6. לאחר התקנה, הקלד `/moai init` בצ'אט כדי להתחיל את ההתקנה הראשונית
+
+### שיטה 2: התקנה מ-K-Harness Marketplace
+
+K-Harness הוא ה-Marketplace המכיל את MoAI-Cowork.
 
 ```
-@moai מה לוח השנה להצהרת מיסוי בישראל לשנת 2026?
+# שלב 1: הוסף את ה-Marketplace
+/plugin marketplace add modu-ai/k-harness
+
+# שלב 2: התקן את התוסף MoAI-Cowork
+/plugin install moai-cowork@k-harness
 ```
 
-**תגובה**: MoAI באופן אוטומטי:
-1. טוען מידע לוקליזציה של ישראל
-2. מייעץ לנתוני חקיקה מסית 2026
-3. מספק לוח שנה מסית מותאם אישית
-
-### הפעל למידה אוטומטית
+### שיטה 3: התקנה ישירה מ-GitHub
 
 ```
-moai learn --feedback "התשובה הייתה מדויקת מאוד"
+# שבור את המאגר
+git clone https://github.com/modu-ai/k-harness.git
+
+# נווט לספרית התוסף
+cd k-harness/plugins/moai-cowork
+
+# טען ידנית ב-Claude Desktop
+# Cowork mode → Plugin (🧩) → "Install from file" → בחר את תיקיית moai-cowork
 ```
 
-MoAI רושמת משוב זה לשיפור שאילתות דומות בעתיד.
+### שיטה 4: התקנה ידנית דרך ZIP
+
+1. הורד את ה-`moai-cowork-v0.1.3.zip` האחרון מדף [GitHub Releases](https://github.com/modu-ai/k-harness/releases)
+2. פתח Claude Desktop → כנס ל-Cowork mode
+3. לחץ על סמל Plugin (🧩) → **Install from file**
+4. בחר את קובץ ZIP שהורדת
 
 ---
 
-## 📚 קטלוג של 100 כלים
+## עדכון
 
-### 10 קטגוריות
+### אם התוקנה דרך Marketplace
 
-#### 1️⃣ מיסים וחשבונאות (Tax & Accounting)
-- **IL_TAX_001**: מס ערך מוסף בישראל
-- **US_TAX_001**: מס הכנסה פדרלי של ארה"ב
-- **JP_TAX_001**: מס צריכה יפני
-- **UK_TAX_001**: VAT בריטי
-- **VN_TAX_001**: VAT וייטנאמי
-- **TH_TAX_001**: VAT תאילנדי
-- *(6 נוספים)*
+```
+# עדכן את K-Harness Marketplace
+/plugin marketplace update k-harness
 
-#### 2️⃣ דין עבודה ומשאבי אנוש (Labor & HR)
-- **IL_HR_001**: דין העבודה בישראל
-- **US_HR_001**: FLSA וגם שכר מינימום
-- **JP_HR_001**: דין העבודה הקנדי
-- **UK_HR_001**: דין התעסוקה הבריטי
-- *(6 נוספים)*
+# או דרך Cowork UI:
+# Plugin (🧩) → MoAI-Cowork → לחץ על "Update"
+```
 
-#### 3️⃣ נתונים וציות (Data & Compliance)
-- **IL_DATA_001**: הגנת נתונים אישיים
-- **US_DATA_001**: CCPA/HIPAA
-- **JP_DATA_001**: חוק הגנת מידע אישי
-- **UK_DATA_001**: UK GDPR
-- *(6 נוספים)*
+### אם התוקנה מ-GitHub
 
-#### 4️⃣ פעולות עסקיות (Business Operations)
-- **IL_BIZ_001**: נוהגי עסקים בישראל
-- **US_BIZ_001**: תרבות הפגישות האמריקאית
-- **JP_BIZ_001**: תרבות שיתוף פעולה יפנית
-- *(7 נוספים)*
+```
+cd k-harness
+git pull origin main
+```
 
-#### 5️⃣ טכנולוגיה ו-IT (Technology & IT)
-- **TECH_001**: שיטות עבודה טובות בפיתוח תוכנה
-- **TECH_002**: ארכיטקטורת ענן
-- *(8 נוספים)*
+### אם התוקנה דרך ZIP
 
-#### 6️⃣ שיווק ומכירות (Marketing & Sales)
-- **MKT_001**: אסטרטגיית שיווק דיגיטלי
-- **MKT_002**: טכניקות מכירה B2B
-- *(8 נוספים)*
+1. הסר את התוסף הקיים: Plugin (🧩) → MoAI-Cowork → **Remove**
+2. הורד את קובץ ZIP האחרון
+3. חזור על תהליך ההתקנה הידנית של שיטה 4
 
-#### 7️⃣ כספים וגם השקעות (Finance & Investment)
-- **FIN_001**: ניתוח דוחות כספיים
-- **FIN_002**: ניהול תיק השקעות
-- *(8 נוספים)*
+### בדוק את הגרסה
 
-#### 8️⃣ דין וגם חוזים (Legal & Contracts)
-- **LEG_001**: בדיקת חוזים
-- **LEG_002**: עריכת NDA
-- *(8 נוספים)*
-
-#### 9️⃣ אסטרטגיה וגם תכנון (Strategy & Planning)
-- **STR_001**: הקמת אסטרטגיית עסקית
-- **STR_002**: הגדרת OKR
-- *(8 נוספים)*
-
-#### 🔟 לקוח וגם שירות (Customer & Service)
-- **CUS_001**: ניתוח שביעות רצון הלקוחות
-- **CUS_002**: תוכנית שיפור השירות
-- *(8 נוספים)*
+הקלד `/moai status` בצ'אט כדי לאמת את הגרסה שהתוקנה כרגע.
 
 ---
 
-## 👤 מערכת פרופיל גלובלית
+## פתרון בעיות
 
-### פרופיל אישי (Personal Profile)
-```yaml
-name: "דוד כהן"
-role: "CFO"
-locale: "he_IL"
-industry: "פיננסים"
-experience_years: 15
-languages: ["עברית", "אנגלית"]
-```
+### התוסף לא מזוהה
 
-### פרופיל צוות (Team Profile)
-```yaml
-team_name: "צוות הפיננסים"
-region: "תל אביב"
-size: 8
-focus_areas: ["מיסים", "חשבונאות"]
-```
+1. סגור לחלוטין והפעל מחדש את Claude Desktop
+2. בדוק אם MoAI-Cowork מופיע ברשימת Plugin (🧩) ב-Cowork mode
+3. אם לא, נסה להתקין מחדש
 
-### פרופיל ארגוני (Organization Profile)
-```yaml
-company_name: "ABC Corporation"
-headquarters: "תל אביב"
-founded: 2010
-employees: 500
-industries: ["פיננסים", "טכנולוגיה"]
-expansion_regions: ["פולין", "בדרום אפריקה"]
-```
+### שגיאה ב-`/moai init`
+
+1. הקלד `/moai doctor` כדי להפעיל אבחוני סביבה
+2. אם הפרופיל הגלובלי שלך פגום, אפס אותו עם `/moai profile --reset`
+
+### Harness לא נטוען
+
+1. בדוק אם `.moai/config.json` קיים בתיקיית הפרויקט שלך
+2. אם לא, אתחול מחדש עם `/moai init`
+
+### נתוני התאמה מקום לא אוספים
+
+- קוריאה: משתמשת בנתונים מובנים (אין צורך בחיפוש באינטרנט)
+- מדינות אחרות: דורש חיבור לאינטרנט וכלי חיפוש באינטרנט
 
 ---
 
-## 🔄 מחזור למידה עצמי (Self-Refine)
+## התחלה מהירה
 
-### זרימת למידה
+### שלב 1: אתחול
 
 ```
-1. הרץ שאילתה
-   ↓
-2. הנפק תגובה (בשימוש בכלים)
-   ↓
-3. אסוף משוב משתמש
-   ↓
-4. נתח תוצאות (דיוק, רלוונטיות, תועלת)
-   ↓
-5. שפר כלי (התאם משקולות)
-   ↓
-6. החל לשאילתה הבאה
+/moai init
 ```
 
-### סוגי משוב
+MoAI מערך ראיון אינטראקטיבי כדי לאסוף את הפרופיל שלך (שם, תפקיד, חברה, אזור).
 
-| סוג | תיאור | השפעה |
-|-----|--------|--------|
-| **חיובי** | "מדויק מאוד" | משקל כלי +10% |
-| **חלקי** | "חלקית נכון" | משקל ±5% |
-| **שלילי** | "שגוי" | משקל כלי -15% |
-| **מותאם אישית** | "צריך יותר תוכן על X" | חיזוק אזור ספציפי |
+### שלב 2: עיין בקטלוג Harness
+
+```
+/moai catalog
+```
+
+צפה ברשימה המלאה של 100 harnesses על פני 10 קטגוריות.
+
+### שלב 3: בצע בקשה בשפה טבעית
+
+```
+עזור לי לעשות מחקר שוק
+```
+
+MoAI אוטומטית מזהה את ה-`market-research` harness ופועל במצב מומחה.
 
 ---
 
-## 📖 דוגמאות שימוש
+## קטלוג 100 Harness
 
-### דוגמה 1: ייעוץ מסי
-```
-ש: "מה התהליך להרשמת דמי ביטוח עבור עובדים חדשים בישראל?"
-→ הפעל כלי IL_HR_001
-→ סיפק יעדים, מסמכים נדרשים והליך
-```
+| # | קטגוריה | ספירה | דוגמאות Harnesses |
+|---|----------|-------|-----------------|
+| 1 | תוכן ויצירה | 10 | copywriting, youtube-production, podcast-studio, book-publishing |
+| 2 | עסקים וסטרטגיה | 10 | business-model-canvas, competitive-analysis, startup-launcher, pricing-strategy |
+| 3 | שיווק וגדילה | 10 | brand-identity, growth-hacking, social-media-manager, influencer-strategy |
+| 4 | חינוך מחקר | 10 | course-builder, thesis-advisor, exam-prep, language-tutor |
+| 5 | משפט ציות | 10 | contract-analyzer, compliance-checker, patent-drafter, privacy-engineer |
+| 6 | אורח חיים | 10 | travel-planner, wedding-planner, meal-planner, fitness-program |
+| 7 | תקשורת מסמכים | 10 | presentation-designer, report-generator, technical-writer, proposal-writer |
+| 8 | פעולות וموארד אנוש | 10 | hiring-pipeline, onboarding-system, operations-manual, crisis-communication |
+| 9 | כספים וסחר | 10 | accounting-tax, financial-modeler, import-export, invoice-mgmt |
+| 10 | קונספט וחדשנות | 10 | product-manager, ai-strategy, ux-research, sales-enablement |
 
-### דוגמה 2: עסקים בינלאומיים
-```
-ש: "על מה עלי להקפיד בפגישת עסקים בארה"ב?"
-→ הפעל כלי US_BIZ_001
-→ מדריך התאמה תרבותית, ניהול זמן, סגנון תקשורת
-```
+ראה את הרשימה המלאה של 100 harnesses עם `/moai catalog`.
 
-### דוגמה 3: ציות נורמטיבי
+---
+
+## פקודות עיקריות
+
+| פקודה | תיאור |
+|---------|-------------|
+| `/moai init` | אתחול - אסוף פרופיל והתקן harness |
+| `/moai catalog` | עיין בקטלוג harness של 100 |
+| `/moai status` | בדוק את ה-harness המותקן ומצב ההתפתחות |
+| `/moai evolve` | הפעל מחזור התפתחות של אימון עצמי |
+| `/moai profile` | צפה/ערוך בפרופיל גלובלי |
+| `/moai doctor` | הפעל אבחוני סביבה |
+| `/moai help` | הצג פקודות זמינות |
+
+---
+
+## ארכיטקטורה
+
 ```
-ש: "אילו הליכים עלי לעקוב כדי לעבד נתוני לקוחות באיחוד האירופי?"
-→ הפעל כלים IL_DATA_001 ו-GDPR קשורים
-→ ציות GDPR, ניהול הסכמה, הליכי העברת נתונים
+Layer 0: auto-memory (global) — פרופיל משתמש, היסטוריית harness
+Layer 1: plugin (read-only) — 100 base harnesses (en/ מקור יחיד, התאמה מקום בזמן ריצה)
+Layer 2: .claude/CLAUDE.md + rules/ — persona
+Layer 3: .moai/ (read/write) — תוכן תחום, נתוני התפתחות
+Layer 4: auto-memory learning — צבירת משוב בחתך הפעלות
 ```
 
 ---
 
-## 🛠 כיצד לתרום (Contributing)
+## רישיון
 
-### 1. הציע כלי חדש
-```bash
-# הציע תחום חדש
-moai contribute --domain "משפט מסחרי בישראל" --category "legal"
-```
-
-### 2. שפר כלי קיים
-```bash
-# שיפור על בסיס משוב
-moai improve DOMAIN_ID --feedback "צריך תוכן נוסף"
-```
-
-### 3. הוסף לוקליזציה חדשה
-```bash
-# הוסף לוקליזציה של מדינה חדשה
-moai add-locale --country "גרמניה" --code "de_DE"
-```
-
-### 4. שפר תיעוד
-- ערוך קבצי לוקליזציה ב-`/skills/moai/references/locale/`
-- הגש Pull Request בגיטהאב
-- עדכן מדריכי התאמה תרבותית
+MIT License - חופשי לשימוש, שינוי והפצה
 
 ---
 
-## 📋 מפת דרכים
+## GitHub
 
-### שלב 1 (נוכחי)
-- [x] מערכת כלים בסיסית
-- [x] מדריכי לוקליזציה גלובליים (7 מדינות)
-- [ ] יישום מחזור Self-Refine
-
-### שלב 2 (2026 Q2)
-- [ ] 100 כלים הושלמו
-- [ ] ממשק רב שפות (12 שפות)
-- [ ] תכונות שיתוף צוות
-
-### שלב 3 (2026 Q3)
-- [ ] עדכונים נורמטיביים בזמן אמת
-- [ ] תהליך ביקורת AI-to-Human
-- [ ] תבניות ספציפיות לתעשייה
+- **Repository**: [modu-ai/k-harness](https://github.com/modu-ai/k-harness)
+- **Issues/Suggestions**: [GitHub Issues](https://github.com/modu-ai/k-harness/issues)
 
 ---
 
-## 📞 תמיכה וקשר
+**MoAI-Cowork: פגשו את מומחי ה-AI שלכם.**
 
-- **תיעוד**: `/skills/moai/references/locale/`
-- **GitHub**: (בקרוב)
-- **דוא"ל**: support@moai-cowork.dev
-
----
-
-## 📄 רישיון
-
-רישיון MIT - חופשי לשימוש, שינוי והפצה
-
----
-
-## 🙏 תודות
-
-MoAI-Cowork מתפתח ברציפות עם משוב מקהילת Claude וCowork.
-
----
-
-**MoAI-Cowork: הכר את מומחה הבינה המלאכותית המותאם שלך.**
-
-*עדכון אחרון: 2026-04-04*
+*Version 0.1.3 | Last Updated: 2026-04-08*

@@ -1,299 +1,223 @@
+<div align="center">
+
 # 🗿 MoAI-Cowork
 
-**100个自演进域名工具 — 您的个性化AI专家**
+**100个自我进化的领域框架 — 您的个人AI专家**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)]()
+[![Version](https://img.shields.io/badge/version-0.1.3-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
+[![Harnesses](https://img.shields.io/badge/harnesses-100-orange)]()
+[![Languages](https://img.shields.io/badge/languages-17-purple)]()
 
-🌐 [한국어](README.md) | [English](README-en.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+🌐 [한국어](README.md) | [日本語](README-ja.md) | [Español](README-es.md) | [Français](README-fr.md) | [Deutsch](README-de.md) | [Português](README-pt-BR.md) | [中文](README-zh-CN.md) | [Bahasa](README-id.md) | [हिन्दी](README-hi.md) | [Tiếng Việt](README-vi.md) | [ภาษาไทย](README-th.md) | [Italiano](README-it.md) | [Nederlands](README-nl.md) | [Polski](README-pl.md) | [العربية](README-ar.md) | [עברית](README-he.md)
+
+</div>
 
 ---
 
-## 🎯 什么是MoAI？
+## 什么是 MoAI？
 
-**MoAI-Cowork** 是一个自动学习系统，将AI转变为组织各领域的专业专家。
+**MoAI-Cowork** 是一款 Claude Cowork 插件，通过自学型AI助手系统提供100个领域专家框架。
 
-- **100个工具**: 10个类别 × 10个领域 (会计、法律、人力资源、技术、营销等)
-- **自我进化**: 基于用户反馈和结果分析的Self-Refine循环
-- **全球化档案**: 通过个人、团队和组织档案提供个性化回应
-- **插件式设计**: 与Claude Code和Cowork生态系统无缝集成
+框架是一个AI专家模块，将特定领域的知识、工作流程、交付物格式和上下文收集协议打包在一起。安装后，MoAI将转变为领域专家，提供结构化的结果。
 
-### 核心特性
+**主要特性：**
 
-| 功能 | 描述 |
+- 10个类别 × 100个框架 — 内容、营销、商业、教育、法律、生活方式、沟通、运营、财务和产品/创新
+- 5层自学架构 — 随时间推移不断进化和适应用户
+- 全球档案 — 跨会话共享个人和公司信息，无需重新输入
+- 支持17种语言 — 单一英文源 + 运行时本地化
+- 全球地区支持 — 输入您的工作国家，MoAI将自动通过网络搜索收集税法、劳动法、数据保护和商业惯例
+
+---
+
+## 安装
+
+### 方法1：从 Claude Cowork Marketplace 安装（推荐）
+
+1. 启动 **Claude Desktop** 应用
+2. 从左下角进入 **Cowork** 模式
+3. 点击聊天输入框旁的 **Plugin（🧩）** 图标
+4. 在marketplace中搜索 `moai-cowork`
+5. 找到 **MoAI-Cowork** 并点击 **Install**
+6. 安装后，在聊天中输入 `/moai init` 开始初始设置
+
+### 方法2：从 K-Harness Marketplace 安装
+
+K-Harness 是包含 MoAI-Cowork 的marketplace。
+
+```
+# 步骤1：添加marketplace
+/plugin marketplace add modu-ai/k-harness
+
+# 步骤2：安装 MoAI-Cowork 插件
+/plugin install moai-cowork@k-harness
+```
+
+### 方法3：直接从 GitHub 安装
+
+```
+# 克隆仓库
+git clone https://github.com/modu-ai/k-harness.git
+
+# 导航到插件目录
+cd k-harness/plugins/moai-cowork
+
+# 在 Claude Desktop 中手动加载
+# Cowork 模式 → Plugin（🧩）→ "Install from file" → 选择 moai-cowork 文件夹
+```
+
+### 方法4：通过 ZIP 手动安装
+
+1. 从 [GitHub Releases](https://github.com/modu-ai/k-harness/releases) 页面下载最新的 `moai-cowork-v0.1.3.zip`
+2. 打开 Claude Desktop → 进入 Cowork 模式
+3. 点击 Plugin（🧩）图标 → **Install from file**
+4. 选择下载的 ZIP 文件
+
+---
+
+## 更新
+
+### 如果通过marketplace安装
+
+```
+# 更新 K-Harness marketplace
+/plugin marketplace update k-harness
+
+# 或通过 Cowork UI：
+# Plugin（🧩）→ MoAI-Cowork → 点击 "Update"
+```
+
+### 如果从 GitHub 安装
+
+```
+cd k-harness
+git pull origin main
+```
+
+### 如果通过 ZIP 安装
+
+1. 删除现有插件：Plugin（🧩）→ MoAI-Cowork → **Remove**
+2. 下载最新的 ZIP 文件
+3. 重复方法4的手动安装流程
+
+### 检查版本
+
+在聊天中输入 `/moai status` 以验证当前安装的版本。
+
+---
+
+## 故障排除
+
+### 插件未被识别
+
+1. 完全关闭并重启 Claude Desktop
+2. 检查 MoAI-Cowork 是否出现在 Cowork 模式中的 Plugin（🧩）列表中
+3. 如果没有，请尝试重新安装
+
+### `/moai init` 出现错误
+
+1. 输入 `/moai doctor` 运行环境诊断
+2. 如果您的全局档案已损坏，使用 `/moai profile --reset` 重置
+
+### 框架未加载
+
+1. 检查项目文件夹中是否存在 `.moai/config.json`
+2. 如果没有，使用 `/moai init` 重新初始化
+
+### 本地化数据未收集
+
+- 韩国：使用内置数据（无需网络搜索）
+- 其他国家：需要互联网连接和网络搜索工具
+
+---
+
+## 快速开始
+
+### 步骤1：初始化
+
+```
+/moai init
+```
+
+MoAI进行交互式访谈，收集您的档案（名字、角色、公司、地区）。
+
+### 步骤2：浏览框架目录
+
+```
+/moai catalog
+```
+
+查看跨越10个类别的完整100个框架列表。
+
+### 步骤3：发出自然语言请求
+
+```
+帮我做市场调研
+```
+
+MoAI自动检测 `market-research` 框架并以专家模式运行。
+
+---
+
+## 100个框架目录
+
+| # | 类别 | 数量 | 示例框架 |
+|---|------|------|---------|
+| 1 | 内容与创意 | 10 | copywriting, youtube-production, podcast-studio, book-publishing |
+| 2 | 商业与战略 | 10 | business-model-canvas, competitive-analysis, startup-launcher, pricing-strategy |
+| 3 | 营销与增长 | 10 | brand-identity, growth-hacking, social-media-manager, influencer-strategy |
+| 4 | 教育与研究 | 10 | course-builder, thesis-advisor, exam-prep, language-tutor |
+| 5 | 法律与合规 | 10 | contract-analyzer, compliance-checker, patent-drafter, privacy-engineer |
+| 6 | 生活方式 | 10 | travel-planner, wedding-planner, meal-planner, fitness-program |
+| 7 | 沟通与文档 | 10 | presentation-designer, report-generator, technical-writer, proposal-writer |
+| 8 | 运营与人力资源 | 10 | hiring-pipeline, onboarding-system, operations-manual, crisis-communication |
+| 9 | 财务与贸易 | 10 | accounting-tax, financial-modeler, import-export, invoice-mgmt |
+| 10 | 产品与创新 | 10 | product-manager, ai-strategy, ux-research, sales-enablement |
+
+使用 `/moai catalog` 查看完整的100个框架列表。
+
+---
+
+## 关键命令
+
+| 命令 | 描述 |
 |------|------|
-| **自动学习** | 每次互动的性能记录和分析 |
-| **域名专业化** | 每个领域最前沿的实用知识 |
-| **文化适应** | 支持全球商业实践和语言 |
-| **实时更新** | 包含最新的税法、法规和市场信息 |
-| **多用户支持** | 团队级别的档案管理和协作 |
+| `/moai init` | 初始化 — 收集档案并安装框架 |
+| `/moai catalog` | 浏览100个框架目录 |
+| `/moai status` | 检查已安装框架和进化状态 |
+| `/moai evolve` | 运行自学型进化周期 |
+| `/moai profile` | 查看/编辑全球档案 |
+| `/moai doctor` | 运行环境诊断 |
+| `/moai help` | 显示可用命令 |
 
 ---
 
-## 📦 安装
+## 架构
 
-### 需求
-- Claude Code（最新版本）
-- Cowork插件支持
-
-### 步骤1：将插件添加到Cowork
-```bash
-# 通过Cowork CLI安装（即将推出）
-cowork install moai-cowork
 ```
-
-### 步骤2：初始化档案
-```bash
-moai init
-```
-
-### 步骤3：配置个人档案
-```bash
-moai profile --set-personal
+第0层：auto-memory（全局）— 用户档案、框架历史
+第1层：plugin（只读）— 100个基础框架（en/单一源、运行时本地化）
+第2层：.claude/CLAUDE.md + rules/ — 人设
+第3层：.moai/（读/写）— 领域上下文、进化数据
+第4层：auto-memory learning — 跨会话反馈累积
 ```
 
 ---
 
-## 🚀 快速开始
+## 许可证
 
-### 运行您的第一个查询
-
-```
-@moai 2026年中国增值税申报日期是什么？
-```
-
-**回应**: MoAI自动：
-1. 加载中国的位置信息
-2. 查询2026年税法数据
-3. 提供个性化增值税申报日期
-
-### 激活自动学习
-
-```
-moai learn --feedback "答案非常准确"
-```
-
-MoAI记录此反馈，以改进未来的类似查询。
+MIT 许可证 — 可自由使用、修改和分发
 
 ---
 
-## 📚 100个工具目录
+## GitHub
 
-### 10个类别
-
-#### 1️⃣ 税务和会计 (Tax & Accounting)
-- **CN_TAX_001**: 中国增值税
-- **US_TAX_001**: 美国联邦所得税
-- **JP_TAX_001**: 日本消费税
-- **UK_TAX_001**: 英国增值税
-- **VN_TAX_001**: 越南增值税
-- **TH_TAX_001**: 泰国增值税
-- *(6个更多)*
-
-#### 2️⃣ 劳动法和人力资源 (Labor & HR)
-- **CN_HR_001**: 中国劳动法
-- **US_HR_001**: FLSA和最低工资
-- **JP_HR_001**: 日本劳动法
-- **UK_HR_001**: 英国就业法
-- *(6个更多)*
-
-#### 3️⃣ 数据和合规性 (Data & Compliance)
-- **CN_DATA_001**: 个人信息保护法
-- **US_DATA_001**: CCPA/HIPAA
-- **JP_DATA_001**: 个人信息保护法
-- **UK_DATA_001**: UK GDPR
-- *(6个更多)*
-
-#### 4️⃣ 商业运营 (Business Operations)
-- **CN_BIZ_001**: 中国商业实践
-- **US_BIZ_001**: 美国会议文化
-- **JP_BIZ_001**: 日本协作文化
-- *(7个更多)*
-
-#### 5️⃣ 技术和IT (Technology & IT)
-- **TECH_001**: 软件开发最佳实践
-- **TECH_002**: 云架构
-- *(8个更多)*
-
-#### 6️⃣ 市场营销和销售 (Marketing & Sales)
-- **MKT_001**: 数字营销战略
-- **MKT_002**: B2B销售技巧
-- *(8个更多)*
-
-#### 7️⃣ 财务和投资 (Finance & Investment)
-- **FIN_001**: 财务报表分析
-- **FIN_002**: 投资组合管理
-- *(8个更多)*
-
-#### 8️⃣ 法律和合同 (Legal & Contracts)
-- **LEG_001**: 合同审查
-- **LEG_002**: NDA起草
-- *(8个更多)*
-
-#### 9️⃣ 战略和规划 (Strategy & Planning)
-- **STR_001**: 业务战略制定
-- **STR_002**: OKR设定
-- *(8个更多)*
-
-#### 🔟 客户和服务 (Customer & Service)
-- **CUS_001**: 客户满意度分析
-- **CUS_002**: 服务改进计划
-- *(8个更多)*
+- **仓库**：[modu-ai/k-harness](https://github.com/modu-ai/k-harness)
+- **问题/建议**：[GitHub Issues](https://github.com/modu-ai/k-harness/issues)
 
 ---
 
-## 👤 全球档案系统
+**MoAI-Cowork：遇见您的AI专家。**
 
-### 个人档案 (Personal Profile)
-```yaml
-name: "王小明"
-role: "首席财务官"
-locale: "zh_CN"
-industry: "金融"
-experience_years: 15
-languages: ["中文", "英文"]
-```
-
-### 团队档案 (Team Profile)
-```yaml
-team_name: "财务团队"
-region: "北京"
-size: 8
-focus_areas: ["税务", "会计"]
-```
-
-### 组织档案 (Organization Profile)
-```yaml
-company_name: "ABC Corporation"
-headquarters: "北京"
-founded: 2010
-employees: 500
-industries: ["金融", "技术"]
-expansion_regions: ["日本", "新加坡"]
-```
-
----
-
-## 🔄 自学循环 (Self-Refine)
-
-### 学习流程
-
-```
-1. 执行查询
-   ↓
-2. 生成回应（使用工具）
-   ↓
-3. 收集用户反馈
-   ↓
-4. 分析结果（准确性、相关性、实用性）
-   ↓
-5. 改进工具（调整权重）
-   ↓
-6. 应用到下一个查询
-```
-
-### 反馈类型
-
-| 类型 | 描述 | 影响 |
-|------|------|------|
-| **正面** | "非常准确" | 工具权重 +10% |
-| **部分** | "部分正确" | 权重 ±5% |
-| **负面** | "不正确" | 工具权重 -15% |
-| **自定义** | "需要更多关于X的内容" | 特定领域加强 |
-
----
-
-## 📖 使用示例
-
-### 示例1：税务咨询
-```
-问：在中国招聘新员工时的社保登记流程是什么？
-→ 激活工具CN_HR_001
-→ 提供截止日期、所需文件和流程
-```
-
-### 示例2：国际商务
-```
-问：在美国商务会议中应该注意什么？
-→ 激活工具US_BIZ_001
-→ 文化适应指南、时间管理、沟通风格
-```
-
-### 示例3：法规合规
-```
-问：在欧盟处理客户数据需要什么程序？
-→ 激活工具CN_DATA_001和相关GDPR
-→ GDPR合规、同意管理、数据转移流程
-```
-
----
-
-## 🛠 如何贡献 (Contributing)
-
-### 1. 提议新工具
-```bash
-# 提议新领域
-moai contribute --domain "中国商业法" --category "legal"
-```
-
-### 2. 改进现有工具
-```bash
-# 基于反馈的改进
-moai improve DOMAIN_ID --feedback "需要更多内容"
-```
-
-### 3. 添加新的本地化
-```bash
-# 添加新国家本地化
-moai add-locale --country "台湾" --code "zh_TW"
-```
-
-### 4. 改进文档
-- 编辑 `/skills/moai/references/locale/` 中的本地化文件
-- 在GitHub上提交Pull Request
-- 更新文化适应指南
-
----
-
-## 📋 路线图
-
-### 阶段1（当前）
-- [x] 基础工具系统
-- [x] 全球本地化指南（7个国家）
-- [ ] Self-Refine循环实现
-
-### 阶段2（2026年Q2）
-- [ ] 100个工具完成
-- [ ] 多语言UI（12种语言）
-- [ ] 团队协作功能
-
-### 阶段3（2026年Q3）
-- [ ] 实时法规更新
-- [ ] AI转人工审查流程
-- [ ] 行业特定模板
-
----
-
-## 📞 支持和联系
-
-- **文档**: `/skills/moai/references/locale/`
-- **GitHub**: （即将推出）
-- **邮箱**: support@moai-cowork.dev
-
----
-
-## 📄 许可证
-
-MIT许可 - 自由使用、修改和分发
-
----
-
-## 🙏 致谢
-
-MoAI-Cowork通过Claude和Cowork社区的反馈不断发展。
-
----
-
-**MoAI-Cowork: 认识您的个性化AI专家。**
-
-*上次更新：2026-04-04*
+*版本 0.1.3 | 最后更新：2026-04-08*
