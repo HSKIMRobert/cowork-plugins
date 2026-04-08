@@ -2,7 +2,7 @@
 
 ## 개요
 MoAI가 매 작업 후 자동으로 반성하고 학습하여 규칙을 진화시키는 프로토콜입니다.
-Self-Refine 사이클을 통해 지속적으로 개선됩니다.
+Self-Refine 사이클을 통해 지속적으로 개선되며, sequential-thinking MCP를 활용하여 복잡한 패턴을 분석합니다.
 
 ---
 
@@ -40,6 +40,12 @@ IF feedback < 7:
 **Step 3: 패턴 발견**
 ```
 feedback + reflection에서 패턴 추출:
+
+복잡한 패턴 분석 시 sequential-thinking 활용:
+  → mcp__sequential-thinking__sequentialthinking 호출
+  → 원인-결과 관계 분석
+  → 근본 원인 추출
+  → 개선 전략 단계화
 
 IF 같은 문제가 3회 이상 반복:
   → "심각한 문제" 신호

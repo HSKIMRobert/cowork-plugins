@@ -65,15 +65,12 @@ Phase 1: 하네스 식별
   → router.md에서 적절한 하네스 확인
 
 Phase 2: 하네스 레퍼런스 로드
-  references/harness-100/{lang}/{harness-id}.md
-  → lang = 사용자 언어 (ko, en)
+  references/skills/{harness-id}.md
   → 하네스 정의: 페르소나, 워크플로우, 출력형식, 반성기준
 
-Phase 3: 규칙 로드
-  .claude/rules/
-  ├── 00-moai-core.md (필수)
-  ├── 01-{harness-id}.md (해당 하네스)
-  └── 02-locale-{country}.md (필요시)
+Phase 3: 시스템 지침 로드
+  .claude/CLAUDE.md (필수, v0.2.0 아키텍처 정의)
+  → MoAI 코어 규칙, 에이전트 디렉터 모델, 평가 기준
 
 Phase 4: 컨텍스트 로드
   .moai/harness-contexts/
@@ -98,6 +95,7 @@ THEN:
   → 요청을 단계별로 분해
   → 각 단계의 입력/출력 정의
   → 실행 순서 및 의존성 확인
+  → 위험/불확실성 식별
   → 구조화된 계획을 기반으로 하네스 실행 진입
 
 ELSE:

@@ -31,11 +31,9 @@ moai_profile:
 user_profile:
   name: "김철수"                    # 사용자 이름
   email: "kim@example.com"           # 이메일
-  locale: "ko_KR"                    # BCP 47 형식
-  language: "korean"                 # 선호 언어
+  language: "korean"                 # 선호 언어 (한국어 고정)
   country: "KR"                      # 국가 코드 (ISO 3166-1)
   timezone: "Asia/Seoul"             # IANA 타임존
-  phonetic_name: "Kim Chul Soo"      # 로마자 표기 (영문 소통용)
   preferred_pronouns: "he/him"       # 대명사 선호
   birth_year: 1985                   # 연생 (선택)
 ```
@@ -43,9 +41,9 @@ user_profile:
 ### 2-2. 검증 규칙
 - name: 1~100자, 특수문자 제한
 - email: RFC 5321 형식
-- locale: ISO 639-1 + ISO 3166-1
 - country: 정확히 2자 대문자
 - timezone: IANA 데이터베이스 확인
+- language: "korean" 고정
 
 ---
 
@@ -112,18 +110,14 @@ company_profile:
 ### 5-1. 필드 정의
 ```yaml
 preferences:
-  response_language: "korean"         # 응답 언어
   response_tone: "professional"       # [formal, professional, casual, humorous]
   honorific_style: "존칭"            # [존칭, 반말, 중립]
   persona_name: "MoAI"               # 어시스턴트 호칭
-  file_language: "korean"            # 생성 파일 언어
-  doc_language: "korean"             # 문서 작성 언어
-  code_comments: "korean"            # 코드 주석 언어
   time_format: "24h"                 # [12h, 24h]
-  date_format: "YYYY-MM-DD"          # [YYYY-MM-DD, DD/MM/YYYY, MM/DD/YYYY]
-  currency: "KRW"                    # 통화 코드
-  number_format: "1,000.00"          # [1,000.00, 1.000,00]
-  week_start: "monday"               # [sunday, monday, saturday]
+  date_format: "YYYY-MM-DD"          # ISO 8601 기준
+  currency: "KRW"                    # 한국 원화 고정
+  number_format: "1,000.00"          # 한국식 쉼표 형식
+  week_start: "monday"               # 월요일 시작 (ISO)
   response_verbosity: "concise"       # [concise, standard, detailed]
   enable_web_search: true            # 웹 검색 활성화
   auto_save_context: true            # 자동 컨텍스트 저장
@@ -148,7 +142,6 @@ context_depth:
     copywriting: 5,
     email-crafter: 3
   }
-  locale_customization_level: 3      # 현지화 수준 (1~5)
 ```
 
 ---

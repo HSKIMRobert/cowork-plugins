@@ -1,14 +1,13 @@
 {
   "name": "moai-cowork",
-  "version": "0.1.3",
-  "description": "MoAI — 100 self-evolving domain harnesses for Cowork. Personalized AI expert with global profile sharing, 17 languages, and web-search localization.",
+  "version": "0.2.0",
+  "description": "MoAI — 한국 사용자를 위한 도메인 전문가 AI. 100개 하네스 기반 CLAUDE.md 맞춤 생성, 문서/디자인/마케팅/법률/재무 실행 스킬 제공.",
   "author": {
     "name": "GOOS"
   },
   "keywords": [
-    "harness", "self-evolving", "playbook", "automation",
-    "multilingual", "productivity", "assistant", "persona",
-    "global-profile", "cowork"
+    "하네스", "한국", "업무자동화", "문서생성", "디자인",
+    "마케팅", "세무", "계약서", "PPT", "한글", "cowork"
   ],
   "license": "MIT"
 }

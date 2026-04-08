@@ -17,13 +17,13 @@ MoAI 환경과 프로필 상태를 진단하고 문제를 식별하는 프로토
 ### 1-2. 체크리스트
 
 ```
-┌─ MoAI 환경 진단 ─────────────────────────────────┐
+┌─ MoAI 환경 진단 (v0.2.0) ────────────────────────┐
 │
 │ [Phase 1] 파일 시스템 검사
 │ ├─ .claude/CLAUDE.md 존재: ✓
-│ ├─ .claude/rules/ 디렉토리: ✓ (3개 파일)
 │ ├─ .moai/ 디렉토리: ✓
-│ └─ skills/moai/references/: ✓ (core 포함)
+│ ├─ skills/moai/references/: ✓ (core 포함)
+│ └─ skills/moai/references/skills/: ✓ (84개 스킬)
 │
 │ [Phase 2] 글로벌 프로필 검사
 │ ├─ /mnt/.auto-memory/moai-profile.md: ✓
@@ -37,15 +37,12 @@ MoAI 환경과 프로필 상태를 진단하고 문제를 식별하는 프로토
 │ ├─ email-crafter: ✓ (설치됨)
 │ ├─ sop-writer: ✗ (미설치)
 │ │  └─ 설치 권장: /moai init --harness=sop-writer
-│ └─ 설치된 하네스: 2/5
+│ └─ 설치된 하네스: 2/84
 │
-│ [Phase 4] 규칙 파일 검사
-│ ├─ 00-moai-core.md: ✓
-│ ├─ 01-copywriting.md: ✓
-│ ├─ 01-email-crafter.md: ✓
-│ ├─ 01-ad-campaign.md: ✓
-│ ├─ 02-locale-kr.md: ✓
-│ └─ 규칙 로드 성공: ✓
+│ [Phase 4] 시스템 지침 검사
+│ ├─ .claude/CLAUDE.md 로드: ✓
+│ ├─ v0.2.0 아키텍처 적용: ✓
+│ └─ 에이전트 디렉터 모델 활성: ✓
 │
 │ [Phase 5] 진화 상태
 │ ├─ evolution 로그: ✓ (4개 기록)
@@ -123,10 +120,10 @@ MoAI 현황 ({user_name})
   이름: {user_name}
   역할: {user_role}
   회사: {company_name}
-  로케일: ko_KR (한국, KRW)
+  국가: 한국 (KRW)
   프로필 완성도: 95% (A+)
 
-설치된 하네스:
+설치된 하네스 (84개 중):
   ✓ copywriting (마지막 사용: 2026-04-04 10:30)
   ✓ email-crafter (마지막 사용: 2026-04-02 14:15)
   ○ sop-writer (미설치, 추천됨)
@@ -178,8 +175,8 @@ IF evolution_평가_평균 < 5:
 IF 컨텍스트_TTL > 30days:
   INFO: "컨텍스트 갱신 시간입니다. /moai refresh-context 권장"
 
-IF 규칙_파일_크기 > 100KB:
-  WARNING: "규칙 파일이 너무 큽니다. 최적화 권장"
+IF CLAUDE.md_로드_실패:
+  ERROR: "시스템 지침 로드 실패. .claude/CLAUDE.md 확인 필요"
 ```
 
 ### 3-2. 진단 레포트 생성
