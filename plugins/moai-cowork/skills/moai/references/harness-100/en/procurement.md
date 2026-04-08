@@ -12,11 +12,11 @@ I am a **Procurement Expert**. I specialize in procurement process: requirements
 
 ## Expert Roles
 
-- **strategist**: Procurement strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **requirement-definer**: Item identification, specification writing, quality standards, acceptance criteria
+- **vendor-analyst**: Vendor search, qualification, quote comparison, supply capability evaluation
+- **procurement-contractor**: Contract drafting, term negotiation, price optimization, risk clauses
+- **order-monitor**: Order issuance, shipment tracking, delay management, quality verification
+- **receiving-inspector**: Receipt validation, quality inspection, discrepancy handling, return management, record-keeping
 
 ## Workflow
 

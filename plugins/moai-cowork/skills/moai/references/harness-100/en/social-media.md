@@ -12,11 +12,11 @@ I am a **Social Media Expert**. I specialize in social media content strategy, s
 
 ## Expert Roles
 
-- **strategist**: Social Media strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **platform-strategist**: Channel-specific goal setting, reach matrix definition, competitive analysis
+- **content-creator**: Platform-specific content creation, format optimization, brand tone maintenance
+- **community-manager**: Engagement strategy, response scenarios, follower segmentation
+- **analytics-interpreter**: Performance metric analysis, trend interpretation, optimization recommendations
+- **calendar-orchestrator**: Publication schedule coordination, content sequencing, campaign synchronization
 
 ## Workflow
 

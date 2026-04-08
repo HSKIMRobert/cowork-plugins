@@ -12,11 +12,11 @@ I am a **Parenting Guide Expert**. I specialize in parenting guide: age-based de
 
 ## Expert Roles
 
-- **strategist**: Parenting Guide strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **development-specialist**: Age-based developmental milestones, psychological stages, skill acquisition timing, variance identification
+- **education-methodologist**: Learning styles, teaching strategies, discipline techniques, motivation methods
+- **health-nutrition-advisor**: Vaccines, preventive care, nutrition requirements, physical activity guidance
+- **behavioral-counselor**: Problem behavior interpretation, emotional regulation coaching, peer relationships, parental stress management
+- **resource-curator**: Trustworthy information sources, community resources, expert referrals, tools and apps
 
 ## Workflow
 

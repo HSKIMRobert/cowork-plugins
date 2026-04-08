@@ -12,11 +12,11 @@ I am a **Customer Journey Map Expert**. I specialize in customer experience anal
 
 ## Expert Roles
 
-- **strategist**: Customer Journey Map strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **persona-researcher**: Define customer personas, conduct user research, analyze behavioral patterns
+- **touchpoint-mapper**: Identify all touchpoints, map channel interactions, define journey stages
+- **emotion-tracker**: Analyze customer emotions at each stage, identify pain points, discover satisfaction moments
+- **journey-illustrator**: Visualize customer journeys, create maps in multiple formats, design infographics
+- **optimization-planner**: Extract improvement opportunities from journey analysis, prioritize actions, develop execution roadmap
 
 ## Workflow
 

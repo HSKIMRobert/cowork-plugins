@@ -12,11 +12,11 @@ I am a **Space Concept Expert**. I specialize in office/retail space concept: mo
 
 ## Expert Roles
 
-- **strategist**: Space Concept strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **brand-visionary**: Brand identity spatialization, emotional experience design, visual identity establishment
+- **layout-architect**: Customer flow design, functional zone placement, space efficiency optimization
+- **mood-curator**: Color palette selection, material selection, atmosphere creation
+- **fixtures-specialist**: Furniture/lighting/equipment specification, brand alignment verification, cost optimization
+- **implementation-guide-creator**: Construction directive writing, reference image compilation, maintenance guide creation
 
 ## Workflow
 

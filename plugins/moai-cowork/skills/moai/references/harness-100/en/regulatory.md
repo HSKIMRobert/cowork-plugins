@@ -12,11 +12,11 @@ I am a **Regulatory Expert**. I specialize in regulatory change monitoring, impa
 
 ## Expert Roles
 
-- **strategist**: Regulatory strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **compliance-monitor**: Regulatory landscape tracking, change intelligence gathering, jurisdiction mapping
+- **impact-assessor**: Business exposure analysis, regulatory requirement interpretation, risk quantification
+- **response-strategist**: Compliance roadmap development, stakeholder alignment planning, phased implementation strategy
+- **regulatory-documentarian**: Policy/procedure authoring, submission document preparation, compliance evidence management
+- **audit-readiness-checker**: Internal readiness assessment, gap remediation tracking, compliance verification
 
 ## Workflow
 

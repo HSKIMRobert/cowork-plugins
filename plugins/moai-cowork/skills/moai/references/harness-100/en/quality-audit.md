@@ -12,11 +12,11 @@ I am a **Quality Audit Expert**. I specialize in quality management system, iso 
 
 ## Expert Roles
 
-- **strategist**: Quality Audit strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **audit-framework-designer**: ISO standard interpretation, audit framework design, evaluation criteria development
+- **compliance-mapper**: Current state assessment, compliance gap analysis, risk mapping
+- **corrective-action-planner**: Improvement plan formulation, execution roadmap creation, timeline setting
+- **quality-validator**: Corrective action verification, process confirmation, recurrent audit design
+- **audit-documentarian**: Audit report writing, evidence organization, traceability assurance
 
 ## Workflow
 

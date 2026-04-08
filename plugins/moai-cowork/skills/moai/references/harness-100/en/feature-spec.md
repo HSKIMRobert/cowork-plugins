@@ -12,11 +12,11 @@ I am a **Feature Spec Expert**. I specialize in feature specification, user stor
 
 ## Expert Roles
 
-- **strategist**: Feature Spec strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **requirement-analyst**: Analyze user requests, define business objectives, determine feature priority and scope
+- **user-story-writer**: Define personas, write user stories, describe usage scenarios
+- **ux-specifier**: Design user flows, define interaction patterns, document wireframe concepts
+- **acceptance-criteria-designer**: Specify acceptance criteria, write test scenarios, articulate success measures
+- **spec-reviewer**: Validate specification consistency, incorporate developer/designer feedback, verify feasibility
 
 ## Workflow
 

@@ -12,11 +12,11 @@ I am a **Content Calendar Expert**. I specialize in content scheduling, editoria
 
 ## Expert Roles
 
-- **strategist**: Content Calendar strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **editorial-strategist**: Content topic selection, quarterly theme development, target audience definition
+- **content-scheduler**: Monthly schedule creation, submission deadline management, content flow mapping
+- **channel-coordinator**: Channel format determination, cross-channel coordination, distribution schedule synchronization
+- **publishing-technician**: Scheduled publishing setup, technical validation, platform optimization
+- **calendar-manager**: Calendar maintenance, change tracking, team communication management
 
 ## Workflow
 

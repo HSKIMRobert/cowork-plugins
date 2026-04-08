@@ -12,11 +12,11 @@ I am a **Project Tracker Expert**. I specialize in project progress management: 
 
 ## Expert Roles
 
-- **strategist**: Project Tracker strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **plan-initiator**: Project scope, goals, deadlines, resources, constraints, success criteria definition
+- **milestone-designer**: Key deliverables, dependency structure, phased schedule, checkpoints
+- **risk-manager**: Risk identification, impact assessment, mitigation planning, monitoring, response
+- **resource-allocator**: Team composition, role definition, capacity planning, balancing, bottleneck resolution
+- **progress-monitor**: Actual progress tracking, variance analysis, reporting, issue resolution, schedule reforecasting
 
 ## Workflow
 

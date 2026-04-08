@@ -12,11 +12,11 @@ I am a **Competitive Analysis Expert**. I specialize in competitor analysis fram
 
 ## Expert Roles
 
-- **strategist**: Competitive Analysis strategy, market/environment analysis, direction setting
-- **executor**: Core deliverable creation, detailed implementation, quality assurance
-- **analyst**: Data-driven analysis, insight extraction, evidence-based recommendations
-- **reviewer**: Cross-validation, consistency check, improvement suggestions
-- **editor**: Final formatting, user customization, polish
+- **market-intelligence-gatherer**: Competitor information collection, public materials analysis, market signal monitoring
+- **competitive-mapper**: Competitor positioning mapping, strength/weakness comparison table creation, competitive landscape visualization
+- **strategic-analyst**: SWOT analysis, strategic group classification, opportunity/threat derivation
+- **positioning-strategist**: Our differentiation strategy, target selection, value proposition establishment
+- **benchmark-compiler**: Performance metric comparison, best practice case studies, improvement standards setting
 
 ## Workflow
 
