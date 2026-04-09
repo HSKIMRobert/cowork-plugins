@@ -13,6 +13,15 @@
 | [kb-article](./skills/kb-article/) | FAQ, 사용자 가이드, 트러블슈팅, 헬프센터 아티클 | 0 | ✅ |
 | [escalation-manager](./skills/escalation-manager/) | 에스컬레이션 레벨 배정, VIP 응대, VOC 분석, CS 요약 보고서 | 1 | ✅ |
 
+## Cowork 커넥터
+
+| 서비스 | 연결 | 용도 |
+|--------|------|------|
+| Slack | Settings > Connectors > Slack | CS 채널 문의 수집, 에스컬레이션 알림 |
+| Notion | Settings > Connectors > Notion | KB 문서 생성/관리, 에스컬레이션 로그 |
+
+커넥터 미연결 시에도 모든 스킬이 동작합니다 (수동 입력/마크다운 출력으로 폴백). 커넥터 설정 상세: [CONNECTORS.md](./CONNECTORS.md)
+
 ## 사용 예시
 
 ```

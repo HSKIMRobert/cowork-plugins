@@ -16,13 +16,13 @@
 | [blog](./skills/blog/) | 네이버/티스토리/브런치/WordPress/Ghost 6개 플랫폼 최적화 포스팅 | 6 | ✅ |
 | [social-media](./skills/social-media/) | 인스타/스레드/X/링크드인/유튜브쇼츠/카카오 7개 플랫폼 콘텐츠 | 7 | ✅ |
 
-## MCP 커넥터
+## Cowork 커넥터
 
-| 서버 | 용도 |
-|------|------|
-| wordpress | WordPress 포스트 생성/발행/예약 |
+| 서비스 | 연결 | 용도 |
+|--------|------|------|
+| WordPress | Settings > Connectors > WordPress | 블로그 포스트 직접 발행/예약 |
 
-네이버/티스토리/브런치/Ghost 등은 콘텐츠 생성까지만 지원합니다 (플랫폼별 최적화 카피 제공, 발행은 수동).
+네이버/티스토리/브런치/Ghost 등은 콘텐츠 생성까지만 지원합니다 (발행은 수동). 커넥터 설정 상세: [CONNECTORS.md](./CONNECTORS.md)
 
 ## 스크립트
 
