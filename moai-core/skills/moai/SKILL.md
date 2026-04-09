@@ -42,101 +42,23 @@ MoAI는 실행(How)을 담당하는 에이전트팀이다.
 2. 설치된 하네스가 없으면 → 아래 라우팅 테이블로 자동 감지
 3. 감지된 스킬을 트리거하고 해당 레퍼런스 로드 후 실행
 
-### 3.1 라우팅 테이블
+### 3.1 라우팅 테이블 (v1.0 — 14개 플러그인)
 
-| 키워드 | 스킬 | 모듈/하네스 |
-|--------|------|-----------|
-| 유튜브, 채널, 영상전략 | content-creative | harness/youtube-production |
-| 영상, Remotion, 인트로, 모션그래픽 | content-creative | remotion-video/guide |
-| 랜딩 페이지, 홈페이지, 서비스 소개 | content-creative | landing-page/guide |
-| 카드뉴스, 캐러셀, 인스타 카드 | content-creative | card-news/guide |
-| 뉴스레터, 구독자 | content-creative | harness/newsletter-engine |
-| 카피, 광고 문구, 슬로건 | content-creative | harness/copywriting |
-| 팟캐스트, 오디오 | content-creative | harness/podcast-studio |
-| 출판, 전자책, 원고 | content-creative | harness/book-publishing |
-| 광고 캠페인, 미디어 플랜 | content-creative | harness/advertising-campaign |
-| 사업계획, 스타트업, 창업 | business-strategy | harness/startup-launcher |
-| 시장조사, TAM, 경쟁분석 | business-strategy | harness/market-research |
-| 투자, 피칭, IR | business-strategy | harness/investor-report |
-| 가격전략, 프라이싱 | business-strategy | harness/pricing-strategy |
-| 재무모델, 매출예측 | business-strategy | harness/financial-modeler |
-| 비즈니스 모델, 캔버스 | business-strategy | harness/business-model-canvas |
-| 신시장 진출, 해외 진출 | business-strategy | harness/market-entry-strategy |
-| 시나리오 플래닝 | business-strategy | harness/scenario-planner |
-| 전략 프레임워크, SWOT | business-strategy | harness/strategy-framework |
-| SNS, 블로그, 해시태그, 인스타 | marketing-growth | sns-content/guide |
-| AI 이미지, 나노바나나, Imagen | marketing-growth | imagegen/guide |
-| 상세페이지, 쿠팡, 스마트스토어 | marketing-growth | product-detail/guide |
-| 브랜드, 아이덴티티, 로고 | marketing-growth | harness/brand-identity |
-| 브랜드 보이스, 톤 가이드 | marketing-growth | harness/brand-voice-guide |
-| CRM, 고객관리, 리텐션 | marketing-growth | harness/crm-strategy |
-| 고객 여정, 터치포인트 | marketing-growth | harness/customer-journey-map |
-| 그로스해킹, 성장전략 | marketing-growth | harness/growth-hacking |
-| 인플루언서, 협찬 | marketing-growth | harness/influencer-strategy |
-| 콘텐츠 재활용, 리퍼포징 | marketing-growth | harness/content-repurposer |
-| 퍼스널 브랜딩 | marketing-growth | harness/personal-branding |
-| A/B 테스트 | marketing-growth | harness/ab-testing |
-| 영업 지원, 세일즈 | marketing-growth | harness/sales-enablement |
-| 강의, 커리큘럼, 온라인 교육 | education-research | harness/course-builder |
-| 시험, 자격증, 수능 | education-research | harness/exam-prep |
-| 논문, 학술, 리서치 | education-research | harness/thesis-advisor |
-| 학술 논문 작성 | education-research | harness/academic-paper |
-| 리서치 어시스턴트 | education-research | harness/research-assistant |
-| 어학, 외국어, 언어학습 | education-research | harness/language-tutor |
-| 역량 모델, 직무 분석 | education-research | harness/competency-modeler |
-| 계약서, 계약 검토, 위험 조항 | legal-compliance | contract/guide |
-| 컴플라이언스, 규제, 감사 | legal-compliance | harness/compliance-checker |
-| 감사 보고서 | legal-compliance | harness/audit-report |
-| ESG, 지속가능성 | legal-compliance | harness/esg-reporting |
-| 법률 리서치 | legal-compliance | harness/legal-research |
-| 지적재산, 특허 | legal-compliance | harness/ip-portfolio |
-| 규제 서류, 인허가 | legal-compliance | harness/regulatory-filing |
-| 이용약관, 개인정보처리방침 | legal-compliance | harness/service-legal-docs |
-| 여행, 맛집, 일정 | lifestyle | harness/travel-planner |
-| 식단, 다이어트, 건강 | lifestyle | harness/meal-planner |
-| 운동, 피트니스, 헬스 | lifestyle | harness/fitness-program |
-| 개인 재무, 가계부 | lifestyle | harness/personal-finance |
-| 결혼, 웨딩, 스드메 | lifestyle | harness/wedding-planner |
-| 이벤트, 행사, 세미나 | lifestyle | harness/event-organizer |
-| 부동산, 매매, 전세 | lifestyle | harness/real-estate-analyst |
-| 육아, 아이, 교육 | lifestyle | harness/parenting-guide |
-| 시니어 케어, 노인 돌봄 | lifestyle | harness/elderly-care-planning |
-| 사이드 프로젝트, 부업 | lifestyle | harness/side-project-launcher |
-| PPT, 슬라이드, 발표자료 | communication-docs | ppt/guide |
-| 한글, hwpx, 아래한글, 한컴 | communication-docs | hwpx/guide |
-| 보고서, 주간보고, 기안서 | communication-docs | harness/report-generator |
-| 제안서, 견적서, RFP | communication-docs | harness/proposal-writer |
-| 회의록, 미팅노트 | communication-docs | harness/meeting-strategist |
-| SOP, 매뉴얼, 절차서 | communication-docs | harness/sop-writer |
-| 발표, 스피치, 프레젠테이션 | communication-docs | harness/public-speaking |
-| 위기 소통, 사과문 | communication-docs | harness/crisis-communication |
-| 데이터 분석, 인사이트 | communication-docs | harness/data-analysis |
-| 번역, 현지화 | communication-docs | harness/translation-localization |
-| 채용, 면접, 파이프라인 | operations-hr | harness/hiring-pipeline |
-| 온보딩, 신입 교육 | operations-hr | harness/onboarding-system |
-| 운영 매뉴얼, 프로세스 | operations-hr | harness/operations-manual |
-| 고객 지원, CS | operations-hr | harness/customer-support |
-| 피드백 분석, 설문 | operations-hr | harness/feedback-analyzer |
-| 조달, 구매, 발주 | operations-hr | harness/procurement-docs |
-| 원격 근무, 재택 | operations-hr | harness/remote-work-ops |
-| 리스크, 위험 관리 | operations-hr | harness/risk-register |
-| 세금, 부가세, 3.3%, 종소세 | finance-trade | tax/guide |
-| 청구서, 인보이스 | finance-trade | harness/invoice-mgmt |
-| 보조금, 지원사업 | finance-trade | harness/grant-writer |
-| 수출입, 무역, 통관 | finance-trade | harness/import-export |
-| 공급망, SCM | finance-trade | harness/supply-chain |
-| RFP 응답, 입찰 | finance-trade | harness/rfp-responder |
-| 비영리, 사회적기업 | finance-trade | harness/nonprofit-management |
-| 이커머스, 쇼핑몰 | finance-trade | harness/ecommerce-launcher |
-| PM, 로드맵, 기능명세 | product-innovation | harness/product-manager |
-| 프로젝트 트래커, 일정 관리 | product-innovation | harness/project-tracker |
-| AI전략, 디지털전환 | product-innovation | harness/ai-strategy |
-| 지속가능성 감사 | product-innovation | harness/sustainability-audit |
-| 다양성, 포용, DEI | product-innovation | harness/diversity-inclusion |
-| 정부 지원금, R&D | product-innovation | harness/gov-funding-plan |
-| 파트너십, 제휴 | product-innovation | harness/partnership-development |
-| UX, 사용자 리서치 | product-innovation | harness/ux-research |
-| 사용자 피드백, VOC | product-innovation | harness/user-feedback-analysis |
+| 키워드 | 플러그인 | 대표 스킬 |
+|--------|---------|----------|
+| 사업계획, 스타트업, 창업, 시장조사, TAM, 투자, IR, 재무모델, SWOT | **moai-business** | strategy-planner, market-analyst, investor-relations, daily-briefing |
+| 마케팅, SEO, 네이버, 카카오, SNS, 인스타, 브랜드, 그로스해킹, 이메일 캠페인, A/B 테스트 | **moai-marketing** | sns-content, campaign-planner, seo-audit, email-sequence, performance-report |
+| 계약서, 컴플라이언스, 규제, 감사, ESG, 법률, 특허, NDA, 이용약관 | **moai-legal** | contract-review, compliance-check, nda-triage, legal-risk |
+| 세금, 부가세, 3.3%, 종소세, 홈택스, 재무제표, K-IFRS, 결산, 연말정산 | **moai-finance** | tax-helper, financial-statements, close-management, variance-analysis |
+| 채용, 면접, 온보딩, 근로계약서, 4대보험, 성과평가, 오퍼레터, 퇴직금 | **moai-hr** | employment-manager, people-operations, performance-review, draft-offer |
+| 카드뉴스, 랜딩 페이지, 뉴스레터, 카피, 블로그, 유튜브, 팟캐스트, Remotion | **moai-content** | card-news, landing-page, newsletter, copywriting, blog, social-media, media-production |
+| 운영 매뉴얼, 결재, 조달, SOP, 벤더, 나라장터, KPI 보고 | **moai-operations** | process-manager, vendor-manager, status-reporter |
+| 강의, 커리큘럼, 논문, 학술, 시험, 어학, 역량 모델 | **moai-education** | curriculum-designer, research-assistant, assessment-creator |
+| 여행, 식단, 운동, 웨딩, 이벤트, 부동산, 육아 | **moai-lifestyle** | travel-planner, wellness-coach, event-planner |
+| PM, 로드맵, 기능명세, UX 리서치, 스프린트, AI전략 | **moai-product** | spec-writer, roadmap-manager, ux-researcher |
+| 고객 지원, CS, 티켓, KB 문서, 에스컬레이션 | **moai-support** | ticket-triage, draft-response, kb-article, escalation-manager |
+| PPT, 한글, HWPX, DOCX, XLSX, 보고서, 공문서 | **moai-office** | pptx-designer, hwpx-writer, docx-generator, xlsx-creator |
+| 스케줄, 예약, 자동실행, 반복 업무, 크론 | **moai-schedules** | create-schedule, list-schedules, manage-schedule |
 
 ## 4. 카탈로그 (10개 카테고리, 84개 하네스)
 
