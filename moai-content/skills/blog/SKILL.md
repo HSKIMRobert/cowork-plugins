@@ -166,31 +166,18 @@ metadata:
 - 직장인 대상: 화·수·목요일 저녁 8~10시 최고
 - 주말: 오전 10시~오후 2시 (여유 시간대)
 
-## 발행 자동화
+## 발행 연동 (선택)
 
-### MCP 연동 (wordpress)
-WordPress MCP 서버가 연결되어 있으면 WordPress 사이트에 직접 발행합니다:
-- 카테고리, 태그, 특성 이미지 자동 설정
-- 블로그 카피 생성 → 포맷 최적화 → MCP로 발행 → URL 전달
+MCP 서버가 연결되어 있으면 블로그 발행까지 자동화합니다:
 
-### 브라우저 자동화 (네이버/티스토리/브런치)
-WordPress 외 플랫폼은 Computer Use 또는 Browser MCP(Playwright/claude-in-chrome)로 직접 게시합니다:
+| 플랫폼 | MCP | 기능 |
+|--------|-----|------|
+| **WordPress** | wordpress | 포스트 생성, 카테고리/태그/특성이미지 자동 설정, 발행/예약 |
+| **Ghost** | ghost | 포스트 CRUD, 멤버 관리, 뉴스레터 발행, 태그/티어 관리 |
 
-1. 브라우저에서 해당 플랫폼 글쓰기 페이지 열기
-2. 제목, 본문, 카테고리, 태그를 자동 입력
-3. 이미지가 있으면 업로드
-4. 미리보기 확인 후 발행
+MCP 미연결 시(네이버/티스토리/브런치 등): 플랫폼에 최적화된 마크다운 카피를 생성합니다. 사용자가 직접 복사-붙여넣기로 발행합니다.
 
-**지원 플랫폼별 접속 경로**:
-- 네이버 블로그: `blog.naver.com/{id}/postwrite`
-- 티스토리: `{id}.tistory.com/manage/newpost`
-- 브런치: `brunch.co.kr/write`
-- X/LinkedIn/인스타: 각 플랫폼 웹 인터페이스
-
-**사전 조건**: 해당 플랫폼에 로그인된 브라우저 세션 필요. Computer Use 또는 claude-in-chrome MCP가 활성화되어 있어야 합니다.
-
-### 수동 발행 (폴백)
-MCP/브라우저 자동화가 불가한 경우 마크다운 카피만 생성합니다. 사용자가 직접 복사-붙여넣기로 발행합니다.
+**Ghost MCP 설정**: `GHOST_API_URL` + `GHOST_ADMIN_API_KEY` 환경변수 필요. Ghost Admin > Settings > Integrations에서 API key 발급.
 
 ## 문제 해결
 
