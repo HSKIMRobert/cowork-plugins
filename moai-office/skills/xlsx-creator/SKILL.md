@@ -1,7 +1,7 @@
 ---
 name: xlsx-creator
 description: >
-  엑셀 문서 생성 — XLSX 데이터 표·차트·수식 생성. openpyxl 기반, 한국 비즈니스 보고서 양식 지원.
+  엑셀(XLSX) 문서를 자동으로 생성합니다. "KPI 대시보드 엑셀로 만들어줘", "매출 분석표 생성해줘", "간트차트 엑셀 만들어줘"라고 요청할 때 사용하세요. openpyxl 기반으로 데이터 표, 차트, 수식, 조건부 서식이 포함된 한국 비즈니스 보고서를 지원합니다.
 user-invocable: true
 metadata:
   version: "1.0.0"
@@ -113,3 +113,19 @@ from openpyxl.formatting.rule import ColorScaleRule
 - **한글 폰트**: 셀 내 한글 표시 시 '맑은 고딕' 또는 '나눔고딕' 폰트 설정 권장
 - **차트 제한**: openpyxl 차트는 기본 형식만 지원. 고급 차트는 xlsxwriter 대안 사용 가능
 - **보안**: 개인정보(급여, 주민번호) 포함 파일은 시트 보호 + 파일 암호화 적용
+
+## 문제 해결
+
+| 상황 | 해결 방법 |
+|------|-----------|
+| 파일 생성 실패 | openpyxl 설치 여부 확인: `pip install openpyxl`. 설치 후 재시도하세요 |
+| 템플릿 미설정 | 보고서 유형과 필요한 지표 목록을 알려주시면 기본 구조로 생성해 드립니다 |
+| 수식 오류 | 데이터 범위와 원하는 계산 방식을 설명해 주시면 수식을 수정해 드립니다 |
+| 차트 미생성 | 차트 유형(막대/꺾은선/원형)과 데이터 범위를 명시해 주시면 생성해 드립니다 |
+
+## 이 스킬을 사용하지 말아야 할 때
+
+- **DOCX(Word) 문서 생성** → moai-office:docx-generator 스킬이 더 적합합니다
+- **PPT 발표자료 생성** → moai-office:pptx-designer 스킬을 사용하세요
+- **한글(HWPX) 문서 생성** → moai-office:hwpx-writer 스킬을 사용하세요
+- **실시간 데이터 연동 대시보드** → Power BI, Tableau, Google Looker Studio 등 전용 BI 도구를 사용하세요

@@ -1,7 +1,10 @@
 ---
 name: seo-audit
 description: >
-  SEO 감사 — 네이버 C-Rank·D.I.A./구글 Core Web Vitals 기준 온페이지·기술 SEO 분석 및 GEO 대응 전략 수립.
+  네이버·구글·AI 검색(GEO) 통합 SEO 감사 및 최적화 전략을 수립합니다.
+  'SEO 감사해줘', '네이버 상위 노출 전략 짜줘', '키워드 분석해줘',
+  '구글 검색 최적화해줘', 'GEO 전략 만들어줘', 'C-Rank 개선 방법 알려줘'라고 요청하세요.
+  온페이지·기술 SEO, 키워드 전략, AI 검색 최적화 보고서를 생성합니다.
 user-invocable: true
 metadata:
   version: "1.0.0"
@@ -92,6 +95,14 @@ SEO 감사, 검색최적화, 키워드 분석, 네이버 SEO, 구글 SEO, 온페
 ## 추천 키워드 목록
 ```
 
+## 사용 예시
+
+**예시 1**: "우리 블로그 네이버 SEO 감사해줘. URL은 xxx.tistory.com"
+→ C-Rank 진단 → D.I.A. 체크 → 개선 우선순위 → 액션 플랜
+
+**예시 2**: "이커머스 사이트 구글 SEO + GEO 전략 만들어줘"
+→ Core Web Vitals → E-E-A-T → GEO 준비도 → 통합 최적화 로드맵
+
 ## 산출물
 
 - 네이버 / 구글 / GEO 통합 SEO 감사 보고서
@@ -117,3 +128,18 @@ SEO 감사, 검색최적화, 키워드 분석, 네이버 SEO, 구글 SEO, 온페
 - 구글 서치 콘솔 (search.google.com/search-console)
 - 네이버 키워드 도구 (광고 플랫폼)
 - Google PageSpeed Insights
+
+## 문제 해결
+
+| 상황 | 대응 |
+|------|------|
+| URL 접근이 불가한 경우 | 사용자에게 주요 페이지 내용 공유 요청. 텍스트 기반으로 분석 진행 |
+| 키워드 검색량 데이터가 없는 경우 | 네이버 광고 플랫폼·Google Keyword Planner 사용 안내. 추정 기반 제안 |
+| 사이트 구조 정보가 없는 경우 | 핵심 페이지 URL 2~3개와 업종 정보로 일반 가이드라인 제공 |
+
+## 이 스킬을 사용하지 말아야 할 때
+
+- SNS 콘텐츠 작성이나 브랜드 전략 → moai-marketing/sns-content 사용
+- 마케팅 캠페인 기획이나 광고 집행 → moai-marketing/campaign-planner 사용
+- 마케팅 성과 데이터 분석 → moai-marketing/performance-report 사용
+- 단순 키워드 제안이나 일반 질문 → 일반 대화로 해결
