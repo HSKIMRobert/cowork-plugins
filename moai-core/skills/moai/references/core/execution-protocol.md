@@ -253,7 +253,7 @@ IF 실행_중_오류:
 
 ## 6. 실행 경로 선택
 
-### 5-1. 빠른 실행 (Quick Mode)
+### 6-1. 빠른 실행 (Quick Mode)
 ```
 /moai {harness-id} --quick
 
@@ -266,7 +266,7 @@ IF 실행_중_오류:
 - 즉시 산출물 제공
 ```
 
-### 5-2. 대화형 실행 (Interactive Mode, 기본)
+### 6-2. 대화형 실행 (Interactive Mode, 기본)
 ```
 /moai {harness-id}
 
@@ -276,7 +276,7 @@ IF 실행_중_오류:
 - 결정론적 검증 수행
 ```
 
-### 5-3. 배치 실행 (Batch Mode)
+### 6-3. 배치 실행 (Batch Mode)
 ```
 /moai batch
 config: {

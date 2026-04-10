@@ -1,6 +1,6 @@
 # 콘텐츠 캘린더 (content-calendar)
 
-> MoAI-Cowork v0.2.0 하네스 참고자료
+> MoAI-Cowork v1.0.0 하네스 참고자료
 
 ## 개요
 

@@ -1,6 +1,6 @@
 # 논문 작성 지도자 (58-thesis-advisor)
 
-> MoAI-Cowork v0.2.0 하네스 레퍼런스
+> MoAI-Cowork v1.0.0 하네스 레퍼런스
 
 ## 개요
 

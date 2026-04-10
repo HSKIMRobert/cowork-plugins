@@ -1,6 +1,6 @@
 # 규제 서류 제출 (35-regulatory-filing)
 
-> MoAI-Cowork v0.2.0 하네스 레퍼런스
+> MoAI-Cowork v1.0.0 하네스 레퍼런스
 
 ## 개요
 

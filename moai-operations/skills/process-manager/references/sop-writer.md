@@ -1,6 +1,6 @@
 # 표준 운영 절차 작성 (84-sop-writer)
 
-> MoAI-Cowork v0.2.0 하네스 레퍼런스
+> MoAI-Cowork v1.0.0 하네스 레퍼런스
 
 ## 개요
 
