@@ -2,7 +2,7 @@
 
 Claude Cowork 도메인 전문가 AI 마켓플레이스.
 
-17개 독립 플러그인 67개 스킬로 비즈니스 전략, 마케팅, 법률, 재무, 인사, 콘텐츠, 운영, 교육, 라이프스타일, 제품, 고객지원, 문서생성, 스케줄 관리, 데이터 분석, 연구/특허를 지원합니다.
+16개 독립 플러그인 64개 스킬로 비즈니스 전략, 마케팅, 법률, 재무, 인사, 콘텐츠, 운영, 교육, 라이프스타일, 제품, 고객지원, 문서생성, 데이터 분석, 연구/특허를 지원합니다.
 
 ## 플러그인 카탈로그
 
@@ -21,7 +21,6 @@ Claude Cowork 도메인 전문가 AI 마켓플레이스.
 | [moai-product](./moai-product/) | PM 로드맵, UX 리서치, 스펙, AI 전략 | 3 |
 | [moai-support](./moai-support/) | 티켓 분류, KB 문서, 에스컬레이션 | 4 |
 | [moai-office](./moai-office/) | PPT, DOCX, XLSX, HWPX 문서 생성 | 4 |
-| [moai-schedules](./moai-schedules/) | 반복 업무 자동 실행 | 3 |
 | [moai-career](./moai-career/) | 커리어 준비 — 자기소개서, 이력서, 면접 코칭, 채용공고 분석 | 4 |
 | [moai-data](./moai-data/) | 데이터 분석 — CSV/Excel 탐색, 공공데이터, 시각화 | 3 |
 | [moai-research](./moai-research/) | 연구/특허 — 논문 검색, 특허 분석/출원, 연구비 신청 | 5 |
@@ -30,9 +29,9 @@ Claude Cowork 도메인 전문가 AI 마켓플레이스.
 
 | 항목 | 수량 |
 |------|:----:|
-| 플러그인 | 17 |
-| 스킬 | 67 |
-| 레퍼런스 파일 | 168 |
+| 플러그인 | 16 |
+| 스킬 | 64 |
+| 레퍼런스 파일 | 167 |
 | 에이전트 | 7 |
 | MCP 서버 | 5 |
 | 스크립트 | 16 |
@@ -68,7 +67,7 @@ Claude Cowork에서 플러그인 설치:
 ## 기술 특징
 
 **Anthropic 공식 스킬 가이드 준수**
-- 모든 67개 스킬에 [What]+[When]+[Triggers] 구조의 description 적용
+- 모든 64개 스킬에 [What]+[When]+[Triggers] 구조의 description 적용
 - Negative triggers로 불필요한 스킬 로딩 방지
 - 인라인 폴백과 에러 핸들링 내장
 

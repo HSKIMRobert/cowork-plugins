@@ -1,7 +1,7 @@
 ---
 name: moai
 description: >
-  비즈니스 도메인 전문가 시스템. 사용자 요청을 자동 감지하여 17개 전문 플러그인으로 라우팅합니다.
+  비즈니스 도메인 전문가 시스템. 사용자 요청을 자동 감지하여 16개 전문 플러그인으로 라우팅합니다.
   '사업계획서 써줘', '계약서 검토해줘', '세금 계산해줘', '특허 찾아줘',
   '/moai init', '/moai catalog'으로 시작하세요.
 keywords: "MoAI, 모아이, 전문가, init, catalog, status, 사업, 마케팅, 법률, 세무, 인사, 콘텐츠, 특허, 논문, 데이터"
@@ -9,7 +9,7 @@ keywords: "MoAI, 모아이, 전문가, init, catalog, status, 사업, 마케팅,
 
 # MoAI — 도메인 전문가 AI 팀
 
-> v1.0.0 | 17개 플러그인 | 67개 스킬
+> v1.0.0 | 16개 플러그인 | 64개 스킬
 
 사용자는 방향(What & Why)을 설정하고, MoAI는 실행(How)을 담당합니다.
 
@@ -42,7 +42,6 @@ keywords: "MoAI, 모아이, 전문가, init, catalog, status, 사업, 마케팅,
 | PM, 로드맵, UX, 스프린트 | moai-product |
 | 고객지원, CS, 티켓 | moai-support |
 | PPT, 한글, Word, Excel | moai-office |
-| 스케줄, 예약, 자동실행 | moai-schedules |
 | 이력서, 면접, 포트폴리오 | moai-career |
 | 데이터, CSV, 차트, 통계, 공공데이터 | moai-data |
 | 논문, 특허, KIPRIS, 연구비, 출원 | moai-research |

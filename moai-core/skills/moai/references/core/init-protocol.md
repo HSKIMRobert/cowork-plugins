@@ -142,7 +142,6 @@ IF Phase 1 답변에 매칭되지만 미설치된 플러그인이 있으면:
 |---------|-----------|
 | moai-content | WordPress, Canva |
 | moai-marketing | Gmail, HubSpot, Canva |
-| moai-schedules | Google Calendar |
 | moai-product | Notion, Figma, Asana/Linear/Jira |
 | moai-office | Google Drive, Gmail, Notion, Microsoft 365 |
 | moai-support | Slack, HubSpot |
