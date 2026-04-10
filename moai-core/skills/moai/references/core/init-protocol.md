@@ -105,8 +105,10 @@ AskUserQuestion (1질문, 4옵션, multiSelect) ✅
 + Other ("더 보기")
 ```
 
-설치되지 않은 플러그인은 표시하지 않는다.
-"더 보기" 선택 시 나머지 플러그인 페이지네이션.
+표시 규칙:
+- moai-core는 오케스트레이터이므로 **선택 목록에서 제외**
+- 설치되지 않은 플러그인은 표시하지 않는다
+- "더 보기" 선택 시 나머지 플러그인 페이지네이션
 
 ### 2-3. 미설치 플러그인 안내
 
@@ -181,6 +183,8 @@ AskUserQuestion (1질문, 최대 4옵션, multiSelect) ✅
 | moai-business | DART OpenAPI | DART_API_KEY | 기업 공시/재무제표 |
 | moai-legal | 국가법령정보 | KOREAN_LAW_OC | 법령/판례 검색 |
 
+해당 서비스가 **2개 이상**이면 AskUserQuestion:
+
 AskUserQuestion (1질문, 최대 4옵션, multiSelect) ✅
 
 ```
@@ -192,6 +196,16 @@ AskUserQuestion (1질문, 최대 4옵션, multiSelect) ✅
 ☐ Nano Banana — AI 이미지 생성 (카드뉴스/썸네일)
 + Other ("건너뛰기 — 나중에 /moai apikey로 등록")
 ```
+
+해당 서비스가 **1개만**이면 텍스트 대화로 직접 안내:
+
+```
+[예: moai-content만 설치 시]
+"Nano Banana API 키를 등록하시겠습니까? (AI 이미지 생성)
+ 입력하시거나, '건너뛰기'로 나중에 등록할 수 있습니다."
+```
+
+해당 서비스가 **0개**이면 Phase 3-2 전체를 건너뛴다.
 
 선택 시, 각 서비스별 텍스트 대화로 순차 입력:
 
@@ -300,8 +314,6 @@ def _parse_env_file(path, key_name):
 /mnt/.auto-memory/
 ├── moai-profile.md        ← 사용자 프로필
 └── moai-credentials.env   ← API 키 (Phase 3에서 생성)
-        ├── history.json
-        └── reflections/
 ```
 
 ### 4-2. CLAUDE.md 생성 규칙
@@ -342,23 +354,26 @@ def _parse_env_file(path, key_name):
 
 ### 4-4. 첫 실행 안내
 
-CLAUDE.md 생성 완료 후:
+CLAUDE.md 생성 완료 후, **Phase 2에서 선택된 플러그인 기반으로 예시를 동적 생성**:
 
 ```
 "설정이 완료되었습니다! 바로 시작해 보세요:
 
- 선택하신 플러그인 기반 추천:
- - '사업계획서 써줘' → moai-business
- - 'PPT 만들어줘' → moai-office
- - '계약서 검토해줘' → moai-legal
- 
+ {selected_plugins 기반 예시 3개 동적 생성}
+
  전체 기능:
  - '/moai catalog' → 설치된 플러그인 + 하네스 전체 목록
  - '/moai status' → 현재 설정 상태 확인
- 
+
  작업을 요청하면 필요한 맥락을 그때 수집합니다.
  자연스럽게 대화하시면 됩니다."
 ```
+
+예시 생성 규칙:
+- 선택된 플러그인별 대표 작업 1개씩, 총 3개 이내
+- 플러그인 라우팅 테이블에서 가장 빈번한 키워드 사용
+- 예: moai-content 선택 → "'카드뉴스 만들어줘' → moai-content"
+- 예: moai-business 선택 → "'사업계획서 써줘' → moai-business"
 
 ---
 
