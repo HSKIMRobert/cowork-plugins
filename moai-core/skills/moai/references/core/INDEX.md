@@ -28,7 +28,7 @@ setup-cowork + claude-code-setup 패턴 융합. 맥락 수집은 Lazy Collection
 /mnt/.auto-memory/moai-profile.md 중심. 개인 + 회사 프로필 CRUD.
 
 ### 5. claudemd-generator.md — CLAUDE.md 생성 프로토콜
-하네스 레퍼런스 기반 맞춤형 CLAUDE.md 자동 생성. 하네스 전체 복사 원칙.
+하네스 레퍼런스 기반 맞춤형 CLAUDE.md 자동 생성. 200라인 이내 맞춤형 CLAUDE.md 생성.
 
 ### 6. execution-protocol.md — 하네스 실행 프로토콜
 플러그인 트리거 → 레퍼런스 로드 → 산출물 생성 → 검토.

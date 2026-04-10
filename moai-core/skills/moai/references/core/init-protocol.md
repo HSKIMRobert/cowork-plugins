@@ -59,8 +59,14 @@ AskUserQuestion (1질문, 4옵션) ✅
 
 ```
 "이름(또는 닉네임)과 회사명을 알려주세요.
- 예: '홍길동, 테크스타트업' 또는 '길동'만 입력해도 됩니다."
+ 예: '홍길동, 테크스타트업' 또는 '길동'만 입력해도 됩니다.
+ 사업자등록증을 첨부하시면 자동으로 정보를 추출합니다."
 ```
+
+사업자등록증 첨부 시:
+- 이미지에서 사업자번호, 회사명, 대표자명, 업종을 자동 추출
+- 추출 결과를 확인 후 프로필에 반영
+- 미첨부 시 텍스트 입력으로 진행
 
 → /mnt/.auto-memory/moai-profile.md 생성 (최소 필드)
 → 추가 정보(산업, 경력, 호칭 등)는 하네스 사용 중 auto-memory로 자연스럽게 축적
@@ -207,29 +213,80 @@ AskUserQuestion (1질문, 최대 4옵션, multiSelect) ✅
 
 해당 서비스가 **0개**이면 Phase 3-2 전체를 건너뛴다.
 
-선택 시, 각 서비스별 텍스트 대화로 순차 입력:
+선택 시, 각 서비스별 기존 키 확인 → 입력:
 
 ```
+[각 서비스 공통 패턴]
+IF /mnt/.auto-memory/moai-credentials.env에 해당 키 존재:
+  AskUserQuestion (1질문, 2옵션):
+  "{서비스명} API 키가 이미 등록되어 있습니다."
+  ○ 기존 키 사용 (권장)
+  ○ 새 키로 변경
+  + Other
+
+  "기존 키 사용" → 기존 값 유지, 다음 서비스로
+  "새 키로 변경" → 텍스트 입력으로 진행
+
+ELSE:
+  텍스트 대화로 키 입력
+
 [DART 선택 시]
 "DART OpenAPI 키를 입력해 주세요.
  아직 없다면 https://opendart.fss.or.kr/ 에서 무료 발급 가능합니다.
  (건너뛰려면 '건너뛰기' 입력)"
 
- → 사용자: "abc123def456"
-
-[법령 정보 선택 시]  
+[법령 정보 선택 시]
 "법령 정보 인증코드를 입력해 주세요.
  아직 없다면 https://www.law.go.kr/ Open API에서 발급 가능합니다.
  (건너뛰려면 '건너뛰기' 입력)"
 
- → 사용자: "xyz789"
-
 [Nano Banana 선택 시]
 "Nano Banana API 키를 입력해 주세요.
+ Google AI Studio(ai.google.dev)에서 Gemini API 키로 발급 가능합니다.
  (건너뛰려면 '건너뛰기' 입력)"
-
- → 사용자: "nb_key_..."
 ```
+
+### 3-2.5. Nano Banana 모델 + 사이즈 설정
+
+Nano Banana API 키가 등록된 경우 (기존 또는 신규), 사용할 모델과 이미지 비율을 설정한다.
+
+**모델 선택** — AskUserQuestion (1질문, 3옵션, multiSelect) ✅
+
+```
+"사용할 이미지 생성 모델을 선택하세요 (복수 선택 가능)"
+
+☑ Nano Banana Pro — 고품질, 텍스트 렌더링 우수 (권장)
+☐ Nano Banana 2 — 빠른 생성, Pro 대비 절반 비용
+☐ Nano Banana Ultra — 최고 품질, 프리미엄 결과물
++ Other ("건너뛰기 — Pro만 사용")
+```
+
+**이미지 비율 선택** — AskUserQuestion (1질문, 4옵션, multiSelect) ✅
+
+```
+"기본 이미지 비율을 선택하세요 (복수 선택 가능)"
+
+☑ 3:4 — 인스타그램 피드 최적 (권장)
+☐ 1:1 — 정사각형 (프로필, 썸네일)
+☐ 9:16 — 세로형 (스토리, 릴스)
+☐ 16:9 — 가로형 (블로그, 프레젠테이션)
++ Other ("건너뛰기 — 3:4만 사용")
+```
+
+**저장**: config.json의 nano_banana 필드에 기록:
+```json
+"nano_banana": {
+  "models": ["nano-banana-pro", "nano-banana-2"],
+  "default_model": "nano-banana-pro",
+  "ratios": ["3:4", "1:1", "9:16"],
+  "default_ratio": "3:4"
+}
+```
+
+**실행 시 동작**:
+- 모델/비율이 **1개만 설정**: 자동 사용 (질문 없음)
+- 모델/비율이 **복수 설정** + 사용자 미지정: AskUserQuestion으로 선택 요청
+- 사용자가 명시한 경우: 명시된 값 사용 (질문 없음)
 
 ### 3-3. API 키 저장 (글로벌 공유)
 
@@ -305,7 +362,7 @@ def _parse_env_file(path, key_name):
 
 ```
 <프로젝트>/
-├── CLAUDE.md              ← 맞춤형 (≤ 500라인)
+├── CLAUDE.md              ← 맞춤형 (≤ 200라인)
 └── .moai/
     ├── config.json        ← 플러그인 설정, 커넥터 참조
     └── evolution/
@@ -318,7 +375,7 @@ def _parse_env_file(path, key_name):
 
 ### 4-2. CLAUDE.md 생성 규칙
 
-1. **500라인 이내** — 맞춤형 지침 + 스킬 라우팅만 포함
+1. **200라인 이내** — 맞춤형 지침 + 스킬 라우팅만 포함
 2. **하네스 전체 복사 금지** — 핵심 역할/목적을 2~3줄로 요약
 3. 실행 시 `references/harness/{id}.md`를 **런타임에 로드**
 4. Phase 1의 사용자 프로필 정보를 페르소나에 반영
@@ -344,6 +401,12 @@ def _parse_env_file(path, key_name):
       "korean-law": { "env_key": "KOREAN_LAW_OC", "configured": true },
       "nano-banana": { "env_key": "NANO_BANANA_API_KEY", "configured": false }
     }
+  },
+  "nano_banana": {
+    "models": ["nano-banana-pro", "nano-banana-2"],
+    "default_model": "nano-banana-pro",
+    "ratios": ["3:4", "1:1"],
+    "default_ratio": "3:4"
   },
   "evolution": {
     "cycle_count": 0,
@@ -443,6 +506,9 @@ execution-protocol.md: 컨텍스트 로드 시도
 | Phase 2 | 1 | 3~4 (multiSelect) | ✅ |
 | Phase 3-1 커넥터 | 1 | 최대 4 (multiSelect) | ✅ |
 | Phase 3-2 API 키 | 1 | 최대 4 (multiSelect) | ✅ |
-| Phase 3-2 키 입력 | 텍스트 | N/A | ✅ (대화형) |
+| Phase 3-2 기존 키 | 조건부 | 2 | ✅ |
+| Phase 3-2.5 모델 | 조건부 | 3 (multiSelect) | ✅ |
+| Phase 3-2.5 비율 | 조건부 | 4 (multiSelect) | ✅ |
+| 키 입력 | 텍스트 | N/A | ✅ (대화형) |
 
-**총 AskUserQuestion 호출: 최대 5회** (기존 15+회에서 대폭 감소)
+**총 AskUserQuestion 호출: 최대 8회** (Nano Banana 설정 포함)
