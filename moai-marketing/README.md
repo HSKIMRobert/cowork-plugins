@@ -8,7 +8,9 @@
 
 | 스킬 | 설명 | 레퍼런스 | 상태 |
 |------|------|:--------:|:----:|
-| [sns-content](./skills/sns-content/) | 네이버 블로그, 인스타그램, 카카오 채널 최적화. 브랜드 아이덴티티, 퍼스널 브랜딩 | 6 | ✅ |
+| [brand-identity](./skills/brand-identity/) | 기업 브랜딩 풀 파이프라인. 네이밍, 슬로건, 톤앤매너, 비주얼 가이드라인 | 4 | ✅ |
+| [personal-branding](./skills/personal-branding/) | 개인 브랜딩. 자기 분석, 포지셔닝, 콘텐츠 전략, 채널별 최적화 | 3 | ✅ |
+| [sns-content](./skills/sns-content/) | 네이버 블로그, 인스타그램, 카카오 채널 최적화 | 6 | ✅ |
 | [campaign-planner](./skills/campaign-planner/) | A/B 테스트, 그로스 해킹, 인플루언서 전략, CRM, 이커머스 상세페이지 | 9 | ✅ |
 | [seo-audit](./skills/seo-audit/) | 네이버/구글/AI 검색(GEO) 통합 SEO 감사, 키워드 분석, C-Rank 개선 | 0 | ✅ |
 | [email-sequence](./skills/email-sequence/) | 정보통신망법 준수 이메일 시퀀스, 드립 캠페인, 온보딩/재활성화 | 0 | ✅ |

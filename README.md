@@ -10,11 +10,11 @@ Claude Cowork 도메인 전문가 AI 마켓플레이스.
 |---------|------|:-------:|
 | [moai-core](./moai-core/) | 도메인 AI 라우터, 초기화, 자가학습 엔진 | 1 |
 | [moai-business](./moai-business/) | 사업계획서, 시장조사, 재무모델, 투자제안서 | 4 |
-| [moai-marketing](./moai-marketing/) | 네이버/카카오 SEO, SNS, 캠페인, 이메일 시퀀스, 퍼포먼스 | 5 |
+| [moai-marketing](./moai-marketing/) | 기업/개인 브랜딩, SEO, SNS, 캠페인, 이메일 시퀀스, 퍼포먼스 | 7 |
 | [moai-legal](./moai-legal/) | 계약서 검토, 컴플라이언스, NDA, 지적재산권 | 4 |
 | [moai-finance](./moai-finance/) | 원천징수, 부가세, K-IFRS, 결산, 예산 분석 | 4 |
 | [moai-hr](./moai-hr/) | 근로계약서, 4대보험, 채용, 성과평가 | 4 |
-| [moai-content](./moai-content/) | 카드뉴스, 랜딩페이지, 뉴스레터, 카피라이팅, 블로그, 소셜미디어 | 7 |
+| [moai-content](./moai-content/) | 카드뉴스, 상세페이지, 랜딩페이지, 뉴스레터, 카피라이팅, 블로그, 소셜미디어 | 8 |
 | [moai-operations](./moai-operations/) | 결재, 조달, SOP, 벤더 관리, 상태 보고 | 3 |
 | [moai-education](./moai-education/) | 강의설계, 논문, 교육과정, 시험 출제 | 3 |
 | [moai-lifestyle](./moai-lifestyle/) | 여행, 건강, 웨딩/이벤트 | 3 |
@@ -29,8 +29,8 @@ Claude Cowork 도메인 전문가 AI 마켓플레이스.
 | 항목 | 수량 |
 |------|:----:|
 | 플러그인 | 15 |
-| 스킬 | 56 |
-| 레퍼런스 파일 | 149 |
+| 스킬 | 59 |
+| 레퍼런스 파일 | 160 |
 | 에이전트 | 7 |
 | MCP 서버 | 5 |
 | 스크립트 | 16 |
@@ -66,7 +66,7 @@ Claude Cowork에서 플러그인 설치:
 ## 기술 특징
 
 **Anthropic 공식 스킬 가이드 준수**
-- 모든 52개 스킬에 [What]+[When]+[Triggers] 구조의 description 적용
+- 모든 59개 스킬에 [What]+[When]+[Triggers] 구조의 description 적용
 - Negative triggers로 불필요한 스킬 로딩 방지
 - 인라인 폴백과 에러 핸들링 내장
 
