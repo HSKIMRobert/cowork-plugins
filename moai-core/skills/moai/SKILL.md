@@ -42,7 +42,7 @@ MoAI는 실행(How)을 담당하는 에이전트팀이다.
 2. 설치된 하네스가 없으면 → 아래 라우팅 테이블로 자동 감지
 3. 감지된 스킬을 트리거하고 해당 레퍼런스 로드 후 실행
 
-### 3.1 라우팅 테이블 (v1.0 — 15개 플러그인)
+### 3.1 라우팅 테이블 (v1.0 — 17개 플러그인)
 
 | 키워드 | 플러그인 | 대표 스킬 |
 |--------|---------|----------|
@@ -60,6 +60,8 @@ MoAI는 실행(How)을 담당하는 에이전트팀이다.
 | PPT, 한글, HWPX, DOCX, XLSX, 보고서, 공문서 | **moai-office** | pptx-designer, hwpx-writer, docx-generator, xlsx-creator |
 | 스케줄, 예약, 자동실행, 반복 업무, 크론 | **moai-schedules** | create-schedule, list-schedules, manage-schedule |
 | 자기소개서, 이력서, CV, 면접, 취업, 포트폴리오, 채용공고, JD 분석 | **moai-career** | resume-builder, interview-coach, job-analyzer, portfolio-guide |
+| 데이터, CSV, Excel, 분석, 차트, 시각화, 공공데이터, KOSIS, 통계 | **moai-data** | data-explorer, data-visualizer, public-data |
+| 논문, 특허, KIPRIS, KCI, RISS, 연구비, 선행기술, 출원, 학술 | **moai-research** | paper-search, paper-writer, patent-search, patent-analyzer, grant-writer |
 
 ## 4. 카탈로그 (10개 카테고리, 84개 하네스)
 
@@ -162,7 +164,7 @@ mcp__sequential-thinking__sequentialthinking 호출
 ## 6. 메모리 아키텍처 (3계층)
 
 ```
-계층 1: 플러그인 (Read-Only) — 15개 플러그인 스킬 + 하네스 레퍼런스 + 실행 코드
+계층 1: 플러그인 (Read-Only) — 17개 플러그인 스킬 + 하네스 레퍼런스 + 실행 코드
 계층 2: ./CLAUDE.md (자동 로딩, R/W) — 맞춤형 페르소나 + 워크플로우
 계층 3: 프로젝트 데이터 (R/W)
   ├── .moai/ — 도메인 맥락, 진화 데이터, 설정

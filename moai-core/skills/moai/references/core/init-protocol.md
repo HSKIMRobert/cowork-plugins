@@ -147,6 +147,8 @@ IF Phase 1 답변에 매칭되지만 미설치된 플러그인이 있으면:
 | moai-office | Google Drive, Gmail, Notion, Microsoft 365 |
 | moai-support | Slack, HubSpot |
 | moai-operations | Slack, Notion, Asana/Jira |
+| moai-data | Airtable, Google Sheets, Google Drive, Notion |
+| moai-research | Google Drive, Notion, Google Calendar |
 
 AskUserQuestion (1질문, 최대 4옵션, multiSelect) ✅
 
@@ -183,24 +185,39 @@ AskUserQuestion (1질문, 최대 4옵션, multiSelect) ✅
 
 **API 키 필요 플러그인:**
 
-| 플러그인 | MCP 서버 | 환경변수 | 용도 |
-|---------|---------|---------|------|
-| moai-content | Nano Banana | NANO_BANANA_API_KEY | AI 이미지 생성 |
-| moai-business | DART OpenAPI | DART_API_KEY | 기업 공시/재무제표 |
-| moai-legal | 국가법령정보 | KOREAN_LAW_OC | 법령/판례 검색 |
+| 플러그인 | 서비스 | 환경변수 | 용도 | 발급처 |
+|---------|--------|---------|------|--------|
+| moai-content | Nano Banana | NANO_BANANA_API_KEY | AI 이미지 생성 | ai.google.dev |
+| moai-business | DART 전자공시 | DART_API_KEY | 기업 공시/재무제표 | opendart.fss.or.kr |
+| moai-legal | 국가법령정보 | KOREAN_LAW_OC | 법령/판례 검색 | law.go.kr |
+| moai-data | 공공데이터포털 | DATA_GO_KR_API_KEY | 공공데이터 조회 | data.go.kr |
+| moai-data | KOSIS 통계 | KOSIS_API_KEY | 통계청 데이터 | kosis.kr/openapi |
+| moai-research | KIPRIS Plus | KIPRIS_API_KEY | 특허 검색 | plus.kipris.or.kr |
+| moai-research | KCI 논문 | KCI_API_KEY | 논문 검색 | data.go.kr (KCI) |
 
 해당 서비스가 **2개 이상**이면 AskUserQuestion:
 
 AskUserQuestion (1질문, 최대 4옵션, multiSelect) ✅
 
 ```
-[예: moai-business + moai-legal + moai-content 설치 시]
+[설치된 플러그인에서 API 키 필요 서비스만 추출, 최대 4개씩 페이지네이션]
+
 "API 키를 등록할 서비스를 선택하세요 (나중에 등록 가능)"
 
-☐ DART OpenAPI — 기업 공시 조회, 재무제표 (opendart.fss.or.kr)
+[페이지 1 — 4개]
+☐ DART 전자공시 — 기업 공시, 재무제표 (opendart.fss.or.kr)
+☐ 공공데이터포털 — 공공 API 조회 (data.go.kr)
+☐ KOSIS 통계 — 통계청 데이터 (kosis.kr)
+☐ KIPRIS Plus — 특허 검색 (plus.kipris.or.kr)
++ Other ("더 보기 / 건너뛰기")
+
+[페이지 2 — 나머지]
+☐ KCI 논문 — 학술 논문 검색 (data.go.kr 경유)
 ☐ 법령 정보 — 법령/판례 검색 (law.go.kr)
-☐ Nano Banana — AI 이미지 생성 (카드뉴스/썸네일)
+☐ Nano Banana — AI 이미지 생성 (ai.google.dev)
 + Other ("건너뛰기 — 나중에 /moai apikey로 등록")
+
+※ 설치되지 않은 플러그인의 서비스는 표시하지 않는다
 ```
 
 해당 서비스가 **1개만**이면 텍스트 대화로 직접 안내:
@@ -243,6 +260,26 @@ ELSE:
 [Nano Banana 선택 시]
 "Nano Banana API 키를 입력해 주세요.
  Google AI Studio(ai.google.dev)에서 Gemini API 키로 발급 가능합니다.
+ (건너뛰려면 '건너뛰기' 입력)"
+
+[공공데이터포털 선택 시]
+"공공데이터포털 API 키를 입력해 주세요.
+ https://www.data.go.kr/ 에서 회원가입 후 활용신청하면 즉시 발급됩니다.
+ (건너뛰려면 '건너뛰기' 입력)"
+
+[KOSIS 선택 시]
+"KOSIS 통계 API 키를 입력해 주세요.
+ https://kosis.kr/openapi/ 에서 회원가입 후 자동승인됩니다.
+ (건너뛰려면 '건너뛰기' 입력)"
+
+[KIPRIS Plus 선택 시]
+"KIPRIS Plus 특허 API 키를 입력해 주세요.
+ https://plus.kipris.or.kr/ 에서 회원가입 후 발급 가능합니다.
+ (건너뛰려면 '건너뛰기' 입력)"
+
+[KCI 선택 시]
+"KCI 논문 API 키를 입력해 주세요.
+ https://www.data.go.kr/data/3049042/openapi.do 에서 활용신청하면 즉시 발급됩니다.
  (건너뛰려면 '건너뛰기' 입력)"
 ```
 

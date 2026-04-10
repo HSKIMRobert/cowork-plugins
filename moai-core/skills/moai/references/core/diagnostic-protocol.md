@@ -23,7 +23,7 @@ MoAI 환경과 프로필 상태를 진단하고 문제를 식별하는 프로토
 │ ├─ ./CLAUDE.md 존재: ✓
 │ ├─ .moai/ 디렉토리: ✓
 │ ├─ skills/moai/references/: ✓ (core 포함)
-│ └─ 15개 플러그인 설치 상태: ✓
+│ └─ 17개 플러그인 설치 상태: ✓
 │
 │ [Phase 2] 글로벌 프로필 검사
 │ ├─ /mnt/.auto-memory/moai-profile.md: ✓
