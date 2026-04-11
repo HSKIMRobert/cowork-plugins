@@ -37,18 +37,56 @@ Claude Cowork 도메인 전문가 AI 마켓플레이스.
 | 스크립트 | 16 |
 | 템플릿 | 8 |
 
-## 설치
+## 설치 방법
 
-Claude Cowork에서 플러그인 설치:
+### 방법 1: GitHub 레포 URL로 설치 (권장)
 
-1. Settings > Plugins에서 GitHub 저장소 URL 입력
-2. 원하는 플러그인 선택하여 설치
-3. `/moai init`으로 초기 설정
+Claude Cowork에서 GitHub 레포 주소를 직접 입력하여 전체 마켓플레이스를 설치합니다.
 
-또는 `.plugin` 파일을 직접 설치:
+1. **Claude Cowork** 실행
+2. 좌측 메뉴 > **커스터마이즈** (Customize) > **Plugins**
+3. **마켓플레이스 추가** (Add Marketplace) 클릭
+4. 아래 GitHub 레포 URL 입력:
+   ```
+   https://github.com/modu-ai/cowork-plugins
+   ```
+5. **추가** 클릭 → 16개 플러그인 목록 표시
+6. 원하는 플러그인 선택 → **Install** 클릭
+7. 설치 완료 후 `/moai init` 실행으로 초기 설정
 
-1. [Releases](https://github.com/modu-ai/cowork-plugins/releases)에서 `moai-cowork.plugin` 다운로드
-2. Claude Desktop > Cowork > 플러그인 관리 > **파일에서 설치**
+### 방법 2: 개별 플러그인 로컬 업로드
+
+특정 플러그인만 설치하려면 `.zip` 파일로 직접 업로드합니다.
+
+1. [Releases](https://github.com/modu-ai/cowork-plugins/releases)에서 원하는 플러그인 `.zip` 다운로드
+2. Cowork > **커스터마이즈** > **Plugins** > **로컬 플러그인 업로드**
+3. `.zip` 파일 선택 → **업로드**
+
+### 필수 설치 순서
+
+1. **moai-core** (필수, 오케스트레이터/라우터)
+2. 필요한 도메인 플러그인 (moai-business, moai-office 등)
+3. `/moai init` 실행 → 프로필 + 커넥터 + API 키 설정
+
+### 첫 실행
+
+설치 완료 후 아무 프로젝트 폴더에서:
+```
+/moai init
+```
+- Phase 1: 분야 선택 (1질문)
+- Phase 2: 플러그인 선택 (multiSelect)
+- Phase 3: 커넥터 + API 키 등록
+- Phase 4: 맞춤형 CLAUDE.md 생성
+
+약 3분 내 완료. 이후 자연어로 요청하면 자동 라우팅됩니다:
+```
+"사업계획서 써줘"        → moai-business
+"PPT 만들어줘"           → moai-office
+"계약서 검토해줘"        → moai-legal
+"세금 계산해줘"          → moai-finance
+"카드뉴스 만들어줘"      → moai-content
+```
 
 ## 에이전트 공유 호출
 
