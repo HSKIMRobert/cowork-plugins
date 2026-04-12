@@ -39,53 +39,70 @@ Claude Cowork 도메인 전문가 AI 마켓플레이스.
 
 ## 설치 방법
 
-### 방법 1: GitHub 레포 URL로 설치 (권장)
+### Step 1: 마켓플레이스 추가
 
-Claude Cowork에서 GitHub 레포 주소를 직접 입력하여 전체 마켓플레이스를 설치합니다.
+Claude Cowork에서 GitHub 레포 주소를 입력하여 플러그인 마켓플레이스를 추가합니다.
 
-1. **Claude Cowork** 실행
-2. 좌측 메뉴 > **커스터마이즈** (Customize) > **Plugins**
-3. **마켓플레이스 추가** (Add Marketplace) 클릭
-4. 아래 GitHub 레포 URL 입력:
-   ```
-   https://github.com/modu-ai/cowork-plugins
-   ```
-5. **추가** 클릭 → 16개 플러그인 목록 표시
-6. 원하는 플러그인 선택 → **Install** 클릭
-7. 설치 완료 후 `/moai init` 실행으로 초기 설정
+1. Claude Cowork 좌측 메뉴 > **사용자 지정** 클릭
+2. 개인 플러그인 영역에서 **+** 버튼 클릭
+3. **플러그인 생성** > **마켓플레이스 추가** 선택
+4. URL 입력란에 아래 주소 입력 후 **동기화** 클릭:
 
-### 방법 2: 개별 플러그인 로컬 업로드
+```
+modu-ai/cowork-plugins
+```
 
-특정 플러그인만 설치하려면 `.zip` 파일로 직접 업로드합니다.
+![마켓플레이스 추가](docs/setup-1.png)
+![URL 입력](docs/setup-2.png)
 
-1. [Releases](https://github.com/modu-ai/cowork-plugins/releases)에서 원하는 플러그인 `.zip` 다운로드
-2. Cowork > **커스터마이즈** > **Plugins** > **로컬 플러그인 업로드**
-3. `.zip` 파일 선택 → **업로드**
+### Step 2: 플러그인 설치
 
-### 필수 설치 순서
+동기화가 완료되면 16개 플러그인 목록이 표시됩니다.
 
-1. **moai-core** (필수, 오케스트레이터/라우터)
-2. 필요한 도메인 플러그인 (moai-business, moai-office 등)
-3. `/moai init` 실행 → 프로필 + 커넥터 + API 키 설정
+1. **개인** 탭 선택 → **cowork-plugins** 마켓플레이스 확인
+2. 원하는 플러그인 옆의 **+** 버튼으로 설치
+3. **moai-core**를 반드시 먼저 설치 (라우터/오케스트레이터)
+4. 이후 필요한 도메인 플러그인 추가 설치
 
-### 첫 실행
+![플러그인 목록](docs/setup-3.png)
 
-설치 완료 후 아무 프로젝트 폴더에서:
+### Step 3: 프로젝트 생성
+
+플러그인 설치 후 Cowork 프로젝트를 생성합니다.
+
+1. 좌측 메뉴 > **프로젝트** > **+ 새 프로젝트** 클릭
+2. **처음부터 시작하기** 선택
+3. 프로젝트 이름 입력 (예: "youtube 콘텐츠 기획")
+4. 프로젝트 위치 선택 → **만들기** 클릭
+
+![프로젝트 생성](docs/projec-1.png)
+![프로젝트 설정](docs/projec-2.png)
+
+### Step 4: `/moai init` 으로 초기화
+
+프로젝트 생성 후 채팅창에서 MoAI를 초기화합니다.
+
 ```
 /moai init
 ```
-- Phase 1: 분야 선택 (1질문)
-- Phase 2: 플러그인 선택 (multiSelect)
-- Phase 3: 커넥터 + API 키 등록
-- Phase 4: 맞춤형 CLAUDE.md 생성
+
+1. **Phase 1**: 분야 선택 (비즈니스/마케팅/관리/기술 중 택 1)
+2. **Phase 2**: 설치된 플러그인 중 주로 사용할 플러그인 선택 (복수 선택 가능)
+3. **Phase 3**: 커넥터 연결 + API 키 등록 (선택)
+4. **Phase 4**: 프로젝트 맞춤형 CLAUDE.md 자동 생성
+
+![MoAI 초기화](docs/projec-3.png)
 
 약 3분 내 완료. 이후 자연어로 요청하면 자동 라우팅됩니다:
+
 ```
 "사업계획서 써줘"        → moai-business
 "PPT 만들어줘"           → moai-office
 "계약서 검토해줘"        → moai-legal
 "세금 계산해줘"          → moai-finance
 "카드뉴스 만들어줘"      → moai-content
+"데이터 분석해줘"        → moai-data
+"특허 찾아줘"            → moai-research
 ```
 
 ## 에이전트 공유 호출
