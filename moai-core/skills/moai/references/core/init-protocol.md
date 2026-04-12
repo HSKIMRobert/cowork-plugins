@@ -254,7 +254,10 @@ AskUserQuestion (1질문, 최대 4옵션, multiSelect) ✅
 
 선택된 플러그인 중 API 키가 필요한 것이 있으면, API 키 등록을 안내한다.
 
-**주의: 아래 4개 서비스만 안내한다. 네이버 API, 구글 검색 API 등 목록에 없는 서비스는 절대 안내하지 않는다.**
+**주의:**
+- **아래 4개 API 키만 안내한다.** 네이버 API, 구글 검색 API, Google Drive API, Notion API, Notebook LM API 등은 API 키가 아니라 **Cowork 공식 커넥터**로 연결한다.
+- Google Drive, Notion, Gmail, Slack 등은 Phase 3-1(커넥터)에서 안내한다.
+- API 키 안내와 커넥터 안내를 혼동하지 않는다.
 
 **API 키 목록 (4개만 해당):**
 
