@@ -21,8 +21,10 @@ keywords: "MoAI, 모아이, 전문가, init, catalog, status, 사업, 마케팅,
 | `/moai catalog` | 설치된 플러그인 + 스킬 목록 표시 |
 | `/moai status` | 현재 설정 상태 확인 |
 | `/moai apikey` | API 키 조회/추가/변경 |
+| `/moai feedback` | 버그/기능 요청 → GitHub Issues 자동 등록 |
 
 커맨드 실행 시 해당 프로토콜을 references/core/에서 로드합니다.
+`/moai feedback` 실행 시 `feedback` 스킬을 트리거합니다.
 
 ## 라우팅
 

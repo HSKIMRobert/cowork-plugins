@@ -3,13 +3,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Claude Cowork](https://img.shields.io/badge/Claude-Cowork-blueviolet)](https://claude.ai)
 [![Plugins](https://img.shields.io/badge/Plugins-16-blue)](.claude-plugin/marketplace.json)
-[![Skills](https://img.shields.io/badge/Skills-64-green)](.claude-plugin/marketplace.json)
+[![Skills](https://img.shields.io/badge/Skills-65-green)](.claude-plugin/marketplace.json)
 
 **Claude Cowork 도메인 전문가 AI 마켓플레이스**
 
-자연어 한 줄이면 사업계획서, 계약서 검토, 세금 계산, PPT 제작, 데이터 분석, 특허 검색까지 — 16개 독립 플러그인과 64개 전문 스킬이 업무를 대신합니다.
+자연어 한 줄이면 사업계획서, 계약서 검토, 세금 계산, PPT 제작, 데이터 분석, 특허 검색까지 — 16개 독립 플러그인과 65개 전문 스킬이 업무를 대신합니다.
 
-> *Domain expert AI marketplace for [Claude Cowork](https://claude.ai). 16 plugins · 64 skills covering business strategy, marketing, legal, finance, HR, content, operations, education, lifestyle, product, support, document generation, data analysis, and research/patents.*
+> *Domain expert AI marketplace for [Claude Cowork](https://claude.ai). 16 plugins · 65 skills covering business strategy, marketing, legal, finance, HR, content, operations, education, lifestyle, product, support, document generation, data analysis, and research/patents.*
 
 ---
 
@@ -30,7 +30,7 @@
 
 | 플러그인 | 설명 | 스킬 수 |
 |---------|------|:-------:|
-| [moai-core](./moai-core/) | 도메인 AI 라우터, 초기화, 자가학습 엔진 | 1 |
+| [moai-core](./moai-core/) | 도메인 AI 라우터, 초기화, 자가학습 엔진, 피드백 | 2 |
 | [moai-business](./moai-business/) | 사업계획서, 시장조사, 재무모델, 투자제안서 | 4 |
 | [moai-marketing](./moai-marketing/) | 기업/개인 브랜딩, SEO, SNS, 캠페인, 이메일 시퀀스, 퍼포먼스 | 7 |
 | [moai-legal](./moai-legal/) | 계약서 검토, 컴플라이언스, NDA, 지적재산권 | 4 |
@@ -52,7 +52,7 @@
 | 항목 | 수량 |
 |------|:----:|
 | 플러그인 | 16 |
-| 스킬 | 64 |
+| 스킬 | 65 |
 | 레퍼런스 파일 | 167 |
 | 에이전트 | 0 |
 | MCP 서버 | 5 |
@@ -135,6 +135,7 @@ modu-ai/cowork-plugins
 
 - 소크라테스 인터뷰로 사용자 의도를 정확히 파악한 뒤 계획을 수립하고 실행합니다
 - 산출물 품질 검증 루프(파일 유효성 → 내용 완전성 → AI 슬롭 검수)를 자동 수행합니다
+- `/moai feedback`으로 버그/기능 요청을 GitHub Issues에 자동 등록합니다
 ---
 
 ### moai-business — 비즈니스 전략

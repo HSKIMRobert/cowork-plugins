@@ -9,6 +9,7 @@ MoAI 코어 플러그인 — 도메인 AI 라우터, 초기화, 자가학습 엔
 | 스킬 | 설명 | 레퍼런스 | 상태 |
 |------|------|:--------:|:----:|
 | [moai](./skills/moai/) | 도메인 AI 라우터 — 자연어 감지, `/moai init`, `/moai catalog` 커맨드 처리 | 10 | ✅ |
+| [feedback](./skills/feedback/) | 버그/기능 요청 → GitHub Issues 자동 등록 (`/moai feedback`) | 0 | ✅ |
 
 ## 사용 예시
 
@@ -26,6 +27,11 @@ MoAI 코어 플러그인 — 도메인 AI 라우터, 초기화, 자가학습 엔
 /moai catalog
 ```
 16개 플러그인 전체 스킬 목록을 조회합니다.
+
+```
+/moai feedback PPT 생성 시 한글 폰트가 깨져요
+```
+버그 리포트를 수집하여 GitHub Issues에 자동 등록합니다.
 
 ## 설치
 
