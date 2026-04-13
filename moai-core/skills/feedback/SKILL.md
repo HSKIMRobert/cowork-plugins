@@ -6,9 +6,9 @@ description: >
   단순 불만 표출이나 일반 대화에는 사용하지 마세요.
 user-invocable: true
 metadata:
-  version: "1.0.0"
+  version: "1.0.3"
   status: "stable"
-  updated: "2026-04-12"
+  updated: "2026-04-14"
   tags: feedback, bug, feature-request, github, issues
 ---
 
