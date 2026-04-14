@@ -134,7 +134,62 @@ metadata:
 4. 응답 스키마가 바뀌면 스크립트 v번호 메이저 bump (예: `generate_image.py v3 → v4`)
 5. CHANGELOG Migration 섹션에 사용자 조치 사항 명시
 
-## 6. 태그 히스토리
+## 6. GitHub Release 정책 (HARD)
+
+태그를 푸시할 때마다 **반드시 같은 태그 이름의 GitHub Release를 생성**합니다. 릴리스 노트는 CHANGELOG.md의 해당 버전 섹션을 그대로 사용합니다.
+
+### 실행 절차 (태그 푸시 직후)
+
+```bash
+NEW="1.2.0"
+
+# CHANGELOG에서 해당 버전 섹션만 추출 (다음 ## 직전까지)
+awk -v v="$NEW" '
+  $0 ~ "^## \\[" v "\\]" {flag=1; next}
+  /^## \[/{flag=0}
+  flag
+' CHANGELOG.md > /tmp/release-notes.md
+
+# Release 생성 (태그는 사전 푸시되어 있어야 함)
+gh release create "v$NEW" \
+  --repo modu-ai/cowork-plugins \
+  --title "v$NEW" \
+  --notes-file /tmp/release-notes.md \
+  --latest
+```
+
+### [HARD] 규칙
+
+- [HARD] 모든 공식 태그(`vX.Y.Z`)는 **GitHub Release**가 반드시 존재해야 함
+- [HARD] Release 노트는 CHANGELOG.md 해당 섹션을 **그대로** 사용 (수작업 요약 금지)
+- [HARD] Release 제목은 **`vX.Y.Z`** 형식 (CHANGELOG 헤더와 동일)
+- [HARD] MINOR 이상 릴리스는 `--latest` 플래그 적용 (PATCH도 최신이면 적용)
+- [HARD] Pre-release (alpha/beta/rc)는 `--prerelease` 플래그 적용
+- [HARD] 내부 이터레이션(점진 PATCH)이 MINOR에 집약되는 경우, **중간 PATCH 태그의 Release는 Draft 또는 생략 가능**하되 집약 대상 MINOR Release 노트에 이력 요약 포함
+- [HARD] Draft 상태로 방치된 과거 Release는 분기별로 정리 (삭제 또는 정식 발행)
+
+### 자동화 제안 (향후)
+
+`.github/workflows/release.yml` 생성하여 태그 푸시 시 자동 릴리스 노트 발행:
+```yaml
+on:
+  push:
+    tags: ['v*.*.*']
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          awk -v v="$VERSION" '$0 ~ "^## \\[" v "\\]" {flag=1;next} /^## \[/{flag=0} flag' \
+            CHANGELOG.md > notes.md
+          gh release create "$GITHUB_REF_NAME" --notes-file notes.md --latest
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+## 7. 태그 히스토리
 
 - **v1.2.0** (2026-04-14): 공식 MINOR. `moai-media` 신규 플러그인, Nano Banana Pro + 2 체제 확정(Imagen 4 → Gemini 3 Image Preview), Kling 영상 단일화, ElevenLabs·fal.ai MCP 번들, 전 저장소 17 플러그인/70 스킬로 확장.
 - v1.1.0~v1.1.3 (2026-04-14, 내부 이터레이션): moai-media 개발 점진 릴리스. v1.2.0에 집약됨.
