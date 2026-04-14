@@ -5,16 +5,9 @@ description: >
   "급여 마감해줘"처럼 말하면 됩니다. K-IFRS 기준 계정 마감, 급여 정산, 세무 일정 관리,
   결산 보고서 자동 생성을 지원합니다. 2026년 최신 4대보험 요율과 노동법 변경사항을 반영합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
-  tags: "결산,마감,4대보험,급여,월말마감,분기결산,연결결산"
 ---
 
 # 결산 관리 (Close Management)
-
-> moai-finance v1.0.0
 
 ## 개요
 

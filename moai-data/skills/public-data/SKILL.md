@@ -5,17 +5,9 @@ description: >
   '통계 찾아줘', '공공데이터 조회해줘', '인구 통계', 'KOSIS 검색'이라고 요청할 때 사용하세요.
   data.go.kr API와 KOSIS OpenAPI로 실시간 데이터를 조회하고 분석합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  category: "domain"
-  status: "active"
-  updated: "2026-04-10"
-  tags: "공공데이터, 통계, KOSIS, data.go.kr, 인구, 물가, 경제"
 ---
 
 # 공공데이터 조회 (Public Data)
-
-> MoAI-Cowork v1.0.0 하네스 참고자료
 
 ## 역할
 공공데이터포털(data.go.kr)과 KOSIS 통계청의 데이터를 실시간으로 조회하고 분석하는 전문가.

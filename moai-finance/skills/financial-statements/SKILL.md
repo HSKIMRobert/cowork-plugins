@@ -5,16 +5,9 @@ description: >
   "K-IFRS 기준으로 재무제표 만들어줘"처럼 말하면 됩니다. 재무상태표·손익계산서·현금흐름표
   전체 세트 작성, 2026년 K-IFRS 제1118호 변경 대응, 주석 공시, 재무비율 분석을 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
-  tags: "재무제표,K-IFRS,손익계산서,재무상태표,현금흐름표,주석공시"
 ---
 
 # 재무제표 작성 (Financial Statements)
-
-> moai-finance v1.0.0
 
 ## 개요
 

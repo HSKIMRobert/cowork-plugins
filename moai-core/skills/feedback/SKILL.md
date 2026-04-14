@@ -2,14 +2,9 @@
 name: feedback
 description: >
   버그 리포트, 기능 요청을 수집하여 GitHub Issues에 자동 등록합니다.
-  '버그 신고', '기능 요청', '피드백', '/moai feedback'으로 트리거됩니다.
+  '버그 신고', '기능 요청', '피드백', '/project feedback'으로 트리거됩니다.
   단순 불만 표출이나 일반 대화에는 사용하지 마세요.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-14"
-  tags: feedback, bug, feature-request, github, issues
 ---
 
 # Feedback — 버그/기능 요청 GitHub Issues 등록
@@ -148,11 +143,11 @@ gh CLI가 없거나 인증되지 않은 환경에서는:
 ```
 
 ```
-/moai feedback 세금 계산 결과가 이상해요
+/project feedback 세금 계산 결과가 이상해요
 ```
 
 ## 이 스킬을 사용하지 말아야 할 때
 
-- 플러그인 사용법 질문 → `/moai catalog` 또는 해당 플러그인 직접 호출
+- 플러그인 사용법 질문 → `/project catalog` 또는 해당 플러그인 직접 호출
 - 일반적인 불만이나 감상 → 별도 스킬 없이 직접 대화
 - 긴급 보안 이슈 → email@mo.ai.kr 으로 직접 연락

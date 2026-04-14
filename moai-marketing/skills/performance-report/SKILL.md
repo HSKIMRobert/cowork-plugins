@@ -6,16 +6,9 @@ description: >
   '광고비 분석해줘', '채널별 KPI 리포트 써줘'라고 요청하세요.
   경영진용 요약과 실무팀용 상세 분석, 다음 기간 액션 플랜을 함께 제공합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
-  tags: "performance,report,KPI,ROAS,GA4,naver,meta,analytics"
 ---
 
 # 퍼포먼스 리포트 (Performance Report)
-
-> moai-marketing v1.0.0
 
 ## 개요
 

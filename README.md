@@ -83,7 +83,7 @@ modu-ai/cowork-plugins
 
 ### Step 2: 플러그인 설치
 
-동기화가 완료되면 16개 플러그인 목록이 표시됩니다.
+동기화가 완료되면 17개 플러그인 목록이 표시됩니다.
 
 1. **개인** 탭 선택 → **cowork-plugins** 마켓플레이스 확인
 2. 원하는 플러그인 옆의 **+** 버튼으로 설치
@@ -104,12 +104,12 @@ modu-ai/cowork-plugins
 ![프로젝트 생성](docs/projec-1.png)
 ![프로젝트 설정](docs/projec-2.png)
 
-### Step 4: `/moai init` 으로 초기화
+### Step 4: `/project init` 으로 초기화
 
 프로젝트 생성 후 채팅창에서 MoAI를 초기화합니다.
 
 ```
-/moai init
+/project init
 ```
 
 1. **Phase 1**: 분야 선택 (비즈니스/마케팅/관리/기술 중 택 1)
@@ -135,11 +135,11 @@ modu-ai/cowork-plugins
 
 ### moai-core — 오케스트레이터
 
-자연어 요청을 분석하여 16개 도메인 플러그인 중 적합한 스킬로 자동 라우팅합니다. `/moai init`으로 프로젝트를 초기화하고, `/moai catalog`으로 설치된 스킬 목록을 조회합니다.
+자연어 요청을 분석하여 16개 도메인 플러그인 중 적합한 스킬로 자동 라우팅합니다. `/project init`으로 프로젝트를 초기화하고, `/project catalog`으로 설치된 스킬 목록을 조회합니다.
 
 - 소크라테스 인터뷰로 사용자 의도를 정확히 파악한 뒤 계획을 수립하고 실행합니다
 - 산출물 품질 검증 루프(파일 유효성 → 내용 완전성 → AI 슬롭 검수)를 자동 수행합니다
-- `/moai feedback`으로 버그/기능 요청을 GitHub Issues에 자동 등록합니다
+- `/project feedback`으로 버그/기능 요청을 GitHub Issues에 자동 등록합니다
 ---
 
 ### moai-business — 비즈니스 전략
@@ -339,7 +339,7 @@ Airtable/Google Sheets 커넥터로 데이터를 직접 분석합니다.
 
 | 기능 | 소속 스킬 | 공유 대상 |
 |------|----------|----------|
-| 품질 검증 (PASS/FAIL) | moai-core/moai | 전 플러그인 |
+| 품질 검증 (PASS/FAIL) | moai-core/project | 전 플러그인 |
 | 시장 데이터 수집 | moai-business/market-analyst | moai-product 등 |
 | 콘텐츠 생성 | moai-marketing/sns-content | moai-business 등 |
 | 컴플라이언스 체크 | moai-legal/compliance-check | moai-finance, moai-hr 등 |
@@ -349,7 +349,7 @@ Airtable/Google Sheets 커넥터로 데이터를 직접 분석합니다.
 ## 기술 특징
 
 **Anthropic 공식 스킬 가이드 준수**
-- 모든 64개 스킬에 [What]+[When]+[Triggers] 구조의 description 적용
+- 모든 70개 스킬에 [What]+[When]+[Triggers] 구조의 description 적용
 - Negative triggers로 불필요한 스킬 로딩 방지
 - 인라인 폴백과 에러 핸들링 내장
 

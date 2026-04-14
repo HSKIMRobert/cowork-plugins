@@ -5,15 +5,9 @@ description: >
   "CV 작성해줘"처럼 말하면 됩니다. STAR 기법 기반 자소서, ATS 최적화 이력서,
   영문 CV, LinkedIn 프로필 최적화, 글자수별 전략(500/1000/1500자)을 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
 ---
 
 # 이력서/자소서 빌더 (resume-builder)
-
-> moai-career v1.0.0
 
 ## 지원 영역
 

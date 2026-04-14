@@ -7,16 +7,9 @@ description: >
   '숏폼 영상 만들어줘', '이미지 움직여줘', '릴스 영상 생성', '립싱크 영상',
   '/moai-media kling'으로 호출하세요. fal.ai MCP 경유.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-14"
-  tags: "video,kling,short-form,reels,tiktok,lip-sync,fal"
 ---
 
 # Kling 3.0 — 숏폼 영상 생성
-
-> moai-media v1.2.0 | fal.ai MCP 경유
 
 ## 개요
 

@@ -6,10 +6,6 @@ description: >
   'OKR 설정해줘', '해외 진출 전략 짜줘', '시나리오 플래닝 해줘'라고 요청하세요.
   BMC, Blue Ocean, Porter's 5 Forces, OKR 등 검증된 전략 프레임워크를 활용합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-09"
 ---
 
 # 전략 플래너 (Strategy Planner)

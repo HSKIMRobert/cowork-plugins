@@ -6,16 +6,9 @@ description: >
   '재활성화 이메일 만들어줘', '뉴스레터 시리즈 짜줘'라고 요청하세요.
   법적 컴플라이언스 체크, 시퀀스 플로우, 이메일 본문 초안을 제공합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
-  tags: "email,drip,campaign,newsletter,정보통신망법,수신동의,automation"
 ---
 
 # 이메일 시퀀스 (Email Sequence)
-
-> moai-marketing v1.0.0
 
 ## 개요
 

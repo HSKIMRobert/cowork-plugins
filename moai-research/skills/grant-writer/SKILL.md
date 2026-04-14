@@ -5,17 +5,9 @@ description: >
   '연구비 신청서', 'NRF 과제', 'IITP 사업', '정부 과제 신청', '연구 제안서'라고 요청할 때 사용하세요.
   한국연구재단(NRF), IITP, KIAT, 중소벤처기업부 등 주요 연구비 양식에 맞춘 신청서를 작성합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  category: "domain"
-  status: "active"
-  updated: "2026-04-10"
-  tags: "연구비, 과제, NRF, IITP, KIAT, 신청서, 제안서, 정부과제"
 ---
 
 # 연구비 신청서 (Grant Writer)
-
-> MoAI-Cowork v1.0.0 하네스 참고자료
 
 ## 역할
 주요 정부 연구비 지원 기관의 양식에 맞춘 신청서를 작성하는 전문가.

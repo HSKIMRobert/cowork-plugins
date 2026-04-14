@@ -8,31 +8,32 @@
 
 **단일 진실 원칙**: cowork-plugins 저장소의 모든 버전 표기는 **완전히 동일**해야 합니다.
 
-### 동기화 대상 (총 88개 지점, v1.1.0 기준)
+### v1.3.0 변경: SKILL.md frontmatter 버전 제거
+
+v1.3.0부터 **SKILL.md에서 `metadata` 블록을 완전히 제거**했습니다. 버전은 **plugin.json 단일 소스**입니다.
+
+### 동기화 대상 (총 18개 지점, v1.3.0 기준)
 
 | 범주 | 경로 | 필드 | 개수 |
 |---|---|---|---|
 | 마켓플레이스 | `.claude-plugin/marketplace.json` | `metadata.version` | 1 |
 | 플러그인 매니페스트 | `<plugin>/.claude-plugin/plugin.json` | `version` | 17 |
-| 스킬 frontmatter | `<plugin>/skills/<skill>/SKILL.md` | `metadata.version` | 70 |
+| ~~스킬 frontmatter~~ | ~~`<plugin>/skills/<skill>/SKILL.md`~~ | — | **0 (v1.3.0 제거)** |
 
-플러그인 또는 스킬 추가·삭제 시 이 카운트를 함께 갱신하세요.
+플러그인 추가·삭제 시 이 카운트를 함께 갱신하세요.
 
 ### [HARD] 버전 변경 절차
 
-릴리스 버전을 올릴 때는 **반드시 아래 4단계를 함께 실행**합니다. 일부만 올리는 것은 금지.
+릴리스 버전을 올릴 때는 **반드시 아래 4단계를 함께 실행**합니다.
 
-1. **3곳 동시 업데이트** (위 표의 82개 지점 전부)
+1. **2곳 동시 업데이트** (위 표의 18개 지점 전부)
    ```bash
-   NEW="1.0.4"
+   NEW="1.3.1"
    # marketplace
    sed -i '' -E 's/"version": *"[0-9]+\.[0-9]+\.[0-9]+"/"version": "'$NEW'"/' .claude-plugin/marketplace.json
    # 모든 plugin.json
    find . -path "*/.claude-plugin/plugin.json" -not -path "*/.git/*" -exec \
      sed -i '' -E 's/"version": *"[0-9]+\.[0-9]+\.[0-9]+"/"version": "'$NEW'"/' {} +
-   # 모든 SKILL.md metadata.version
-   find . -name "SKILL.md" -not -path "*/.git/*" -exec \
-     sed -i '' -E 's/^(  version: *)"[0-9]+\.[0-9]+\.[0-9]+"/\1"'$NEW'"/' {} +
    ```
 
 2. **CHANGELOG.md 항목 추가**: `## [NEW] - YYYY-MM-DD` 섹션, Added/Changed/Fixed/Removed 분류
@@ -45,45 +46,64 @@
 
 ### [HARD] 금지 사항
 
-- 일부 파일만 버전 올리기 (예: marketplace.json만 bump, SKILL.md 방치)
-- 태그 형식 불일치 (예: `v1.1.0` 태그인데 marketplace.json은 `1.0.3`)
+- 일부 파일만 버전 올리기 (예: marketplace.json만 bump, plugin.json 방치)
+- 태그 형식 불일치 (예: `v1.3.0` 태그인데 marketplace.json은 `1.2.0`)
 - 버전 번호와 무관한 마이너 수정에 버전 bump
 - 이미 배포된 태그를 force-push로 덮어쓰기 (사용자 캐시 손상)
+- **SKILL.md에 `metadata:` 블록 재도입 금지** (v1.3.0 단일 소스 정책 위반)
 
 ### 검증 명령
 
 커밋 전 반드시 실행:
 ```bash
 # 모든 버전이 동일한지 확인 (한 줄만 출력되어야 통과)
-{ grep -h '"version"' .claude-plugin/marketplace.json moai-*/.claude-plugin/plugin.json | grep -oE '[0-9]+\.[0-9]+\.[0-9]+'; \
-  grep -h "^  version:" moai-*/skills/*/SKILL.md | grep -oE '[0-9]+\.[0-9]+\.[0-9]+'; } \
-  | sort -u
+{ grep -h '"version"' .claude-plugin/marketplace.json moai-*/.claude-plugin/plugin.json \
+  | grep -oE '[0-9]+\.[0-9]+\.[0-9]+'; } | sort -u
+
+# SKILL.md에 metadata 블록이 남아있지 않은지 확인 (아무 것도 출력되지 않아야 통과)
+grep -l "^metadata:" moai-*/skills/*/SKILL.md 2>/dev/null
 ```
 
 ---
 
 ## 2. 플러그인 컴포넌트 규격 (HARD)
 
-### Skill 슬래시 자동완성 노출
+### SKILL.md frontmatter 규격 (v1.3.0 기준)
 
-`/<skill-name>` Tab 자동완성에 노출하려면 SKILL.md frontmatter에 다음 필드 **필수**:
+**v1.3.0부터 `metadata:` 블록 금지**. 허용되는 필드는 2-3개뿐입니다.
+
+#### 카테고리 A: 슬래시 호출 스킬 (Tab 자동완성 대상)
+
+`/skill-name` 형태로 Tab 자동완성하고 싶은 모든 스킬:
 
 ```yaml
 ---
 name: <skill-name>
-description: >
-  ...
-user-invocable: true        # ← 슬래시 메뉴 노출 스위치
-metadata:
-  version: "X.Y.Z"
-  status: "active" | "stable" | "experimental"
-  updated: "YYYY-MM-DD"
-  tags: "tag1,tag2,tag3"
+description: |
+  스킬의 목적과 트리거 조건을 자연스러운 서술로 풍부하게 작성.
+  "다음과 같은 요청 시 반드시 이 스킬을 사용하세요:" 블록으로
+  트리거 키워드/문장을 구체적으로 나열.
+user-invocable: true
 ---
 ```
 
-- `user-invocable` 누락 시 → Tab 자동완성 불가, 모델 자동 호출만 가능
-- `keywords` 필드는 **비표준**이므로 사용 금지 (`metadata.tags`로 대체)
+#### 카테고리 B: 모델 자동 호출 스킬 (체인 내부 호출만)
+
+Tab 자동완성 불필요하고 모델이 문맥으로 자동 호출하는 스킬:
+
+```yaml
+---
+name: <skill-name>
+description: |
+  서술형 설명 + 트리거 키워드.
+---
+```
+
+### [HARD] 금지 필드
+
+- `metadata:` 블록 전체 (version, status, updated, tags 포함)
+- `keywords:` (비표준, 사용 금지)
+- 본문 상단의 `> vX.Y.Z | ...` 식 버전 배너 라인 (plugin.json이 단일 소스)
 
 ### Plugin 매니페스트
 
@@ -91,7 +111,7 @@ metadata:
 ```json
 {
   "name": "plugin-name",
-  "version": "1.0.3",
+  "version": "1.3.0",
   "description": "...",
   "author": { "name": "..." },
   "keywords": ["..."],
@@ -101,7 +121,53 @@ metadata:
 
 ---
 
-## 3. 릴리스 후 사용자 안내
+## 3. /project init — CLAUDE.md 생성 지침 정책 (HARD, v1.3.0 신규)
+
+`moai-core:project` 스킬의 `/project init` 커맨드는 프로젝트 루트에 `CLAUDE.md`를 생성합니다. 생성된 CLAUDE.md에는 **다음 HARD 규칙 블록이 반드시 포함**되어야 합니다.
+
+### 3-1. 문서·콘텐츠 생성 우선순위 (HARD)
+
+사용자 프로젝트에서 DOCX/PPTX/XLSX/HWPX/HTML/블로그/카드뉴스/뉴스레터/SNS/카피/상세페이지/이미지/영상/음성 등 산출물을 만들 때는 **Claude 기본 artifacts·도구가 아니라 moai 스킬을 우선 사용**합니다.
+
+| 산출물 | 우선 스킬 |
+|---|---|
+| DOCX / Word | `moai-office:docx-generator` |
+| PPTX / 발표자료 | `moai-office:pptx-designer` |
+| XLSX / Excel | `moai-office:xlsx-creator` |
+| HWPX / 한글 | `moai-office:hwpx-writer` |
+| HTML / 웹페이지 / 랜딩 | `moai-content:landing-page` |
+| 블로그 / 카드뉴스 / 뉴스레터 / 카피 / 상세페이지 / SNS | `moai-content:*` |
+| 이미지 / 영상 / 음성 | `moai-media:*` |
+
+### 3-2. AI 슬롭 후처리 (HARD)
+
+**모든 텍스트 산출물 워크플로우의 마지막 단계**에 `moai-core:ai-slop-reviewer` 스킬을 호출해 AI 패턴을 검수·수정합니다.
+
+- 대상: 블로그, 뉴스레터, 카피, 사업계획서, 계약서/공문, 제안서, 보고서, 이메일, 랜딩 카피, 사업보고, 특허 초안, 강의자료 원고 등 **모든 텍스트 산출물**
+- 제외: 코드, JSON/CSV 데이터, 차트·표, 숫자 리포트, 단순 조회 응답
+
+### 3-3. 스킬 체이닝 (HARD)
+
+`/project init`은 산출물별 **스킬 체인**을 설계해 CLAUDE.md의 "프로젝트 워크플로우" 섹션에 기록합니다. 예:
+
+```
+사업계획서(PPT)
+  체인: strategy-planner → pptx-designer → ai-slop-reviewer
+블로그 발행
+  체인: blog → ai-slop-reviewer → (선택) nano-banana
+제품 랜딩
+  체인: copywriting → landing-page → ai-slop-reviewer
+```
+
+체인은 `moai-core/skills/project/references/templates/CLAUDE.md.tmpl`의 `{workflow_chains}` 슬롯에 주입됩니다.
+
+### 3-4. 글로벌 프로필 질문 금지
+
+v1.3.0 기준 `/project init`은 **이름·회사·역할을 재질문하지 않습니다**. `moai-profile.md`를 생성하지 않으며, 사용자 정보는 **프로젝트 CLAUDE.md 한 곳에만** 기록됩니다.
+
+---
+
+## 4. 릴리스 후 사용자 안내
 
 신버전 배포 후 사용자 측 캐시 갱신 필요:
 ```
@@ -111,7 +177,7 @@ metadata:
 
 ---
 
-## 4. MCP 서버 통합 정책 (HARD)
+## 5. MCP 서버 통합 정책 (HARD)
 
 플러그인이 MCP 서버를 번들하려면 다음 규칙을 따릅니다:
 
@@ -124,7 +190,7 @@ metadata:
 현재 MCP 번들 플러그인:
 - `moai-media`: `fal-ai` (hosted), `elevenlabs` (local stdio via uvx)
 
-## 5. 외부 API 모델 ID 업데이트 정책
+## 6. 외부 API 모델 ID 업데이트 정책
 
 외부 API(Google, OpenAI, Anthropic 등)가 모델 이름·엔드포인트를 변경하면:
 
@@ -134,14 +200,14 @@ metadata:
 4. 응답 스키마가 바뀌면 스크립트 v번호 메이저 bump (예: `generate_image.py v3 → v4`)
 5. CHANGELOG Migration 섹션에 사용자 조치 사항 명시
 
-## 6. GitHub Release 정책 (HARD)
+## 7. GitHub Release 정책 (HARD)
 
 태그를 푸시할 때마다 **반드시 같은 태그 이름의 GitHub Release를 생성**합니다. 릴리스 노트는 CHANGELOG.md의 해당 버전 섹션을 그대로 사용합니다.
 
 ### 실행 절차 (태그 푸시 직후)
 
 ```bash
-NEW="1.2.0"
+NEW="1.3.1"
 
 # CHANGELOG에서 해당 버전 섹션만 추출 (다음 ## 직전까지)
 awk -v v="$NEW" '
@@ -168,35 +234,16 @@ gh release create "v$NEW" \
 - [HARD] 내부 이터레이션(점진 PATCH)이 MINOR에 집약되는 경우, **중간 PATCH 태그의 Release는 Draft 또는 생략 가능**하되 집약 대상 MINOR Release 노트에 이력 요약 포함
 - [HARD] Draft 상태로 방치된 과거 Release는 분기별로 정리 (삭제 또는 정식 발행)
 
-### 자동화 제안 (향후)
+---
 
-`.github/workflows/release.yml` 생성하여 태그 푸시 시 자동 릴리스 노트 발행:
-```yaml
-on:
-  push:
-    tags: ['v*.*.*']
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: |
-          VERSION="${GITHUB_REF_NAME#v}"
-          awk -v v="$VERSION" '$0 ~ "^## \\[" v "\\]" {flag=1;next} /^## \[/{flag=0} flag' \
-            CHANGELOG.md > notes.md
-          gh release create "$GITHUB_REF_NAME" --notes-file notes.md --latest
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
+## 8. 태그 히스토리
 
-## 7. 태그 히스토리
-
+- **v1.3.0** (2026-04-14): 공식 MINOR. `/moai` → `/project` 커맨드 이름 전환 (Claude Code 프로젝트 레벨 스킬과의 shadowing 충돌 해소). `ai-slop-reviewer` 스킬 신규 도입 (모든 텍스트 산출물 후처리 검수). **스킬 체이닝 기반 CLAUDE.md 생성** — `/project init`이 산출물별 스킬 체인을 설계하고 확인 후 CLAUDE.md에 기록. SKILL.md `metadata:` 블록 전면 제거 (단일 버전 소스: plugin.json). 글로벌 프로필 시스템(`moai-profile.md`, `[MoAI 프로필]`) 전면 제거. CLAUDE.md 템플릿 외부 파일화(`templates/CLAUDE.md.tmpl`). office/web 스킬 우선 + AI 슬롭 후처리 HARD 규칙 고정 포함.
 - **v1.2.0** (2026-04-14): 공식 MINOR. `moai-media` 신규 플러그인, Nano Banana Pro + 2 체제 확정(Imagen 4 → Gemini 3 Image Preview), Kling 영상 단일화, ElevenLabs·fal.ai MCP 번들, 전 저장소 17 플러그인/70 스킬로 확장.
 - v1.1.0~v1.1.3 (2026-04-14, 내부 이터레이션): moai-media 개발 점진 릴리스. v1.2.0에 집약됨.
 - **v1.0.3** (2026-04-14): `/moai` 자동완성 수정 + 전체 버전 통일 + 태그 정책 확립
-- 이전 로컬 태그(구 v1.1.0/v1.2.0/v1.3.0)는 marketplace 버전과 불일치하여 v1.0.3 시점에 정리·삭제함 (현재 v1.1.0은 재부여됨, 의미가 다름)
 
 ---
 
-Version: 1.0.0
+Version: 1.3.0
 Last Updated: 2026-04-14

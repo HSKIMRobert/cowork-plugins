@@ -6,10 +6,6 @@ description: >
   '매출 예측 해줘', '투자자 보고서 작성해줘', '밸류에이션 계산해줘'라고 요청하세요.
   시리즈 A/B 투자 유치, 손익분석, 현금흐름 모델, 피칭 덱을 생성합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-09"
 ---
 
 # 투자자 관계 (Investor Relations)

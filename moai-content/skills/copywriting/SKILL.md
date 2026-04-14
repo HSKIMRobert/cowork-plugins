@@ -5,10 +5,6 @@ description: >
   "제품 슬로건 만들어줘"처럼 말하면 됩니다. 마케팅 카피 작성, 헤드라인·CTA 최적화,
   광고 캠페인 전략, 비주얼 스토리텔링을 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-09"
 ---
 
 # 카피라이팅 (Copywriting)

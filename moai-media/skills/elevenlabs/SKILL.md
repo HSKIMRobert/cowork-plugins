@@ -7,16 +7,9 @@ description: >
   '음성 생성', '내레이션 만들어줘', '보이스오버', 'AI 더빙',
   '/moai-media elevenlabs'로 호출하세요.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-14"
-  tags: "voice,tts,elevenlabs,narration,dubbing,podcast,voice-cloning"
 ---
 
 # ElevenLabs — AI 음성/TTS 생성
-
-> moai-media v1.2.0 | 공식 MCP 서버 (`uvx elevenlabs-mcp`)
 
 ## 개요
 

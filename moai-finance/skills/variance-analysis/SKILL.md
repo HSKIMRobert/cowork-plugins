@@ -5,16 +5,9 @@ description: >
   "비용 초과 분석해줘"처럼 말하면 됩니다. 매출·비용·이익 항목별 분산 원인 분석,
   KPI 추적, 수익성 개선 권고안 도출을 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
-  tags: "분산분석,예산,실적,KPI,수익성,원가분석,경영분석"
 ---
 
 # 분산 분석 (Variance Analysis)
-
-> moai-finance v1.0.0
 
 ## 개요
 

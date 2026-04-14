@@ -6,16 +6,9 @@ description: >
   'IP 포트폴리오 분석해줘', '2026년 법령 변화 영향 분석해줘'라고 요청하세요.
   판례·법령 리서치, IP 포트폴리오, 리스크 매트릭스, 대응 액션 플랜을 제공합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
-  tags: "legal,risk,판례,지적재산,특허,상표,저작권,IP,컴플라이언스"
 ---
 
 # 법적 리스크 분석 (Legal Risk)
-
-> moai-legal v1.0.0
 
 ## 개요
 

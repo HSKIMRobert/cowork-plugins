@@ -5,10 +5,6 @@ description: >
   "부가세 신고 어떻게 해줘"처럼 말하면 됩니다. 프리랜서 3.3% 원천징수, 종합소득세,
   부가가치세, 홈택스 신고 절차를 한국 세법 기준으로 안내합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-09"
 ---
 
 # 세무 도우미 (Tax Helper)

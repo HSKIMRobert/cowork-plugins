@@ -2,7 +2,7 @@
 
 > AI 미디어 스튜디오 — 이미지·영상·음성 통합 생성 플러그인
 
-[![버전](https://img.shields.io/badge/version-1.2.0-blue)](../CHANGELOG.md)
+[![버전](https://img.shields.io/badge/version-1.3.0-blue)](../CHANGELOG.md)
 [![라이선스](https://img.shields.io/badge/license-MIT-green)](../LICENSE)
 
 ## 개요
@@ -56,7 +56,7 @@
 | `FAL_KEY` | [fal.ai/dashboard/keys](https://fal.ai/dashboard/keys) | `ideogram`, `kling`, `fal-gateway` |
 | `ELEVENLABS_API_KEY` | [elevenlabs.io](https://elevenlabs.io/app/settings/api-keys) | `elevenlabs` |
 
-`/moai init` 또는 `/moai apikey`로 통합 등록.
+`/project init` 또는 `/project apikey`로 통합 등록.
 
 ### 레거시 호환
 

@@ -6,10 +6,6 @@ description: >
   '가격 전략 수립해줘', '포지셔닝 맵 만들어줘'라고 요청하세요.
   시장 조사 보고서, 경쟁 매핑, 고객 세그멘테이션, 가격 모델을 생성합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-09"
 ---
 
 # 시장 분석가 (Market Analyst)

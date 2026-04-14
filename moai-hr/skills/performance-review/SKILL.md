@@ -5,16 +5,9 @@ description: >
   "피드백 면담 스크립트 써줘"처럼 말하면 됩니다. MBO·OKR·KPI 체계 구축,
   360도 평가 설계, 인사 고과 가이드, 피드백 면담 스크립트 작성을 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
-  tags: "성과평가,OKR,MBO,KPI,인사고과,360도평가,피드백,성과관리"
 ---
 
 # 성과평가 (Performance Review)
-
-> moai-hr v1.0.0
 
 ## 개요
 

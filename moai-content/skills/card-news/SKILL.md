@@ -5,10 +5,6 @@ description: >
   "캐러셀 콘텐츠 구성해줘"처럼 말하면 됩니다. AI 이미지 생성 기반 캐러셀 카드뉴스 제작,
   잡지 SOP 적용, 디자인 가이드, AI 글쓰기 방지 기법을 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-09"
 ---
 
 # 카드뉴스 (Card News)

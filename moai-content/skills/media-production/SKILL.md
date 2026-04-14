@@ -5,10 +5,6 @@ description: >
   "팟캐스트 만들어줘", "콘텐츠 캘린더 짜줘"처럼 말하면 됩니다. Remotion 영상 제작,
   유튜브 프로덕션, 팟캐스트 스튜디오, 출판 기획, 콘텐츠 캘린더 설계를 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-09"
 ---
 
 # 미디어 프로덕션 (Media Production)

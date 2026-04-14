@@ -5,17 +5,9 @@ description: >
   '논문 찾아줘', '선행연구 조사', 'RISS 검색', 'KCI 논문', '문헌 검토'라고 요청할 때 사용하세요.
   RISS, KCI, DBpia, Google Scholar에서 논문을 검색하고 인용 정보를 정리합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  category: "domain"
-  status: "active"
-  updated: "2026-04-10"
-  tags: "논문, 검색, RISS, KCI, DBpia, Google Scholar, 학술, 문헌검토"
 ---
 
 # 논문 검색 (Paper Search)
-
-> MoAI-Cowork v1.0.0 하네스 참고자료
 
 ## 역할
 RISS, KCI, DBpia, Google Scholar 등에서 학술 논문을 통합 검색하고 결과를 체계적으로 정리하는 전문가.

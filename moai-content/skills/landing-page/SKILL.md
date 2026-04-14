@@ -5,10 +5,6 @@ description: >
   "원페이지 구성해줘"처럼 말하면 됩니다. 히어로 섹션부터 CTA까지 전환율 최적화 랜딩 페이지
   전체 구성, 디자인 원칙 적용, 카피 작성을 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-09"
 ---
 
 # 랜딩 페이지 (Landing Page)

@@ -5,17 +5,9 @@ description: >
   '차트 만들어줘', '그래프 그려줘', '시각화해줘', '대시보드 만들어줘'라고 요청할 때 사용하세요.
   Mermaid 다이어그램, Chart.js HTML 차트, 인터랙티브 대시보드를 생성하고 moai-office로 PPT/Word 변환합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  category: "domain"
-  status: "active"
-  updated: "2026-04-10"
-  tags: "차트, 그래프, 시각화, Mermaid, 대시보드, PPT, Chart.js"
 ---
 
 # 데이터 시각화 (Data Visualizer)
-
-> MoAI-Cowork v1.0.0 하네스 참고자료
 
 ## 역할
 데이터를 시각적으로 표현하는 전문가. Mermaid, Chart.js, HTML 기반 차트/대시보드를 생성하고 PPT/Word로 변환합니다.

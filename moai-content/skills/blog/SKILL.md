@@ -5,16 +5,9 @@ description: >
   "SEO 최적화 블로그 글 작성해줘"처럼 말하면 됩니다. 네이버·티스토리·브런치·WordPress·Ghost
   6개 플랫폼 최적화, C-Rank·D.I.A.·GEO 알고리즘 반영 포스팅 작성을 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
-  tags: "블로그,네이버,티스토리,브런치,wordpress,SEO,GEO,C-Rank,DIA,콘텐츠"
 ---
 
 # 블로그 (Blog)
-
-> moai-content v1.0.0
 
 ## 개요
 

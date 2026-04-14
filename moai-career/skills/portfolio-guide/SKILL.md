@@ -5,15 +5,9 @@ description: >
   "프로젝트 정리해줘"처럼 말하면 됩니다. 개발/디자인/마케팅/기획 분야별 구성 전략,
   GitHub/Behance/Notion 포트폴리오 최적화, 프로젝트 기술서 작성을 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
 ---
 
 # 포트폴리오 가이드 (portfolio-guide)
-
-> moai-career v1.0.0
 
 ## 지원 영역
 

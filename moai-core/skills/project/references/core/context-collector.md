@@ -8,16 +8,16 @@
 
 ## 1. 맥락 충분성 등급
 
-### A등급 — 필수 (즉시 충족 가능)
-프로필 재사용으로 즉시 획득:
-- 사용자 이름
-- 선호 언어
-- 국가
-- 역할 (Job title)
-- 산업
-- 타임존
+### A등급 — 필수 (프로젝트 CLAUDE.md에서 즉시 획득)
+프로젝트 CLAUDE.md의 "프로젝트 개요" 섹션에서 읽어옴:
+- 프로젝트 목적 (`{project_purpose}`)
+- 주요 산출물 (`{primary_deliverables}`)
+- 대상 독자·고객 (`{audience}`)
+- 톤·형식 제약 (`{tone_constraints}`)
+- 설치 플러그인 (`{installed_plugins}`)
 
-**충족 조건**: Claude 메모리의 moai-profile.md 로드 (CLAUDE.md 시스템 지침 참조)
+**충족 조건**: `./CLAUDE.md` 로드 (Cowork 세션 시작 시 자동).
+v1.3.0부터 **글로벌 프로필(`moai-profile.md`)은 사용하지 않는다**. 프로젝트 CLAUDE.md가 유일한 맥락 소스.
 
 ---
 
@@ -303,7 +303,7 @@ context_metadata = {
 - 프로필 변경 후 (회사, 역할, 산업)
 - TTL 만료 시
 - 평가 점수 < 5/10
-- 사용자 명시적 요청 (`/moai refresh-context`)
+- 사용자 명시적 요청 (`/project refresh-context`)
 
 ---
 

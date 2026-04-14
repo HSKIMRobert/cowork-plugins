@@ -7,16 +7,9 @@ description: >
   'fal.ai로 Flux 이미지', 'Recraft 로고', 'Hailuo 영상', 'MiniMax 음악 생성',
   '/moai-media fal-gateway'로 호출하세요.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-14"
-  tags: "fal,gateway,flux,recraft,hailuo,luma,pika,music,multi-model"
 ---
 
 # fal.ai Gateway — 통합 미디어 모델 접근
-
-> moai-media v1.2.0 | hosted MCP (`https://mcp.fal.ai/mcp`)
 
 ## 개요
 

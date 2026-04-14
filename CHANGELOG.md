@@ -6,12 +6,49 @@
 
 ## 버전 통일 원칙 (HARD)
 
-아래 82개 지점의 버전 표기는 **항상 완전히 동일**합니다:
+아래 18개 지점의 버전 표기는 **항상 완전히 동일**합니다 (v1.3.0부터):
 - `.claude-plugin/marketplace.json` (`metadata.version`) × 1
-- `<plugin>/.claude-plugin/plugin.json` (`version`) × 16
-- `<plugin>/skills/<skill>/SKILL.md` (`metadata.version`) × 65
+- `<plugin>/.claude-plugin/plugin.json` (`version`) × 17
+- ~~`<plugin>/skills/<skill>/SKILL.md`~~ — **v1.3.0에서 제거** (metadata 블록 삭제, plugin.json 단일 소스)
 
 상세 정책: `CLAUDE.local.md` § 1 참조.
+
+## [1.3.0] - 2026-04-14
+
+### Added
+- **`moai-core:ai-slop-reviewer` 스킬 신규 도입** — Claude가 생성한 텍스트의 AI 패턴(금지어, 획일적 문장 구조, AI식 도입/결말, 과도한 목록화, 수동태 남용 등)을 진단하고 인간적인 톤으로 수정. 모든 텍스트 산출물 워크플로우의 **필수 마지막 단계**.
+- **스킬 체이닝 기반 `/project init` 워크플로우** — 사용자 업무 인터뷰 → 설치 플러그인 감지 → **산출물별 스킬 체인 설계** → 사용자 확인 → CLAUDE.md 생성. 40+ 산출물 프리셋 체인(사업계획서, IR 덱, 블로그, 랜딩, 계약서, 특허 등) 제공.
+- CLAUDE.md 외부 템플릿화 — `moai-core/skills/project/references/templates/CLAUDE.md.tmpl` 도입. `{workflow_chains}`, `{primary_deliverables}`, `{tone_constraints}` 등 변수 슬롯 기반.
+- HARD 규칙 블록 고정 포함 — 생성된 모든 CLAUDE.md에 "문서·콘텐츠 생성 우선순위(moai-office/content 우선)" + "AI 슬롭 후처리" 규칙이 강제 포함됨.
+
+### Changed
+- **커맨드 이름 변경**: `/moai` → `/project` (init, catalog, status, apikey, feedback 등 모든 서브커맨드).
+  - **이유**: Claude Code 프로젝트 레벨 스킬(`.claude/skills/moai/`)이 플러그인 스킬을 shadowing하여 `/moai` Tab 자동완성이 동작하지 않던 문제 해소.
+  - **사용자 영향**: 기존 `/moai init` 사용자는 `/project init`으로 변경 필요. `/plugin marketplace update cowork-plugins`로 갱신 후 적용.
+- 스킬 폴더 이동: `moai-core/skills/moai/` → `moai-core/skills/project/`.
+- 버전 단일 소스화 — SKILL.md `metadata:` 블록 전면 삭제, plugin.json `version` 필드가 유일한 버전 원천. 동기화 지점 88개 → **18개**로 축소.
+- SKILL.md frontmatter 규격 단순화 — 슬래시 호출 스킬: `name` + `description` + `user-invocable: true`. 모델 자동 호출 스킬: `name` + `description`만. 그 외 필드 금지.
+- `/project init` AskUserQuestion 회수 감소: 최대 9회 → **최대 6회**.
+
+### Removed
+- **글로벌 프로필 시스템 전면 제거**
+  - `moai-core/skills/project/references/core/profile-manager.md` 삭제.
+  - `moai-profile.md` 파일 생성 중단.
+  - `[MoAI 프로필]` 글로벌 지침 텍스트 안내 제거.
+  - `/project init` Phase 0 (프로필 감지), Phase 1 (이름/회사 수집) 삭제.
+  - **이유**: 프로젝트마다 동일한 정보를 반복 질문하던 UX 문제 해소. 사용자 정보가 필요한 경우 CLAUDE.md 한 곳에 기록.
+- SKILL.md `metadata:` 블록 (version/status/updated/tags) — 69개 파일에서 일괄 제거.
+
+### Fixed
+- `/moai` Tab 자동완성이 Claude Code 내부 `moai` 스킬과 충돌해 동작하지 않던 이슈 (커맨드 이름 변경으로 해결).
+
+### Migration
+
+1. `/plugin marketplace update cowork-plugins` 실행 후 플러그인 갱신.
+2. 기존 사용하던 `/moai init`, `/moai catalog`, `/moai status`, `/moai apikey`, `/moai feedback` → `/project init` 등으로 교체.
+3. 기존 프로젝트 CLAUDE.md의 `/moai ...` 참조를 `/project ...`로 바꾸거나, `/project init`을 다시 실행해 최신 템플릿으로 재생성 권장.
+4. `[MoAI 프로필]` 글로벌 지침을 유지하고 싶은 경우: Cowork Settings > 글로벌 지침에 수동 보존(자동 참조는 중단됨). 불필요하면 제거해도 기능 영향 없음.
+
 
 ## 엔트리 템플릿
 
@@ -415,7 +452,7 @@ v1.1.0에서 방금 설치한 사용자도 즉시 업데이트 필요:
 
 ### Added
 - 초기 마켓플레이스 공개: 16개 플러그인, 64개 스킬
-- `moai-core`: 도메인 AI 라우터 + 자가학습 엔진 (`/moai init`, `/moai catalog`)
+- `moai-core`: 도메인 AI 라우터 + 자가학습 엔진 (`/project init`, `/project catalog`)
 - 도메인 플러그인 15종:
   business, marketing, legal, finance, hr, content, operations,
   education, lifestyle, product, support, office, career, data, research

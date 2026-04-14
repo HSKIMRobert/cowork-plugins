@@ -9,15 +9,9 @@ description: >
   기업/제품 브랜딩은 brand-identity 스킬을 사용하세요.
   SNS 콘텐츠 단독 작성은 sns-content 스킬이 더 적합합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-10"
 ---
 
 # 개인 브랜딩 (Personal Branding)
-
-> moai-marketing v1.0.0
 
 ## 개요
 

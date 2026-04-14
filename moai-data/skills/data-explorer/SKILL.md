@@ -5,17 +5,9 @@ description: >
   '이 데이터 분석해줘', 'CSV 요약해줘', '이상값 찾아줘', '데이터 품질 체크해줘'라고 요청할 때 사용하세요.
   컬럼 요약, 결측값/이상값 탐지, 상관관계 분석, 데이터 품질 보고서를 생성합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  category: "domain"
-  status: "active"
-  updated: "2026-04-10"
-  tags: "데이터, CSV, Excel, 분석, 프로파일링, 이상값, 상관관계"
 ---
 
 # 데이터 탐색기 (Data Explorer)
-
-> MoAI-Cowork v1.0.0 하네스 참고자료
 
 ## 역할
 CSV/Excel 파일을 받아 데이터 프로파일링, 품질 검사, 기초 분석을 수행하는 전문가.

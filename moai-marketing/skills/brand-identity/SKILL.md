@@ -9,10 +9,6 @@ description: >
   개인 브랜딩은 personal-branding 스킬이 더 적합합니다.
   광고 캠페인 기획은 campaign-planner 스킬을 사용하세요.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-10"
 ---
 
 # Brand Identity -- 브랜드 아이덴티티 설계 스킬

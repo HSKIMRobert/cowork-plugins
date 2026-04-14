@@ -2,42 +2,42 @@
 
 ## 개요
 MoAI 환경과 프로필 상태를 진단하고 문제를 식별하는 프로토콜입니다.
-/moai doctor와 /moai status 명령어로 실행됩니다.
+/project doctor와 /project status 명령어로 실행됩니다.
 
 ---
 
-## 1. /moai doctor — 환경 체크
+## 1. /project doctor — 환경 체크
 
 ### 1-1. 진단 구성
 
 ```bash
-/moai doctor
+/project doctor
 ```
 
 ### 1-2. 체크리스트
 
 ```
-┌─ MoAI 환경 진단 (v1.0.0) ────────────────────────┐
+┌─ MoAI 환경 진단 (v1.3.0) ────────────────────────┐
 │
 │ [Phase 1] 파일 시스템 검사
 │ ├─ ./CLAUDE.md 존재: ✓
 │ ├─ .moai/ 디렉토리: ✓
-│ ├─ skills/moai/references/: ✓ (core 포함)
-│ └─ 16개 플러그인 설치 상태: ✓
+│ ├─ .moai/credentials.env: ✓ (프로젝트 격리)
+│ ├─ skills/project/references/: ✓ (core + templates 포함)
+│ └─ 17개 플러그인 설치 상태: ✓
 │
-│ [Phase 2] 글로벌 프로필 검사
-│ ├─ Claude 메모리의 moai-profile.md: ✓
-│ ├─ 프로필 유효성: ✓ (schema v1.0 호환)
-│ ├─ 필수 필드 완성도: 100% (A등급)
-│ ├─ 권장 필드 완성도: 85% (B등급)
-│ └─ 마지막 업데이트: 2026-04-04 (신선함)
+│ [Phase 2] 프로젝트 CLAUDE.md 검사
+│ ├─ CLAUDE.md 라인 수: 178 / 200 (한도 내 ✓)
+│ ├─ HARD 규칙 포함(office 우선): ✓
+│ ├─ HARD 규칙 포함(ai-slop 후처리): ✓
+│ ├─ 스킬 체인 블록 포함: ✓ (6개 체인)
+│ └─ 레거시 프로필 변수 흔적: 없음 ✓
+│   (v1.3.0에서 moai-profile.md 및 글로벌 프로필 시스템 제거됨)
 │
-│ [Phase 3] 하네스 설치 상태
-│ ├─ copywriting: ✓ (설치됨)
-│ ├─ email-crafter: ✓ (설치됨)
-│ ├─ sop-writer: ✗ (미설치)
-│ │  └─ 설치 권장: /moai init --harness=sop-writer
-│ └─ 설치된 하네스: 2/84
+│ [Phase 3] 설치 플러그인 + 스킬 체인 상태
+│ ├─ moai-core: ✓ (project, ai-slop-reviewer, feedback)
+│ ├─ 설계된 스킬 체인: 6개
+│ └─ ai-slop-reviewer 체인 말미 포함율: 100%
 │
 │ [Phase 4] 시스템 지침 검사
 │ ├─ ./CLAUDE.md 로드: ✓
@@ -102,12 +102,12 @@ FOR each harness in installed_harnesses:
 
 ---
 
-## 2. /moai status — 현황 요약
+## 2. /project status — 현황 요약
 
 ### 2-1. 간단한 상태 확인
 
 ```bash
-/moai status
+/project status
 ```
 
 ### 2-2. 출력 예시
@@ -150,10 +150,10 @@ MoAI 현황 ({user_name})
 ### 2-3. 상세 보기 옵션
 
 ```bash
-/moai status --detailed
-/moai status --harness=copywriting
-/moai status --evolution
-/moai status --export=json
+/project status --detailed
+/project status --harness=copywriting
+/project status --evolution
+/project status --export=json
 ```
 
 ---
@@ -164,16 +164,16 @@ MoAI 현황 ({user_name})
 
 ```
 IF 프로필_완성도 < 60%:
-  WARNING: "프로필이 불완전합니다. /moai init --reset 권장"
+  WARNING: "프로필이 불완전합니다. /project init --reset 권장"
 
 IF 하네스_설치 == 0:
-  ERROR: "설치된 하네스가 없습니다. /moai init 실행 필요"
+  ERROR: "설치된 하네스가 없습니다. /project init 실행 필요"
 
 IF evolution_평가_평균 < 5:
-  WARNING: "평가가 낮습니다. /moai evolution --suggest 확인"
+  WARNING: "평가가 낮습니다. /project evolution --suggest 확인"
 
 IF 컨텍스트_TTL > 30days:
-  INFO: "컨텍스트 갱신 시간입니다. /moai refresh-context 권장"
+  INFO: "컨텍스트 갱신 시간입니다. /project refresh-context 권장"
 
 IF CLAUDE.md_로드_실패:
   ERROR: "시스템 지침 로드 실패. ./CLAUDE.md 확인 필요"
@@ -182,7 +182,7 @@ IF CLAUDE.md_로드_실패:
 ### 3-2. 진단 레포트 생성
 
 ```bash
-/moai doctor --report
+/project doctor --report
 
 출력:
 doctor-report-2026-04-04-1030.md 생성됨
@@ -222,7 +222,7 @@ doctor-report-2026-04-04-1030.md 생성됨
 ### 4-2. 트렌드 분석
 
 ```bash
-/moai status --trend=30days
+/project status --trend=30days
 
 출력:
 평가 점수 추이 (최근 30일):
@@ -246,25 +246,25 @@ doctor-report-2026-04-04-1030.md 생성됨
 
 ```bash
 # 프로필만 초기화
-/moai profile --reset
+/project profile --reset
 
 # 진화 데이터만 초기화 (프로필은 유지)
-/moai evolution --reset
+/project evolution --reset
 
 # 하네스 컨텍스트만 초기화
-/moai context --reset
+/project context --reset
 ```
 
 ### 5-2. 전체 재설정
 
 ```bash
-/moai reset --confirm
+/project reset --confirm
 
 주의: 모든 진화 기록이 삭제됩니다.
 백업이 자동 생성됩니다: .moai/backups/reset-2026-04-04/
 
 초기화 후:
-1. /moai init 재실행
+1. /project init 재실행
 2. 하네스 재설치
 3. 컨텍스트 재수집
 ```
@@ -273,10 +273,10 @@ doctor-report-2026-04-04-1030.md 생성됨
 
 ```bash
 # 특정 시점으로 복구
-/moai restore --backup=2026-04-01
+/project restore --backup=2026-04-01
 
 # 백업 목록 조회
-/moai backups --list
+/project backups --list
 
 출력:
 Available backups:
@@ -293,15 +293,15 @@ Available backups:
 ### 6-1. 로그 조회
 
 ```bash
-/moai logs --level=ERROR
-/moai logs --harness=copywriting
-/moai logs --after=2026-04-04T09:00:00+09:00
+/project logs --level=ERROR
+/project logs --harness=copywriting
+/project logs --after=2026-04-04T09:00:00+09:00
 ```
 
 ### 6-2. 디버그 모드
 
 ```bash
-/moai --debug {command}
+/project --debug {command}
 
 출력:
 [DEBUG] 프로필 로드 중...

@@ -5,17 +5,9 @@ description: >
   '논문 써줘', '초록 작성', '참고문헌 정리', 'APA 포맷'이라고 요청할 때 사용하세요.
   서론-선행연구-방법론-결과-논의-결론 구조로 논문을 작성하고 APA/KCI/IEEE 참고문헌을 자동 생성합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  category: "domain"
-  status: "active"
-  updated: "2026-04-10"
-  tags: "논문, 작성, 초록, APA, KCI, IEEE, 참고문헌, 학술"
 ---
 
 # 학술 논문 작성 (Paper Writer)
-
-> MoAI-Cowork v1.0.0 하네스 참고자료
 
 ## 역할
 학술 논문을 체계적으로 구조화하고 작성하는 전문가. APA, KCI, IEEE 등 주요 인용 포맷을 지원합니다.

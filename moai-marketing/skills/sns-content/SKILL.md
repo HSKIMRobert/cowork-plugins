@@ -6,10 +6,6 @@ description: >
   '콘텐츠 달력 짜줘', '퍼스널 브랜딩 전략 세워줘'라고 요청하세요.
   브랜드 아이덴티티, 톤 가이드, 채널별 최적화 콘텐츠를 생성합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-09"
 ---
 
 # SNS 콘텐츠 제작 (SNS Content)

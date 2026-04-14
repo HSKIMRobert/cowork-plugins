@@ -5,15 +5,9 @@ description: >
   "비동기 커뮤니케이션 가이드 만들어줘"처럼 말하면 됩니다. 원격·하이브리드 근무 정책,
   협업 도구 선정 기준, 생산성 관리 프레임워크, 직원 경험 설계를 지원합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
 ---
 
 # 피플 오퍼레이션 (people-operations)
-
-> moai-hr v1.0.0
 
 ## 지원 영역
 

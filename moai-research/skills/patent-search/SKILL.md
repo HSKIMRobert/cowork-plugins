@@ -5,17 +5,9 @@ description: >
   '특허 찾아줘', 'KIPRIS 검색', '선행기술 조사', '특허 출원 현황'이라고 요청할 때 사용하세요.
   KIPRIS Plus API로 특허/실용신안/디자인/상표를 검색하고 서지정보를 정리합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  category: "domain"
-  status: "active"
-  updated: "2026-04-10"
-  tags: "특허, KIPRIS, 검색, IPC, 선행기술, 실용신안, 상표"
 ---
 
 # 특허 검색 (Patent Search)
-
-> MoAI-Cowork v1.0.0 하네스 참고자료
 
 ## 역할
 KIPRIS Plus API를 활용하여 특허/실용신안/디자인/상표를 검색하고 서지정보를 체계적으로 정리하는 전문가.

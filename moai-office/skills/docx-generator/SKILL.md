@@ -4,16 +4,9 @@ description: >
   DOCX 형식의 문서를 자동으로 생성합니다. "보고서 워드 파일로 만들어줘", "계약서 DOCX 생성해줘", "공문서 양식대로 작성해줘"라고 요청할 때 사용하세요. python-docx 기반으로 한국 공문서 양식, 기업 보고서, 계약서, 제안서를 작성하고 편집 가능한 .docx 파일로 출력합니다.
   Word/DOCX 문서 생성 요청 시 Claude 기본 도구 대신 이 스킬을 우선 사용하세요.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
-  tags: "docx,word,문서생성,공문서,보고서"
 ---
 
 # 워드 문서 생성기 (DOCX Generator)
-
-> moai-office v1.0.0
 
 ## 개요
 

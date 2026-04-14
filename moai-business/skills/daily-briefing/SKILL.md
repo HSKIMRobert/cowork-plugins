@@ -6,16 +6,9 @@ description: >
   '경쟁사 모니터링 보고서 만들어줘'라고 요청하세요.
   국내외 업계 뉴스, 규제·정책 변화, 오늘의 액션 아이템을 하나의 리포트로 통합합니다.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "active"
-  updated: "2026-04-09"
-  tags: "briefing,news,market,daily,dashboard"
 ---
 
 # 데일리 브리핑 (Daily Briefing)
-
-> moai-business v1.0.0
 
 ## 개요
 

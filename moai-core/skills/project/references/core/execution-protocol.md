@@ -195,7 +195,7 @@ AskUserQuestion (3옵션):
 
 ```
 Phase 1: 하네스 식별
-  → 사용자 요청 또는 /moai {harness-id} 명령어
+  → 사용자 요청 또는 /project {harness-id} 명령어
   → router.md에서 적절한 하네스 확인
 
 Phase 2: 하네스 레퍼런스 로드
@@ -651,7 +651,7 @@ assert ws.title != "Sheet1" or len(wb.sheetnames) == 1, "시트명 미설정"
 
 <!-- 섹션 5-1~5-3 (자동반성 0-100% 스코어링, 반성 기록, 강제 피드백 수집) 제거:
      Claude(Opus 4.6)가 자기평가를 자연스럽게 수행. 강제 점수화는 레거시 보상 패턴. -->
-<!-- 피드백 수집은 /moai evolve 실행 시에만 트리거됨 (evaluation-protocol 참조) -->
+<!-- 피드백 수집은 /project evolve 실행 시에만 트리거됨 (evaluation-protocol 참조) -->
 
 ---
 
@@ -659,7 +659,7 @@ assert ws.title != "Sheet1" or len(wb.sheetnames) == 1, "시트명 미설정"
 
 ### 6-1. 빠른 실행 (Quick Mode)
 ```
-/moai {harness-id} --quick
+/project {harness-id} --quick
 
 조건:
 - 컨텍스트 완전 (A+B등급)
@@ -672,7 +672,7 @@ assert ws.title != "Sheet1" or len(wb.sheetnames) == 1, "시트명 미설정"
 
 ### 6-2. 대화형 실행 (Interactive Mode, 기본)
 ```
-/moai {harness-id}
+/project {harness-id}
 
 프로세스:
 - 부족한 컨텍스트 수집
@@ -682,7 +682,7 @@ assert ws.title != "Sheet1" or len(wb.sheetnames) == 1, "시트명 미설정"
 
 ### 6-3. 배치 실행 (Batch Mode)
 ```
-/moai batch
+/project batch
 config: {
   harnesses: [copywriting, email-crafter],
   projects: [proj_001, proj_002],

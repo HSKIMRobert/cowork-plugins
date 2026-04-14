@@ -220,10 +220,10 @@ IF 규칙_변경_후_평가_점수 < 규칙_변경_전_평가_점수 - 2점:
 ### 3-2. 롤백 프로세스
 ```bash
 # 이전 규칙 버전으로 복원
-/moai evolution --rollback --pattern=copywriting --version=v1.2
+/project evolution --rollback --pattern=copywriting --version=v1.2
 
 # 또는 특정 커밋으로 복원
-/moai evolution --rollback --commit=abc123def456
+/project evolution --rollback --commit=abc123def456
 ```
 
 ### 3-3. 롤백 이력
@@ -280,7 +280,7 @@ date,harness,feedback_score,completion_time,quality_score,problem_type
 
 ### 5-2. 대시보드 생성
 ```
-/moai evolution --dashboard
+/project evolution --dashboard
 
 출력:
 ┌─ Self-Refine Progress ────────┐
@@ -310,7 +310,7 @@ date,harness,feedback_score,completion_time,quality_score,problem_type
 
 ### 6-2. 규칙 제안
 ```
-/moai evolution --suggest
+/project evolution --suggest
 
 자동 제안 예:
 "Rule 01-copywriting.md의 '실행성' 강화를 제안합니다.

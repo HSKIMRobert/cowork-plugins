@@ -7,10 +7,6 @@ description: >
   네이버 스마트스토어, 쿠팡, 카카오 커머스 등 국내 플랫폼 규격을 지원합니다.
   블로그 글, SNS 포스팅, 랜딩 페이지(단독 전환 목적)에는 이 스킬을 사용하지 마세요.
 user-invocable: true
-metadata:
-  version: "1.2.0"
-  status: "stable"
-  updated: "2026-04-10"
 ---
 
 # 상세 페이지 (Product Detail)
