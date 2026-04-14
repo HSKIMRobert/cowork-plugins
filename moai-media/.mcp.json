@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "fal-ai": {
+      "$comment": "fal.ai hosted MCP - 1000+ models (Flux, Ideogram, Recraft, Kling, Hailuo, Luma, Pika, MiniMax Music). FAL_KEY 필요.",
+      "type": "http",
+      "url": "https://mcp.fal.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer ${FAL_KEY}"
+      }
+    },
+    "elevenlabs": {
+      "$comment": "ElevenLabs 공식 MCP - TTS, 음성복제, 다국어 더빙. ELEVENLABS_API_KEY 필요.",
+      "command": "/bin/bash",
+      "args": ["-l", "-c", "exec uvx elevenlabs-mcp"],
+      "env": {
+        "ELEVENLABS_API_KEY": "${ELEVENLABS_API_KEY}"
+      }
+    }
+  }
+}

@@ -51,6 +51,89 @@
 
 ---
 
+## [1.1.0] - 2026-04-14
+
+### Added
+
+- **신규 플러그인 `moai-media`** — AI 미디어 스튜디오 (이미지·영상·음성 통합)
+  - [`moai-media/skills/google-media/`](moai-media/skills/google-media/SKILL.md): Google Gemini 3 Image Preview + Veo 3.1 통합 스킬
+    - Nano Banana Pro (`gemini-3-pro-image-preview`, 2K), Nano Banana 2 (`gemini-3.1-flash-image-preview`, 1K), Nano Banana Ultra (Pro + 4K)
+    - Veo 3.1 Standard/Fast 영상 (최대 8초, 1080p, 오디오 자동 생성)
+    - 단일 `GEMINI_API_KEY`로 이미지 + 영상 + 텍스트 모두 호출
+  - [`moai-media/skills/ideogram/`](moai-media/skills/ideogram/SKILL.md): Ideogram 3.0 (한국어 타이포그래피 렌더링 업계 최고)
+  - [`moai-media/skills/kling/`](moai-media/skills/kling/SKILL.md): Kling 3.0 (숏폼 영상, 다국어 립싱크, Veo 대비 1/5 가격)
+  - [`moai-media/skills/elevenlabs/`](moai-media/skills/elevenlabs/SKILL.md): ElevenLabs 공식 MCP (TTS, 음성복제, 32개 언어 더빙, ConvAI)
+  - [`moai-media/skills/fal-gateway/`](moai-media/skills/fal-gateway/SKILL.md): fal.ai 통합 MCP 게이트웨이 (Flux, Recraft, Hailuo, Luma, Pika, MiniMax Music 등 1000+ 모델)
+- **MCP 서버 자동 등록** — `moai-media/.mcp.json`에 2종 사전 구성
+  - `fal-ai` (hosted HTTP MCP at `https://mcp.fal.ai/mcp`, `FAL_KEY` 인증)
+  - `elevenlabs` (local stdio MCP via `uvx elevenlabs-mcp`, `ELEVENLABS_API_KEY` 주입)
+- **API 키 2종 신규 지원**: `FAL_KEY`, `ELEVENLABS_API_KEY` (기존 `NANO_BANANA_API_KEY` 유지)
+- **4K 이미지 해상도** 지원 (`image_size="4K"`, Nano Banana Ultra 전용)
+- **14종 화면비 지원** (1:1 ~ 21:9, Gemini 3 Image Preview 기본 스펙)
+- [`moai-media/CONNECTORS.md`](moai-media/CONNECTORS.md): API 키·MCP·커넥터 통합 가이드
+
+### Changed
+
+- **Google "Nano Banana" 브랜드 재정의 반영** (2026 Q1 공식 공지 반영)
+  - 모델 ID 매핑: `imagen-4.0-generate-001` → **`gemini-3-pro-image-preview`**
+  - 모델 ID 매핑: `imagen-4.0-fast-generate-001` → **`gemini-3.1-flash-image-preview`**
+  - 엔드포인트 변경: `:predict` → **`:generateContent`**
+  - 파라미터 스키마: `numberOfImages` + top-level `aspectRatio` → **`imageConfig.aspect_ratio` + `imageSize`**
+  - 응답 파싱: `predictions[].bytesBase64Encoded` → `candidates[].content.parts[].inline_data.data`
+  - ⚠️ **유료 플랜 필수**: Nano Banana Pro/2 및 Veo 3.1은 무료 티어 호출 불가
+- **`generate_image.py` 이관 및 v3.0.0 → v4.0.0 마이그레이션**
+  - 경로: `moai-content/scripts/card-news/generate_image.py` → **`moai-media/scripts/generate_image.py`**
+  - Gemini 3 Image Preview API 스키마로 전면 재작성
+  - Python 3.13+ 스타일 (`from __future__ import annotations`, `TypedDict`, PEP 604 union types)
+  - 환경변수 우선순위: `GEMINI_API_KEY` > `NANO_BANANA_API_KEY` (레거시 호환 유지)
+  - 키 파일 탐색 확장: `~/.gemini-api-key` 추가, `moai-credentials.env`에서 두 키 모두 인식
+  - 서로게이트 sanitize 로직 v3.0 수준 유지 (한국어·이모지 안전)
+- `moai-content/skills/card-news/SKILL.md`: 이미지 생성 섹션을 **moai-media 플러그인 위임 구조**로 전환
+  - API 키 안내를 `NANO_BANANA_API_KEY` → `GEMINI_API_KEY`로 업데이트 (레거시 변수명도 인식됨 명시)
+  - 모델 옵션 문구에 실제 Gemini 3 Image Preview 모델 ID 부기
+  - 스크립트 경로 참조: `scripts/card-news/generate_image.py` → `moai-media/scripts/generate_image.py`
+- **전체 버전 bump 1.0.3 → 1.1.0** (87 지점)
+  - marketplace.json × 1
+  - plugin.json × 17 (기존 16 + 신규 moai-media)
+  - SKILL.md × 70 (기존 65 + 신규 5)
+- `.claude-plugin/marketplace.json`: `moai-media` 플러그인 엔트리 추가
+
+### Migration
+
+**v1.0.x 사용자 조치 사항**:
+
+1. **Google API 키 업그레이드**
+   - 환경변수를 `NANO_BANANA_API_KEY` → `GEMINI_API_KEY`로 변경 권장 (구 변수명도 인식됨)
+   - Gemini API 콘솔에서 **Pay-as-you-go 결제 활성화** 필수 (Nano Banana Pro/2 무료 티어 불가)
+
+2. **신규 API 키 발급 (moai-media 사용 시)**
+   - [fal.ai/dashboard/keys](https://fal.ai/dashboard/keys) → `FAL_KEY`
+   - [elevenlabs.io/app/settings/api-keys](https://elevenlabs.io/app/settings/api-keys) → `ELEVENLABS_API_KEY`
+
+3. **`uv` 설치 (ElevenLabs MCP용)**
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   ```
+
+4. **플러그인 마켓플레이스 새로고침**
+   ```
+   /plugin marketplace update cowork-plugins
+   /plugin install moai-media@cowork-plugins
+   ```
+
+### Breaking
+
+- **`scripts/card-news/generate_image.py` 경로 이동** — `moai-content/scripts/` 경로를 직접 참조하던 외부 스크립트는 `moai-media/scripts/`로 경로 변경 필요
+- **엔드포인트 변경** — 구 스크립트를 복사하여 자체 수정해 사용하던 사용자는 `:predict` → `:generateContent` 전환 및 페이로드 스키마 업데이트 필요 (v4.0.0 `generate_image.py` 참고)
+- **무료 티어 불가** — 기존 Gemini API 무료 키로 Nano Banana 호출하던 워크플로우는 Pay-as-you-go 활성화 필요
+
+### Removed
+
+- `moai-content/scripts/card-news/generate_image.py` (moai-media로 이관)
+- `moai-content/scripts/` 빈 디렉토리 제거
+
+---
+
 ## [1.0.3] - 2026-04-14
 
 ### Added

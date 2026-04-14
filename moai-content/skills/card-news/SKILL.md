@@ -6,7 +6,7 @@ description: >
   잡지 SOP 적용, 디자인 가이드, AI 글쓰기 방지 기법을 지원합니다.
 user-invocable: true
 metadata:
-  version: "1.0.3"
+  version: "1.1.0"
   status: "stable"
   updated: "2026-04-09"
 ---
@@ -23,21 +23,23 @@ metadata:
 - AI 글쓰기 방지 기법으로 오리지널 문체 구현
 
 참조 가이드: `references/card-news/guide.md`, `references/card-news/anti-ai-writing.md`, `references/card-news/magazine-sop.md`, `references/card-news/design-guide.md`
-스크립트: `${CLAUDE_SKILL_DIR}/scripts/card-news/generate_image.py`
 
-## AI 이미지 생성 (Nano Banana)
+**이미지 생성**: `moai-media` 플러그인의 `google-media` 스킬 호출 또는 직접 스크립트 실행:
+`${MOAI_MEDIA_PLUGIN_ROOT}/scripts/generate_image.py` (v1.1.0 이관, Gemini 3 Image Preview 기반)
 
-이미지 생성 요청 시 API 키와 설정을 확인한다.
+## AI 이미지 생성 (moai-media 연동)
 
-### API 키 필수
+이미지 생성은 **`moai-media` 플러그인의 `google-media` 스킬**이 담당합니다. card-news는 프롬프트만 생성하고 실제 렌더링은 moai-media에 위임합니다.
+
+### API 키 필수 (Gemini API)
 
 ```
-IF NANO_BANANA_API_KEY 미설정:
-  "AI 이미지 생성을 위해 Nano Banana API 키가 필요합니다.
+IF GEMINI_API_KEY (또는 레거시 NANO_BANANA_API_KEY) 미설정:
+  "AI 이미지 생성을 위해 Gemini API 키가 필요합니다.
 
    발급 방법:
    1. https://ai.google.dev/ 접속 → Google 계정 로그인
-   2. API 키 생성 (무료 티어 존재)
+   2. API 키 생성 (Nano Banana Pro/2 및 Veo 3.1은 Pay-as-you-go 유료 플랜 필수)
 
    API 키를 입력해 주세요:"
 
@@ -52,9 +54,9 @@ config.json에 복수 모델/비율/해상도가 설정되어 있고
 AskUserQuestion (1질문, 3옵션):
 ```
 "어떤 모델로 이미지를 생성할까요?"
-○ Nano Banana Pro — 고품질, 텍스트 렌더링 우수 (권장)
-○ Nano Banana 2 — 빠른 생성, 비용 절반
-○ Nano Banana Ultra — 최고 품질
+○ Nano Banana Pro — gemini-3-pro-image-preview (2K, 텍스트 렌더링 SOTA, 권장)
+○ Nano Banana 2 — gemini-3.1-flash-image-preview (1K, 빠름, 저비용)
+○ Nano Banana Ultra — gemini-3-pro-image-preview + 4K (대형 인쇄·광고)
 + Other
 ```
 
@@ -134,7 +136,7 @@ AskUserQuestion (1질문, 4옵션):
 ```
 
 ### 5단계: 이미지 생성 (AI)
-- `scripts/card-news/generate_image.py` 활용
+- `moai-media/scripts/generate_image.py` (moai-media 플러그인 설치 필요) 활용
 - 또는 이미지 프롬프트 생성 후 Midjourney/Firefly에서 생성
 
 ### 6단계: 산출물 전달
@@ -146,7 +148,7 @@ AskUserQuestion (1질문, 4옵션):
 
 1. 사용자 요청 수신 → 카드뉴스 요청 확인
 2. `references/card-news/guide.md` 로드 → SOP에 따라 실행
-3. AI 이미지 생성 필요 시 → `scripts/card-news/generate_image.py` 활용
+3. AI 이미지 생성 필요 시 → `moai-media/scripts/generate_image.py` (moai-media 플러그인 설치 필요) 활용
 4. `--deepthink` 또는 복잡 작업 → `mcp__sequential-thinking__sequentialthinking` 호출
 5. 결과물 생성 후 사용자 검토 요청
 

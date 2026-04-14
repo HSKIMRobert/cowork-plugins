@@ -8,13 +8,15 @@
 
 **단일 진실 원칙**: cowork-plugins 저장소의 모든 버전 표기는 **완전히 동일**해야 합니다.
 
-### 동기화 대상 (총 82개 지점)
+### 동기화 대상 (총 88개 지점, v1.1.0 기준)
 
 | 범주 | 경로 | 필드 | 개수 |
 |---|---|---|---|
 | 마켓플레이스 | `.claude-plugin/marketplace.json` | `metadata.version` | 1 |
-| 플러그인 매니페스트 | `<plugin>/.claude-plugin/plugin.json` | `version` | 16 |
-| 스킬 frontmatter | `<plugin>/skills/<skill>/SKILL.md` | `metadata.version` | 65 |
+| 플러그인 매니페스트 | `<plugin>/.claude-plugin/plugin.json` | `version` | 17 |
+| 스킬 frontmatter | `<plugin>/skills/<skill>/SKILL.md` | `metadata.version` | 70 |
+
+플러그인 또는 스킬 추가·삭제 시 이 카운트를 함께 갱신하세요.
 
 ### [HARD] 버전 변경 절차
 
@@ -109,10 +111,34 @@ metadata:
 
 ---
 
-## 4. 태그 히스토리
+## 4. MCP 서버 통합 정책 (HARD)
 
+플러그인이 MCP 서버를 번들하려면 다음 규칙을 따릅니다:
+
+- 플러그인 루트에 **`.mcp.json`** 파일 배치 (예: `moai-media/.mcp.json`)
+- 환경변수는 `${VAR_NAME}` 구문으로만 주입 — 절대 하드코딩 금지
+- hosted MCP는 `type: "http"` + `url` + `headers`로 등록
+- local stdio MCP는 `command` + `args` (권장: `uvx <package>` 형태)
+- API 키 등록 절차는 플러그인 루트의 `CONNECTORS.md`에 필수 문서화
+
+현재 MCP 번들 플러그인:
+- `moai-media`: `fal-ai` (hosted), `elevenlabs` (local stdio via uvx)
+
+## 5. 외부 API 모델 ID 업데이트 정책
+
+외부 API(Google, OpenAI, Anthropic 등)가 모델 이름·엔드포인트를 변경하면:
+
+1. 영향 스킬 식별 (`grep -r "<old-model-id>" .`)
+2. 공식 문서 확인 후 매핑 테이블 업데이트 (예: `generate_image.py` MODEL_MAP)
+3. 레거시 별칭은 **최소 1 메이저 버전** 동안 유지 (v1.0.x → v1.1.x는 호환)
+4. 응답 스키마가 바뀌면 스크립트 v번호 메이저 bump (예: `generate_image.py v3 → v4`)
+5. CHANGELOG Migration 섹션에 사용자 조치 사항 명시
+
+## 6. 태그 히스토리
+
+- **v1.1.0** (2026-04-14): `moai-media` 신규 플러그인. Google Nano Banana 재정의(Imagen 4 → Gemini 3 Image Preview) 반영. MCP 번들 정책 도입.
 - **v1.0.3** (2026-04-14): `/moai` 자동완성 수정 + 전체 버전 통일 + 태그 정책 확립
-- 이전 로컬 태그(v1.1.0, v1.2.0, v1.3.0)는 marketplace 버전과 불일치하여 v1.0.3에서 정리·삭제함
+- 이전 로컬 태그(구 v1.1.0/v1.2.0/v1.3.0)는 marketplace 버전과 불일치하여 v1.0.3 시점에 정리·삭제함 (현재 v1.1.0은 재부여됨, 의미가 다름)
 
 ---
 
