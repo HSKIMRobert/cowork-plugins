@@ -221,6 +221,39 @@ grep -n "하이라이트" README.md
 - **핫픽스 커밋**: 영향받은 문서만 선택적으로 실행
 - **신규 플러그인 추가**: marketplace.json `plugins[]` 배열 업데이트 + 루트 README 카탈로그 테이블 추가 필수
 
+### 4-5. [HARD] README 릴리스 동기화 게이트 (v1.5.1 신규)
+
+v1.5.0 릴리스 시 README 선행 업데이트 누락 사고 재발 방지용. 체인 C(릴리스) 단계 4 검증 단계에 아래 명령을 **반드시** 포함한다.
+
+```bash
+NEW="1.5.0"  # 새 버전 (체인 C 단계 1에서 확보한 값)
+
+# [게이트 1] 루트 README 버전 배지가 NEW와 일치
+grep -E "Version-${NEW//./\\.}-blue" README.md || { echo "FAIL: 루트 README Version 배지 갱신 누락"; exit 1; }
+
+# [게이트 2] 루트 README Skills 배지가 실측값과 일치
+SKILL_COUNT=$(find moai-*/skills -name SKILL.md -not -path "*/.git/*" | wc -l | tr -d ' ')
+grep -E "Skills-${SKILL_COUNT}-green" README.md || { echo "FAIL: 루트 README Skills 배지(${SKILL_COUNT})와 실제 스킬 수 불일치"; exit 1; }
+
+# [게이트 3] 루트 README에 v{NEW} 하이라이트 섹션 존재
+grep -F "v${NEW} 하이라이트" README.md || { echo "FAIL: 루트 README에 v${NEW} 하이라이트 섹션 부재"; exit 1; }
+
+# [게이트 4] 플러그인별 README 스킬 테이블 실측 일치
+# 스킬 테이블 패턴: "| [skill-name](./skills/..." 으로 시작하는 줄만 카운트 (참고자료 테이블 제외)
+for plugin_dir in moai-*; do
+  declared=$(grep -cE '^\| \[[a-z0-9-]+\]\(\./skills/' "$plugin_dir/README.md" 2>/dev/null || echo 0)
+  actual=$(find "$plugin_dir/skills" -maxdepth 2 -name SKILL.md 2>/dev/null | wc -l | tr -d ' ')
+  [ "$declared" -eq "$actual" ] || echo "WARN: $plugin_dir README 스킬 테이블 $declared행 vs 실제 $actual개"
+done
+
+# [게이트 5] 신규 스킬이 추가된 플러그인의 README에 해당 스킬명 언급 확인
+# (release-notes-vX.Y.Z.md의 "What's New" 섹션에서 스킬명을 추출해 개별 README에 grep)
+```
+
+[HARD] 게이트 1·2·3 **하나라도 실패하면 릴리스 커밋 금지**. 수정 후 재검증 통과해야 진행.
+[HARD] 게이트 4·5는 WARN이면 사용자에게 보고 후 명시적 승인 시에만 진행.
+[HARD] README 게이트 실패 시 **force-push로 우회 금지**. 정상 커밋으로 수정본 추가.
+
 ## 5. 릴리스 후 사용자 안내
 
 신버전 배포 후 사용자 측 캐시 갱신 필요:

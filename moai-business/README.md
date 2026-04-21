@@ -1,8 +1,8 @@
 # moai-business
 
-비즈니스 전략 플러그인 — 사업계획서, 시장조사, 재무모델, 투자제안서.
+비즈니스 전략·창업 플러그인 — 사업계획서, 시장조사, 재무모델, 투자제안서, **소상공인 상권분석**, **정부지원사업 통합**.
 
-창업 초기 린 캔버스부터 Series B IR 자료, TAM/SAM/SOM 시장 분석, 재무 시뮬레이션까지 비즈니스 의사결정 전반을 지원합니다. DART 공시 데이터 연동으로 실시간 기업 정보를 활용합니다.
+창업 초기 린 캔버스부터 Series B IR 자료, TAM/SAM/SOM 시장 분석, 재무 시뮬레이션을 거쳐 v1.5.0부터는 **소상공인365 상권분석 PDF → 창업타당성 보고서**와 **K-Startup·BIZINFO·중기부 정부지원사업 탐색·신청서 작성**까지 범위를 넓혔습니다. DART 공시 데이터 연동으로 실시간 기업 정보를 활용합니다.
 
 ## 스킬
 
@@ -12,6 +12,8 @@
 | [market-analyst](./skills/market-analyst/) | TAM/SAM/SOM 산출, 경쟁사 분석, 고객 세그멘테이션, 가격 전략 | 3 | ✅ |
 | [investor-relations](./skills/investor-relations/) | IR 덱, 피칭 자료, 매출 예측, 손익분석, 현금흐름 모델 | 2 | ✅ |
 | [daily-briefing](./skills/daily-briefing/) | 업계 뉴스, 시장 동향, 경쟁사 모니터링, KPI 대시보드 브리핑 | 0 | ✅ |
+| [sbiz365-analyst](./skills/sbiz365-analyst/) 🆕 | 소상공인365 PDF 분석 → 4축 100점 창업타당성 평가 + 9섹션 DOCX 보고서 | 4 | ✅ |
+| [kr-gov-grant](./skills/kr-gov-grant/) 🆕 | K-Startup·BIZINFO·중기부·IITP·문체부·농식품부 정부지원사업 통합 (탐색·작성·검토·일정 4 MODE) | 1 | ✅ |
 
 ## MCP 커넥터
 
@@ -33,6 +35,18 @@
 매일 아침 업계 뉴스 브리핑 만들어줘
 ```
 
+```
+소상공인365에서 내려받은 홍대 상권분석 PDF 첨부. 카페 창업 검토 중, 예산 5천만원.
+```
+
+```
+예비창업자 AI 교육 서비스 창업 준비 중. 받을 수 있는 정부지원사업 3개 추천해줘.
+```
+
+```
+예비창업패키지 신청서 초안 써줘. 업종 AI 교육, 팀원 3명, 목표 자금 1억.
+```
+
 ## 설치
 
 Settings > Plugins > cowork-plugins에서 `moai-business` 선택
@@ -44,3 +58,7 @@ Settings > Plugins > cowork-plugins에서 `moai-business` 선택
 | [DART-mcp-server](https://github.com/snaiws/DART-mcp-server) | 오픈소스 MCP | 전자공시 조회 |
 | [DART OpenAPI](https://opendart.fss.or.kr/) | 공식 API | 기업 공시/재무제표 |
 | [dartpoint-mcp](https://github.com/dartpointai/dartpoint-mcp) | 대안 MCP | 기업 분석 리포트 |
+| [소상공인365 빅데이터 포털](https://bigdata.sbiz.or.kr) | 공식 데이터 | 상권분석 PDF 원본 (sbiz365-analyst 입력) |
+| [K-Startup (창업진흥원)](https://www.k-startup.go.kr) | 공식 공고 | 예비창업패키지·초기창업패키지·TIPS 등 |
+| [BIZINFO (중소벤처기업부)](https://www.bizinfo.go.kr) | 공식 공고 | 중소기업·소상공인 지원사업 통합 검색 |
+| [나라장터 (조달청)](https://www.g2b.go.kr) | 공식 입찰 | 공공조달·정부사업 참여 |

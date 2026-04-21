@@ -2,25 +2,26 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Claude Cowork](https://img.shields.io/badge/Claude-Cowork-blueviolet)](https://claude.ai)
-[![Version](https://img.shields.io/badge/Version-1.4.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Version-1.5.0-blue)](CHANGELOG.md)
 [![Plugins](https://img.shields.io/badge/Plugins-17-blue)](.claude-plugin/marketplace.json)
-[![Skills](https://img.shields.io/badge/Skills-71-green)](.claude-plugin/marketplace.json)
+[![Skills](https://img.shields.io/badge/Skills-73-green)](.claude-plugin/marketplace.json)
 [![shadcn/ui](https://img.shields.io/badge/UI-shadcn/ui-black)](https://ui.shadcn.com/)
 
 **Claude Cowork 도메인 전문가 AI 마켓플레이스**
 
-자연어 한 줄이면 사업계획서, 계약서 검토, 세금 계산, PPT 제작, 데이터 분석, 특허 검색, **AI 이미지·영상·음성 생성**, **shadcn/ui 기반 랜딩·상세 페이지 제작**까지 — 17개 독립 플러그인과 71개 전문 스킬이 업무를 대신합니다. 모든 텍스트 산출물은 **`ai-slop-reviewer`가 AI 패턴을 검수**하여 사람이 쓴 것처럼 자연스럽게 다듬어 드립니다.
+자연어 한 줄이면 사업계획서, 계약서 검토, 세금 계산, PPT 제작, 데이터 분석, 특허 검색, **AI 이미지·영상·음성 생성**, **shadcn/ui 기반 랜딩·상세 페이지 제작**, **소상공인 상권분석·정부지원사업 신청**까지 — 17개 독립 플러그인과 73개 전문 스킬이 업무를 대신합니다. 모든 텍스트 산출물은 **`ai-slop-reviewer`가 AI 패턴을 검수**하여 사람이 쓴 것처럼 자연스럽게 다듬어 드립니다.
 
-> *Domain expert AI marketplace for [Claude Cowork](https://claude.ai). 17 plugins · 71 skills covering business strategy, marketing, legal, finance, HR, content, operations, education, lifestyle, product, support, document generation, data analysis, research/patents, **AI media production (image/video/voice)**, **shadcn/ui-based web landing/detail pages**, and automatic AI-slop detection for every text deliverable.*
+> *Domain expert AI marketplace for [Claude Cowork](https://claude.ai). 17 plugins · 73 skills covering business strategy, marketing, legal, finance, HR, content, operations, education, lifestyle, product, support, document generation, data analysis, research/patents, **AI media production (image/video/voice)**, **shadcn/ui-based web landing/detail pages**, **small-business commercial-area analysis & Korean government grant applications**, and automatic AI-slop detection for every text deliverable.*
 
-**🆕 v1.4.0 하이라이트**
-- **shadcn/ui가 HTML/웹 산출물 기본 스택** — Next.js 15 + Tailwind CSS v4 + shadcn/ui + Lucide + (옵션) Framer Motion. 별도 지정이 없으면 자동 적용
-- **소크라테스식 테마 인터뷰 공통 프로토콜** — 랜딩·상세·대시보드 생성 전에 `AskUserQuestion`으로 베이스 팔레트(Neutral/Zinc/Stone/Slate) · 컬러 모드(Light/Dark/System+Toggle) · 모서리 반경(Sharp~Pill) · 효과(Fade-up·Scroll Reveal·Parallax·Chart)를 질문
-- **OKLCH CSS 변수 기본 출력** — Light/Dark 동시 산출, shadcn 공식 `:root` + `.dark` 구조 준수
-- **Recharts/Chart.js/Tremor/ECharts 4택 1** — 차트 섹션 선택 시 라이브러리를 사용자가 직접 결정
-- 단일 HTML 파일 모드(스마트스토어·쿠팡 업로드용)에도 shadcn CSS 변수 인라인 주입
+**🆕 v1.5.0 하이라이트**
+- **`moai-business`에 소상공인·창업자용 스킬 2종 추가** — 스킬 수 71 → **73**, Breaking change 없음
+- **`sbiz365-analyst`** — [소상공인365 빅데이터 포털](https://bigdata.sbiz.or.kr) PDF를 분석해 **4축 100점 창업타당성 평가(성장성 30·경쟁도 25·수요 적합도 25·재무 타당성 20)** 와 9섹션 Word(.docx) 보고서 자동 생성
+- **`kr-gov-grant`** — K-Startup · BIZINFO · 중기부 · IITP · 문체부 · 농식품부 공고를 **4 MODE(탐색·작성·검토·일정)** 로 통합. 8 신청자 유형 × 7 지원 목적 = 56개 매칭 조합 제공
+- `moai-research:grant-writer`(학술·R&D)와 `moai-business:kr-gov-grant`(창업·사업화) **명확히 분리** — 요청 키워드로 자동 라우팅
+- [릴리스 노트](https://github.com/modu-ai/cowork-plugins/releases/tag/v1.5.0) · [moai-business 가이드 (온라인 문서)](https://github.com/modu-ai/cowork-plugins/tree/v1.5.0/moai-business)
 
 **이전 릴리스 하이라이트**
+- **v1.4.0** — shadcn/ui HTML/웹 산출물 기본 스택(Next.js 15 + Tailwind v4), 소크라테스식 테마 인터뷰, OKLCH CSS 변수 기본, Recharts·Chart.js·Tremor·ECharts 4택 1
 - **v1.3.0** — `/moai` → `/project` 커맨드 전환, `ai-slop-reviewer` 도입, 스킬 체이닝 기반 `/project init`, SKILL.md `metadata` 블록 제거
 
 ---
@@ -43,7 +44,7 @@
 | 플러그인 | 설명 | 스킬 수 |
 |---------|------|:-------:|
 | [moai-core](./moai-core/) | 프로젝트 초기화(`/project init`) + 스킬 체이닝 라우터 + AI 슬롭 검수 + 피드백 | 3 |
-| [moai-business](./moai-business/) | 사업계획서, 시장조사, 재무모델, 투자제안서 | 4 |
+| [moai-business](./moai-business/) | 사업계획서, 시장조사, 재무모델, 투자제안서, **소상공인 상권분석**, **정부지원사업 통합** | 6 |
 | [moai-marketing](./moai-marketing/) | 기업/개인 브랜딩, SEO, SNS, 캠페인, 이메일 시퀀스, 퍼포먼스 | 7 |
 | [moai-legal](./moai-legal/) | 계약서 검토, 컴플라이언스, NDA, 지적재산권 | 4 |
 | [moai-finance](./moai-finance/) | 원천징수, 부가세, K-IFRS, 결산, 예산 분석 | 4 |
@@ -65,8 +66,8 @@
 | 항목 | 수량 |
 |------|:----:|
 | 플러그인 | 17 |
-| 스킬 | 71 |
-| 레퍼런스 파일 | 167 |
+| 스킬 | 73 |
+| 레퍼런스 파일 | 180 |
 | 에이전트 | 0 |
 | MCP 서버 | 7 (`fal-ai`, `elevenlabs` 추가) |
 | 스크립트 | 16 |
@@ -158,7 +159,7 @@ modu-ai/cowork-plugins
 
 ---
 
-### moai-business — 비즈니스 전략
+### moai-business — 비즈니스 전략 · 창업
 
 | 스킬 | 한글명 | 기능 |
 |------|--------|------|
@@ -166,8 +167,10 @@ modu-ai/cowork-plugins
 | market-analyst | 시장 분석가 | 시장조사(TAM/SAM/SOM), 경쟁사 분석, 가격 전략 |
 | investor-relations | 투자자 관계 | 투자 제안서(IR), 재무모델, 매출 예측 |
 | daily-briefing | 일일 브리핑 | 일일 비즈니스 브리핑, 시장 동향 요약 |
+| sbiz365-analyst 🆕 | 소상공인 상권분석 | 소상공인365 PDF → 4축 100점 평가 + 9섹션 창업타당성 DOCX 보고서 |
+| kr-gov-grant 🆕 | 정부지원사업 통합 | K-Startup·BIZINFO·중기부 등 공고 탐색·신청서 작성·검토·마감 관리 (4 MODE) |
 
-DART MCP 서버로 기업 공시/재무제표를 실시간 조회합니다.
+DART MCP 서버로 기업 공시/재무제표를 실시간 조회합니다. `kr-gov-grant`는 창업·사업화·수출·시설 지원사업 전담 — 학술·R&D 연구과제는 `moai-research:grant-writer`를 사용하세요.
 
 ---
 
