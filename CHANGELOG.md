@@ -6,12 +6,26 @@
 
 ## 버전 통일 원칙 (HARD)
 
-아래 18개 지점의 버전 표기는 **항상 완전히 동일**합니다 (v1.3.0부터):
+아래 19개 지점의 버전 표기는 **항상 완전히 동일**합니다 (v1.3.0부터):
 - `.claude-plugin/marketplace.json` (`metadata.version`) × 1
-- `<plugin>/.claude-plugin/plugin.json` (`version`) × 17
+- `<plugin>/.claude-plugin/plugin.json` (`version`) × 18
 - ~~`<plugin>/skills/<skill>/SKILL.md`~~ — **v1.3.0에서 제거** (metadata 블록 삭제, plugin.json 단일 소스)
 
 상세 정책: `CLAUDE.local.md` § 1 참조.
+
+## [Unreleased]
+
+### Added
+
+- **`moai-cost/`** 신규 플러그인 — 협력업체 견적서, 내부 BOM, 생산공장 원가, 전체 프로젝트 원가 2025/2026 비교 분석.
+- **`moai-cost/skills/supplier-quote-cost-analysis/`** — 협력업체 견적서 세부 원가 분해, target price gap, 협상 우선순위 분석.
+- **`moai-cost/skills/bom-cost-rollup/`** — 제품별 BOM 원가 roll-up, 2025/2026 단가·수량·BOM 변경 효과 분해.
+- **`moai-cost/skills/factory-cost-comparison/`** — 제품별·공장별 제조원가 2025/2026 비교, 공장 원가 경쟁력 순위 산출.
+- **`moai-cost/skills/project-cost-variance/`** — 전체 프로젝트 원가 bridge, 제품·공장·협력업체별 증감 기여도 분석.
+
+### Changed
+
+- `.claude-plugin/marketplace.json`, `README.md`, `docs-site/content/plugins/_index.md`에 `moai-cost` 카탈로그와 18 플러그인·77 스킬 카운트 반영.
 
 ## [1.5.0] - 2026-04-21
 

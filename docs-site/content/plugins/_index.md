@@ -1,14 +1,14 @@
 ---
 title: "플러그인 카탈로그"
 weight: 1
-description: "modu-ai/cowork-plugins 마켓플레이스의 17개 플러그인·73개 스킬을 도메인별로 정리한 카탈로그입니다."
+description: "modu-ai/cowork-plugins 마켓플레이스의 18개 플러그인·77개 스킬을 도메인별로 정리한 카탈로그입니다."
 geekdocBreadcrumb: true
 geekdocCollapseSection: false
 ---
 
 # `cowork-plugins` 카탈로그
 
-[`modu-ai/cowork-plugins`](https://github.com/modu-ai/cowork-plugins)는 한국 업무 환경에 맞춰 설계된 **17개 플러그인 · 73개 스킬**의 커뮤니티 마켓플레이스입니다. 사업계획·IR·마케팅·법무·세무·HR·카드뉴스·PPT·이미지 생성 등 도메인별로 묶여 있습니다.
+[`modu-ai/cowork-plugins`](https://github.com/modu-ai/cowork-plugins)는 한국 업무 환경에 맞춰 설계된 **18개 플러그인 · 77개 스킬**의 커뮤니티 마켓플레이스입니다. 사업계획·IR·마케팅·법무·세무·HR·카드뉴스·PPT·이미지 생성 등 도메인별로 묶여 있습니다.
 
 {{< hint type="note" >}}
 **v1.5.0 업데이트 (2026-04-21)**: `moai-business`에 **소상공인365 상권분석(`sbiz365-analyst`)** 과 **정부지원사업 통합(`kr-gov-grant`)** 스킬 2종이 추가되었습니다. 자세한 내용은 [`moai-business`](./moai-business/) 페이지를 확인하세요.
@@ -48,6 +48,7 @@ geekdocCollapseSection: false
 
 - [`moai-legal`](./moai-legal/) — 계약서 검토, NDA, 컴플라이언스, IP 리스크
 - [`moai-finance`](./moai-finance/) — 세무, 결산, K-IFRS 재무제표, 예실 분석
+- [`moai-cost`](./moai-cost/) — 협력업체 견적, BOM, 공장별 제품 원가, 프로젝트 원가 비교
 
 ### 데이터·연구·교육
 
@@ -78,13 +79,14 @@ geekdocCollapseSection: false
 | [moai-hr](./moai-hr/) | 4 | recruiter +3종 |
 | [moai-legal](./moai-legal/) | 4 | contract-review, nda-triage, compliance-check, legal-risk |
 | [moai-finance](./moai-finance/) | 4 | tax-helper, financial-statements, close-management, variance-analysis |
+| [moai-cost](./moai-cost/) | 4 | supplier-quote-cost-analysis, bom-cost-rollup, factory-cost-comparison, project-cost-variance |
 | [moai-data](./moai-data/) | 3 | data-explorer +2종 |
 | [moai-research](./moai-research/) | 5 | paper-search, paper-writer, grant-writer +2종 |
 | [moai-education](./moai-education/) | 3 | curriculum-designer +2종 |
 | [moai-career](./moai-career/) | 4 | job-analyzer, interview-coach +2종 |
 | [moai-lifestyle](./moai-lifestyle/) | 3 | travel-planner +2종 |
 
-전체 **73개** 스킬 (v1.5.0 기준, `moai-business`에 2개 신규 추가).
+전체 **77개** 스킬 (v1.5.0 기준, `moai-business` 2개와 `moai-cost` 4개 신규 추가).
 
 ## 다음 단계
 

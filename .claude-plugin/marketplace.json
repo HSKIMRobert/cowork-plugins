@@ -5,7 +5,7 @@
     "email": "email@mo.ai.kr"
   },
   "metadata": {
-    "description": "모두의 AI's Claude Cowork 플러그인 마켓플레이스 — 17 플러그인, 73 스킬. /project init으로 워크플로우 기반 CLAUDE.md 자동 생성, 모든 텍스트 산출물은 ai-slop-reviewer로 검수. v1.5.0부터 소상공인365 상권분석(sbiz365-analyst)과 정부지원사업 통합(kr-gov-grant) 스킬이 moai-business에 포함되었습니다",
+    "description": "모두의 AI's Claude Cowork 플러그인 마켓플레이스 — 18 플러그인, 77 스킬. /project init으로 워크플로우 기반 CLAUDE.md 자동 생성, 모든 텍스트 산출물은 ai-slop-reviewer로 검수. v1.5.0부터 소상공인365 상권분석(sbiz365-analyst)과 정부지원사업 통합(kr-gov-grant) 스킬이 moai-business에 포함되었습니다",
     "version": "1.5.0",
     "language": "ko"
   },
@@ -25,6 +25,7 @@
     {"name": "moai-office", "source": "./moai-office", "description": "문서 생성 — PPT 디자인, Word(DOCX), Excel(XLSX), 한글(HWPX)"},
     {"name": "moai-career", "source": "./moai-career", "description": "커리어 준비 — 자기소개서, 이력서, 면접 코칭, 채용공고 분석, 포트폴리오"},
     {"name": "moai-data", "source": "./moai-data", "description": "데이터 분석 — CSV/Excel 탐색, 공공데이터 조회, shadcn/ui 대시보드 + Recharts/Chart.js/Tremor/ECharts 차트"},
+    {"name": "moai-cost", "source": "./moai-cost", "description": "원가 분석 — 협력업체 견적서, BOM, 공장별 제품 원가, 프로젝트 원가 2025/2026 비교"},
     {"name": "moai-research", "source": "./moai-research", "description": "연구/특허 — 논문 검색, 학술 논문 작성, 특허 분석/출원, 연구비 신청"},
     {"name": "moai-media", "source": "./moai-media", "description": "AI 미디어 스튜디오 — Nano Banana 이미지(Gemini 3), Kling 영상, Ideogram 한국어 타이포, ElevenLabs 음성, fal.ai 게이트웨이"}
   ]

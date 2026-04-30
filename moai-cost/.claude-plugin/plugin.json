@@ -1,0 +1,12 @@
+{
+  "name": "moai-cost",
+  "version": "1.5.0",
+  "description": "원가 분석 — 협력업체 견적서, BOM, 공장별 제품 원가, 프로젝트 원가 2025/2026 비교",
+  "author": {
+    "name": "HSKIMRobert"
+  },
+  "keywords": [
+    "원가", "견적", "BOM", "협력업체", "공장", "프로젝트", "2025", "2026", "비교", "분석"
+  ],
+  "license": "MIT"
+}
